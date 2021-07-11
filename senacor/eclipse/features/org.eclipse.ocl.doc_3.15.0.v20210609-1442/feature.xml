@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ocl.doc"
+      label="%featureName"
+      version="3.15.0.v20210609-1442"
+      provider-name="%providerName">
+
+   <description url="https://projects.eclipse.org/projects/modeling.mdt.ocl">
+      %description
+   </description>
+
+   <copyright>
+      [Documentation] Copyright text will be taken from the shared license feature
+   </copyright>
+
+   <url>
+      <update label="%updateSiteName" url="http://www.eclipse.org/modeling/updates"/>
+      <discovery label="%updateSiteName" url="http://www.eclipse.org/modeling/updates"/>
+   </url>
+
+   <plugin
+         id="org.eclipse.ocl.doc"
+         download-size="4349"
+         install-size="5690"
+         version="3.15.0.v20210609-1442"
+         unpack="false"/>
+
+<license url="%licenseURL">
+      %license
+   </license></feature>

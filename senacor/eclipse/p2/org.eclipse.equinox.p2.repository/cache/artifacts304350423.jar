@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" type="text/css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://www.eclipse.org/downloads/packages/sites/all/themes/solstice/_themes/solstice_packages/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="canonical" href="https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-modeling-tools/artifacts.jar" />
+<link rel="shortlink" href="https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-modeling-tools/artifacts.jar" />
+  <title>Eclipse 2021-03 | Eclipse Packages</title>
+  <link type="text/css" rel="stylesheet" href="https://www.eclipse.org/downloads/packages/sites/default/files/css/css_B1YKfIYnZNLbX_1rjCVydfm1XZQLWjSwpiV2WPdFRBo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.eclipse.org/downloads/packages/sites/default/files/css/css_Oitj5v-hUTunxIheJJ9QNbCp9XgFk13702LglP10nxA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.eclipse.org/downloads/packages/sites/default/files/css/css_iVkhRm-DilFTkmuBDcUMAAJnbq4Yb-qqAfgFwOerQdE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.eclipse.org/downloads/packages/sites/default/files/css/css_nwG4BoflPzgf-c07IbUBmUJtpZGzxg-rTzrqOEK6wPo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.eclipse.org/downloads/packages/sites/default/files/css/css_9aBvVrn3AHvS3IG9vC5PRWj_JMqSsUZBq2DhwkRNJu4.css" media="screen" />
+  <script src="https://www.eclipse.org/downloads/packages/sites/default/files/js/js_bu9AdsQjsz_6Nfl6xjluK8orG6hwD03RvL6J-M-3f00.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/downloads/packages/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")</script>
+<script src="https://www.eclipse.org/downloads/packages/sites/default/files/js/js_38VWQ3jjQx0wRFj7gkntZr077GgJoGn5nv3v05IeLLo.js"></script>
+<script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+<script src="https://www.eclipse.org/downloads/packages/sites/default/files/js/js_DPXH2olh_wGicJ-llOI5fO6iHmi7zasIS341SIlrF3E.js"></script>
+<script src="https://www.eclipse.org/downloads/packages/sites/default/files/js/js_ft3aztrWwsNzThQHPobka1zVloiQLHjF-CJ9jxzacT4.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/downloads\/packages\/","pathPrefix":"","ajaxPageState":{"theme":"solstice_packages","theme_token":"KBWV0czBTQF5uqnl_3YVbMdWvNbZN-xRmD-ag37CEB0","js":{"public:\/\/google_tag\/google_tag.script.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/www.eclipse.org\/eclipse.org-common\/themes\/solstice\/public\/javascript\/vendor\/cookieconsent\/default.min.js":1,"sites\/all\/modules\/contrib\/ajaxblocks\/ajaxblocks.js":1,"sites\/all\/themes\/solstice\/public\/js\/main.js":1,"sites\/all\/themes\/solstice\/_themes\/solstice_packages\/public\/js\/packages.js":1,"1":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"\/\/www.eclipse.org\/eclipse.org-common\/themes\/solstice\/public\/stylesheets\/vendor\/cookieconsent\/cookieconsent.min.css":1,"sites\/all\/libraries\/fontawesome\/css\/font-awesome.css":1,"sites\/all\/themes\/solstice\/public\/css\/packages.css":1}},"eclipseApiUrl":"https:\/\/api.eclipse.org","marketplaceUrl":"https:\/\/marketplace.eclipse.org","eclipseAccountsUrl":"https:\/\/accounts.eclipse.org","ajaxblocks":"blocks=solstice_support-ss_promotions\/eclipse_installer-eclipse_installer_layout_a\u0026path=release\/2021-03\/r\/eclipse-modeling-tools\/artifacts.jar","bootstrap":{"anchorsFix":1,"anchorsSmoothScrolling":1,"formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-release page-release-2021-03 page-release-2021-03-r page-release-2021-03-r-eclipse-modeling-tools page-release-2021-03-r-eclipse-modeling-tools-artifactsjar" >
+  <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WLCZXC" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager">Google Tag Manager</iframe></noscript>  <a class="sr-only" href="#content">Skip to main content</a>
+<header id="header-wrapper" role="banner" class="header-wrapper header-padding">
+    <div class="container">
+    <div id="header-row" class="row">
+      <div id="header_left" class="col-md-4 col-sm-5 hidden-xs">
+                  <a href="https://eclipse.org/"><img class="logo-eclipse-default img-responsive" width="160" typeof="foaf:Image" src="https://www.eclipse.org/downloads/packages/sites/all/themes/solstice/_themes/solstice_packages/logo.svg" alt="" title="Eclipse Packages" /></a>        
+                  <a class="name navbar-brand element-invisible" href="/downloads/packages/" title="Home">Eclipse Packages</a>
+              </div>
+              <div  id="main-menu-wrapper" class="col-sm-19 col-md-20 margin-top-10">
+                              <div class="navbar float-sm-right yamm" id="main-menu">
+            <div id="navbar-collapse-1" class="navbar-collapse collapse">
+                                  <ul class="menu nav navbar-nav"><li><a href="https://www.eclipse.org/projects/" target="_self">Projects</a></li><li><a href="https://www.eclipse.org/org/workinggroups/" target="_self">Working Groups</a></li><li><a href="https://www.eclipse.org/membership/" target="_self">Members</a></li><li class="dropdown visible-xs"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Community <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="http://marketplace.eclipse.org">Marketplace</a></li><li><a href="http://events.eclipse.org">Events</a></li><li><a href="http://www.planeteclipse.org/">Planet Eclipse</a></li><li><a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a></li><li><a href="https://www.youtube.com/user/EclipseFdn">Videos</a></li><li><a href="https://blogs.eclipse.org">Blogs</a></li></ul></li><li class="dropdown visible-xs"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Participate <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li><li><a href="https://www.eclipse.org/forums/">Forums</a></li><li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li><li><a href="https://wiki.eclipse.org/">Wiki</a></li><li><a href="https://wiki.eclipse.org/IRC">IRC</a></li><li><a href="https://www.eclipse.org/org/research/">Research</a></li></ul></li><li class="dropdown visible-xs"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Eclipse IDE <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://www.eclipse.org/downloads">Download</a></li><li><a href="https://www.eclipse.org/eclipseide">Learn More</a></li><li><a href="https://help.eclipse.org">Documentation</a></li><li><a href="https://www.eclipse.org/getting_started">Getting Started / Support</a></li><li><a href="https://www.eclipse.org/contribute/">How to Contribute</a></li><li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li><li><a href="https://www.eclipse.org/forums/index.php/f/89/">Newcomer Forum</a></li></ul></li><li class="dropdown eclipse-more hidden-xs">
+        <a data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+        <ul class="dropdown-menu"><li><div class="yamm-content"><div class="row"><ul class="col-sm-8 list-unstyled"><li><p><strong>Community</strong></p></li><li><a href="http://marketplace.eclipse.org">Marketplace</a></li><li><a href="http://events.eclipse.org">Events</a></li><li><a href="http://www.planeteclipse.org/">Planet Eclipse</a></li><li><a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a></li><li><a href="https://www.youtube.com/user/EclipseFdn">Videos</a></li><li><a href="https://blogs.eclipse.org">Blogs</a></li></ul><ul class="col-sm-8 list-unstyled"><li><p><strong>Participate</strong></p></li><li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li><li><a href="https://www.eclipse.org/forums/">Forums</a></li><li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li><li><a href="https://wiki.eclipse.org/">Wiki</a></li><li><a href="https://wiki.eclipse.org/IRC">IRC</a></li><li><a href="https://www.eclipse.org/org/research/">Research</a></li></ul><ul class="col-sm-8 list-unstyled"><li><p><strong>Eclipse IDE</strong></p></li><li><a href="https://www.eclipse.org/downloads">Download</a></li><li><a href="https://www.eclipse.org/eclipseide">Learn More</a></li><li><a href="https://help.eclipse.org">Documentation</a></li><li><a href="https://www.eclipse.org/getting_started">Getting Started / Support</a></li><li><a href="https://www.eclipse.org/contribute/">How to Contribute</a></li><li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li><li><a href="https://www.eclipse.org/forums/index.php/f/89/">Newcomer Forum</a></li></ul></div></div></li></ul></li></ul>                              </div>
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                  class="icon-bar"></span> <span class="icon-bar"></span>
+              </button>
+                <a href="https://eclipse.org/" class="navbar-brand visible-xs"><img class="logo-eclipse-default-mobile img-responsive" width="174" typeof="foaf:Image" src="https://www.eclipse.org/downloads/packages/sites/all/themes/solstice/_themes/solstice_packages/logo.svg" alt="" title="Eclipse Packages" /></a>              </div>
+          </div>
+        </div>
+                </div>
+  </div>
+</header>
+
+  <section id="breadcrumb" class="default-breadcrumbs hidden-print">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-24 padding-left-30">
+          <ol class="breadcrumb"><li><a href="//www.eclipse.org">Home</a></li>
+<li><a href="//www.eclipse.org/downloads">Downloads</a></li>
+<li><a href="/downloads/packages/">Packages</a></li>
+<li><a href="/downloads/packages/release">Release</a></li>
+<li>Eclipse 2021-03</li>
+</ol>        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="region region-breadcrumb solstice-region-element-count-1 solstice-sub-menu solstice-sub-menu-default clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-24">
+        <section id="block-system-user-menu" class="block block-system block-menu block-region-breadcrumb block-user-menu clearfix">
+
+      
+  <div class="block-content">
+    <ul class="nav nav-pills"><li class="first leaf"><a href="/downloads/packages/installer" title="The easiest way to install and update your Eclipse Development Environment.">Eclipse Installer</a></li>
+<li class="last leaf"><a href="/downloads/packages/" title="Eclipse Packages">Eclipse Packages</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<main role="main">
+  
+  <div id="main-page-content" class="margin-top-20 container">
+    <header role="banner" id="page-header">
+                </header>
+
+  <!-- /#page-header -->
+  <div id="main-content-row" class="row">
+    <section id="main-content" role="complementary" class="col-md-18 col-sm-16 margin-bottom-20">
+                  
+      
+      
+              <a id="main-content"></a>
+        <div id="maint-content-area">
+          
+                      <h1  class="page-header">Eclipse 2021-03</h1>
+                          
+                                
+          
+          
+            <div class="region region-content solstice-region-element-count-1">
+    <section id="block-system-main" class="block block-system block-region-content block-main clearfix">
+
+      
+  <div class="block-content">
+    <ul><li class="0 first"><a href="/downloads/packages/release/2021-03/r">R Packages</a></li>
+<li class="1"><a href="/downloads/packages/release/2021-03/rc1">RC1 Packages</a></li>
+<li class="2"><a href="/downloads/packages/release/2021-03/m3">M3 Packages</a></li>
+<li class="3"><a href="/downloads/packages/release/2021-03/m2">M2 Packages</a></li>
+<li class="4 last"><a href="/downloads/packages/release/2021-03/m1">M1 Packages</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+  </div>
+                  </div>
+
+        
+              </section>
+
+      
+              <aside id="main-sidebar-secondy" role="complementary" class="col-md-6 col-sm-8">
+            <div class="region region-sidebar-second solstice-region-element-count-5">
+    <section id="block-solstice-support-ss-promotions" class="block block-solstice-support block-region-sidebar-second text-center solstice-block solstice-block block-ss-promotions clearfix">
+
+      
+  <div class="block-content padding-top-10">
+    <div id="block-solstice_support-ss_promotions-ajax-content" class="ajaxblocks-wrapper"><script type="text/javascript"></script><noscript><div class="eclipsefnd-ad ad-strategic ad-strategic-default"><a href="/go/PAID_FROGLOGIC_BANNER_1?impression_id=fcca24619dcd8ef19a2ed365ab97521dc9c20d" rel="nofollow" style="background-image: url('/membership/promo/images/banner_1_froglogic.png')">FrogLogic</a></div></noscript></div>  </div>
+
+</section> <!-- /.block -->
+<section id="block-eclipse-installer-eclipse-installer-layout-a" class="block block-eclipse-installer block-region-sidebar-second solstice-block block-eclipse-installer-layout-a clearfix">
+
+      
+  <div class="block-content padding-top-10">
+    <div id="block-eclipse_installer-eclipse_installer_layout_a-ajax-content" class="ajaxblocks-wrapper"><script type="text/javascript"></script><noscript>
+<div class="text-center">
+      <div class="row">
+      <div class="col-xs-12 col-xs-offset-6 col-md-18 col-md-offset-3">
+        <div class="downloads-eclipse-installer-alert">
+          <p>The Eclipse Installer 2021&#8209;06 R now includes a JRE for macOS, Windows and Linux.</p>
+        </div>
+      </div>
+    </div>
+    <span class="downloads-logo vertical-align"><img height="50" alt="Eclipse" src="/downloads/assets/public/images/logo-eclipse.png"></span>
+  <h3>Get <strong>Eclipse IDE 2021&#8209;06</strong></h3>
+  <p>Install your favorite desktop IDE packages.</p>
+  <p>
+          <a class="btn btn-warning margin-bottom-5" href="https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-06/R/eclipse-inst-jre-win64.exe" title="x86_64 Download">Download x86_64</a>
+      </p>
+  <p><a href="/downloads/packages" class="grey-link">Download Packages</a> | <a class="grey-link" href="/downloads/packages/installer" title="Instructions">Need Help?</a></p>
+</div></noscript></div>  </div>
+
+</section> <!-- /.block -->
+<section id="block-block-1" class="block block-block block-region-sidebar-second solstice-block solstice-block-default solstice-block-white-bg block-1 clearfix">
+
+        <h2 class="block-title">Related Links</h2>
+    
+  <div class="block-content padding-top-10">
+    <ul id="installingEclipse"><li><a href="/downloads/packages/compare">Compare &amp; Combine Packages</a></li>
+<li><a href="/eclipse/news/4.20/">New and Noteworthy</a></li>
+<li><a href="//wiki.eclipse.org/Eclipse/Installation">Install Guide</a></li>
+<li><a href="http://help.eclipse.org">Documentation</a></li>
+<li><a href="http://help.eclipse.org/2021-06/topic/org.eclipse.platform.doc.user/tasks/tasks-129.htm">Updating Eclipse</a></li>
+<li><a href="/forums/">Forums</a></li>
+<li><a href="https://wiki.eclipse.org/Simultaneous_Release">Simultaneous Release</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+<section id="block-block-2" class="block block-block block-region-sidebar-second solstice-block solstice-block-default solstice-block-white-bg block-2 clearfix">
+
+        <h2 class="block-title">More Downloads</h2>
+    
+  <div class="block-content padding-top-10">
+    <ul id="installingEclipse"><li><a href="http://download.eclipse.org/eclipse/">Other builds</a></li>
+<li><a href="/downloads/packages/release/2021-06/r">Eclipse 2021-06 (4.20)</a></li>
+<li><a href="/downloads/packages/release/2021-03/r">Eclipse 2021-03 (4.19)</a></li>
+<li><a href="/downloads/packages/release/2020-12/r">Eclipse 2020-12 (4.18)</a></li>
+<li><a href="/downloads/packages/release/2020-09/r">Eclipse 2020-09 (4.17)</a></li>
+<li><a href="/downloads/packages/release/2020-06/r">Eclipse 2020-06 (4.16)</a></li>
+<li><a href="/downloads/packages/release/2020-03/r">Eclipse 2020-03 (4.15)</a></li>
+<li><a href="//www.eclipse.org/downloads/packages/release">Older Versions</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+<section id="block-block-3" class="block block-block block-region-sidebar-second solstice-block solstice-block-default solstice-block-white-bg block-3 clearfix">
+
+        <h2 class="block-title">Hint</h2>
+    
+  <div class="block-content padding-top-10">
+    <p class="jre">You will need a <a href="//wiki.eclipse.org/Eclipse/Installation#Install_a_JVM">Java runtime environment (JRE)</a> to use Eclipse (Java SE 11 or greater is recommended). Some of the packages come with a JRE. All downloads are provided under the terms and conditions of the Eclipse Foundation Software User Agreement unless otherwise specified.</p>
+  </div>
+
+</section> <!-- /.block -->
+  </div>
+        </aside><!-- /#sidebar-second -->
+          </div>
+  </div>
+
+  </main>
+
+  <div class="eclipsefdn-featured-story featured-footer" data-publish-target="eclipse_org"><div class="container featured-container"></div></div><footer role="contentinfo" id="solstice-footer">
+  <div class="container">
+    <div class="row">
+
+      <section id="footer-eclipse-foundation" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                      <h2 class="section-title">Eclipse Foundation</h2>
+    <ul class="nav"><li><a href="https://www.eclipse.org/org/">About Us</a></li><li><a href="https://www.eclipse.org/org/foundation/contact.php">Contact Us</a></li><li><a href="https://www.eclipse.org/donate">Donate</a></li><li><a href="https://www.eclipse.org/membership/">Members</a></li><li><a href="https://www.eclipse.org/org/documents/">Governance</a></li><li><a href="https://www.eclipse.org/org/documents/Community_Code_of_Conduct.php">Code of Conduct</a></li><li><a href="https://www.eclipse.org/artwork/">Logo and Artwork</a></li><li><a href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a></li></ul>              </section>
+
+      <section id="footer-legal" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                      <h2 class="section-title">Legal</h2>
+    <ul class="nav"><li><a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a></li><li><a href="https://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li><li><a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li><li><a href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License</a></li><li><a href="https://www.eclipse.org/legal/">Legal Resources</a></li></ul>              </section>
+
+      <section id="footer-useful-links" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                      <h2 class="section-title">Useful Links</h2>
+    <ul class="nav"><li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li><li><a href="//help.eclipse.org/">Documentation</a></li><li><a href="https://www.eclipse.org/contribute/">How to Contribute</a></li><li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li><li><a href="https://www.eclipse.org/forums/">Forums</a></li><li><a href="//marketplace.eclipse.org">Marketplace</a></li></ul>              </section>
+
+      <section id="footer-other" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                      <h2 class="section-title">Other</h2>
+    <ul class="nav"><li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li><li><a href="https://www.eclipse.org/projects">Projects</a></li><li><a href="https://www.eclipse.org/org/workinggroups/">Working Groups</a></li><li><a href="https://www.eclipse.org/org/research/">Research@Eclipse</a></li><li><a href="https://www.eclipse.org/security/">Report a Vulnerability</a></li><li><a href="https://status.eclipse.org">Service Status</a></li></ul>              </section>
+
+            <div class="col-sm-24 margin-top-20">
+        <div class="row">
+          <div id="copyright" class="col-md-16">
+            <p id="copyright-text">Copyright &copy; Eclipse Foundation. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-8 social-media">
+            <ul class="list-inline">
+              <li>
+                <a class="social-media-link fa-stack fa-lg" href="https://twitter.com/EclipseFdn">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg" href="https://www.facebook.com/eclipse.org">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg" href="https://www.youtube.com/user/EclipseFdn">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-youtube fa-stack-1x"></i>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg" href="https://www.linkedin.com/company/eclipse-foundation">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>      <a href="#" class="scrollup">Back to the top</a>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='2'>
+  <artifact classifier='osgi.bundle' id='com.senacor.bdm.logdsl.ide' version='1.0.0.202107111555'>
+    <properties size='5'>
+      <property name='artifact.size' value='23873'/>
+      <property name='download.size' value='23873'/>
+      <property name='maven-groupId' value='com.senacor.bdm'/>
+      <property name='maven-artifactId' value='com.senacor.bdm.logdsl.ide'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+    </properties>
+  </artifact>
+  <artifact classifier='osgi.bundle' id='com.senacor.bdm.logdsl.ide.source' version='1.0.0.202107111555'>
+    <properties size='6'>
+      <property name='artifact.size' value='16236'/>
+      <property name='download.size' value='16236'/>
+      <property name='maven-groupId' value='com.senacor.bdm'/>
+      <property name='maven-artifactId' value='com.senacor.bdm.logdsl.ide'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      <property name='maven-classifier' value='sources'/>
+    </properties>
+  </artifact>
+</artifacts>

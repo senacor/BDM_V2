@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="com.senacor.bdm.feature"
+	label="LogDsl Feature "
+	version="1.0.0.202107111555">
+	<plugin
+			id="com.senacor.bdm.logdsl"
+			download-size="43"
+			install-size="88"
+			version="1.0.0.202107111555"
+			unpack="false"/>
+	<plugin
+			id="com.senacor.bdm.logdsl.ide"
+			download-size="23"
+			install-size="53"
+			version="1.0.0.202107111555"
+			unpack="false"/>
+	<plugin
+			id="com.senacor.bdm.logdsl.ui"
+			download-size="16"
+			install-size="42"
+			version="1.0.0.202107111555"
+			unpack="false"/>
+</feature>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logmetamodel" nsURI="http://www.example.org/logmetamodel" nsPrefix="logmetamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="LogDocument" eSuperTypes="commonmetamodel.ecore#//Document">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseentities" upperBound="-1"
+        eType="#//BaseEntity" containment="true" eOpposite="#//BaseEntity/document"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="#//LogDocument"
+        eOpposite="#//LogDocument/baseentities"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="com.senacor.bdm.feature.source" version="1.0.0.202107111555" label="LogDsl Feature  Developer Resources">
+  <includes id="com.senacor.bdm.feature" version="1.0.0.202107111555"/>
+  <plugin id="com.senacor.bdm.logdsl.source" version="1.0.0.202107111555" download-size="0" install-size="0" unpack="false"/>
+  <plugin id="com.senacor.bdm.logdsl.ide.source" version="1.0.0.202107111555" download-size="0" install-size="0" unpack="false"/>
+  <plugin id="com.senacor.bdm.logdsl.ui.source" version="1.0.0.202107111555" download-size="0" install-size="0" unpack="false"/>
+</feature>

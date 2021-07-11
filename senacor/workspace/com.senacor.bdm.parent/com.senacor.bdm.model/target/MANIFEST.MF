@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.senacor.bdm.model;singleton:=true
+Automatic-Module-Name: com.senacor.bdm.model
+Bundle-Version: 1.0.0.202107111555
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: com.senacor.bdm.model.commonmetamodel,com.senacor.bdm.mo
+ del.commonmetamodel.impl,com.senacor.bdm.model.commonmetamodel.util,com
+ .senacor.bdm.model.logmetamodel,com.senacor.bdm.model.logmetamodel.impl
+ ,com.senacor.bdm.model.logmetamodel.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,com.senacor.b
+ dm.model;visibility:=reexport,org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+

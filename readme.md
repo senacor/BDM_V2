@@ -1,1 +1,1 @@
-init commit
+In order to use this eclipse project you need java 11. 
