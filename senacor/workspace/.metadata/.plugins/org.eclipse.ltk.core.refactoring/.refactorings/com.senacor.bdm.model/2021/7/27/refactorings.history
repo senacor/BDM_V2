@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;com.senacor.mdm.model/model/commonmetamodel.aird&apos; to &apos;representations.aird&apos;" description="Rename resource &apos;commonmetamodel.aird&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="model/commonmetamodel.aird" name="representations.aird" stamp="1625573818786" updateReferences="true"/>
-</session>
