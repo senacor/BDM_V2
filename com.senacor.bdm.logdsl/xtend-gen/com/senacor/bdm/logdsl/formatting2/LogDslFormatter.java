@@ -4,7 +4,6 @@
 package com.senacor.bdm.logdsl.formatting2;
 
 import com.google.inject.Inject;
-import com.senacor.bdm.logdsl.services.LogDslGrammarAccess;
 import com.senacor.bdm.model.logmetamodel.BaseEntity;
 import com.senacor.bdm.model.logmetamodel.LogDocument;
 import java.util.Arrays;
@@ -19,7 +18,7 @@ import org.eclipse.xtext.xbase.lib.Extension;
 public class LogDslFormatter extends AbstractFormatter2 {
   @Inject
   @Extension
-  private LogDslGrammarAccess _logDslGrammarAccess;
+  private /* LogDslGrammarAccess */Object _logDslGrammarAccess;
   
   protected void _format(final LogDocument logDocument, @Extension final IFormattableDocument document) {
     EList<BaseEntity> _baseentities = logDocument.getBaseentities();

@@ -13,11 +13,4 @@ Require-Bundle: com.senacor.bdm.model,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: com.senacor.bdm.common.serializer,
- com.senacor.bdm.common.generator,
- com.senacor.bdm.common,
- com.senacor.bdm.common.formatting2,
- com.senacor.bdm.common.validation,
- com.senacor.bdm.common.services,
- com.senacor.bdm.common.scoping
 Import-Package: org.apache.log4j

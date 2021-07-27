@@ -10,8 +10,8 @@ import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.util.ParseHelper;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-@ExtendWith(InjectionExtension.class)
-@InjectWith(TechDslInjectorProvider.class)
+@ExtendWith(InjectionExtension.class)/* 
+@InjectWith(/* name is null */) */
 @SuppressWarnings("all")
 public class TechDslParsingTest {
   @Inject
