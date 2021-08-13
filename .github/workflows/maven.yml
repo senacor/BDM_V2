@@ -22,4 +22,4 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Bclean
-      run: mvn clean install --file pom.xml
+      run: mvn clean install -DskipUiTests --file pom.xml

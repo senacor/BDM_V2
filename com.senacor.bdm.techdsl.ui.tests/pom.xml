@@ -24,5 +24,28 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+  <profiles>
+    <profile>
+      <id>skipUiTests</id>
+      <activation>
+        <property>
+          <name>skipUiTests</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-surefire-plugin</artifactId>
+            <configuration>
+              <skipTests>true</skipTests>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
