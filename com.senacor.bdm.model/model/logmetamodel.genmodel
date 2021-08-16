@@ -3,35 +3,17 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.senacor.bdm.model/src" modelPluginID="com.senacor.bdm.model"
     modelName="Logmetamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    usedGenPackages="commonmetamodel.genmodel#//commonmetamodel" operationReflection="true"
+    importOrganizing="true">
   <foreignModel>logmetamodel.ecore</foreignModel>
   <genPackages prefix="Logmetamodel" basePackage="com.senacor.bdm.model" disposableProviderFactory="true"
       ecorePackage="logmetamodel.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="logmetamodel.ecore#//DataTypes">
-      <genEnumLiterals ecoreEnumLiteral="logmetamodel.ecore#//DataTypes/None"/>
-      <genEnumLiterals ecoreEnumLiteral="logmetamodel.ecore#//DataTypes/String"/>
-      <genEnumLiterals ecoreEnumLiteral="logmetamodel.ecore#//DataTypes/Number"/>
-    </genEnums>
-    <genClasses image="false" ecoreClass="logmetamodel.ecore#//Document">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmetamodel.ecore#//Document/name"/>
-    </genClasses>
     <genClasses ecoreClass="logmetamodel.ecore#//LogDocument">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference logmetamodel.ecore#//LogDocument/member"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmetamodel.ecore#//LogDocument/baseentities"/>
     </genClasses>
-    <genClasses ecoreClass="logmetamodel.ecore#//member">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmetamodel.ecore#//member/logdocument"/>
-    </genClasses>
-    <genClasses ecoreClass="logmetamodel.ecore#//Entity">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference logmetamodel.ecore#//Entity/fields"/>
-    </genClasses>
-    <genClasses ecoreClass="logmetamodel.ecore#//INamedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmetamodel.ecore#//INamedElement/name"/>
-    </genClasses>
-    <genClasses ecoreClass="logmetamodel.ecore#//Field">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmetamodel.ecore#//Field/dtype"/>
-    </genClasses>
-    <genClasses ecoreClass="logmetamodel.ecore#//IDescribable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmetamodel.ecore#//IDescribable/description"/>
+    <genClasses ecoreClass="logmetamodel.ecore#//BaseEntity">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmetamodel.ecore#//BaseEntity/document"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmetamodel.ecore#//BaseEntity/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

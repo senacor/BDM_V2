@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logmetamodel" nsURI="http://www.example.org/logmetamodel" nsPrefix="logmetamodel">
-  <eClassifiers xsi:type="ecore:EClass" name="Document" abstract="true" interface="true">
+  <eClassifiers xsi:type="ecore:EClass" name="LogDocument" eSuperTypes="commonmetamodel.ecore#//Document">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseentities" upperBound="-1"
+        eType="#//BaseEntity" containment="true" eOpposite="#//BaseEntity/document"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="#//LogDocument"
+        eOpposite="#//LogDocument/baseentities"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LogDocument" eSuperTypes="#//Document">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member" upperBound="-1"
-        eType="#//member" containment="true" eOpposite="#//member/logdocument"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="member" abstract="true" eSuperTypes="#//IDescribable">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="logdocument" eType="#//LogDocument"
-        eOpposite="#//LogDocument/member"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//INamedElement #//member">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//Field" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="INamedElement" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//INamedElement #//member">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtype" eType="#//DataTypes"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="DataTypes">
-    <eLiterals name="None"/>
-    <eLiterals name="String" value="1"/>
-    <eLiterals name="Number" value="2"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IDescribable" abstract="true" interface="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
