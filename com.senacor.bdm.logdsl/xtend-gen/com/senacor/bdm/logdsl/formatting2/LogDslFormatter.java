@@ -4,10 +4,9 @@
 package com.senacor.bdm.logdsl.formatting2;
 
 import com.google.inject.Inject;
-import com.senacor.bdm.model.logmetamodel.BaseEntity;
+import com.senacor.bdm.logdsl.services.LogDslGrammarAccess;
 import com.senacor.bdm.model.logmetamodel.LogDocument;
 import java.util.Arrays;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
@@ -18,13 +17,12 @@ import org.eclipse.xtext.xbase.lib.Extension;
 public class LogDslFormatter extends AbstractFormatter2 {
   @Inject
   @Extension
-  private /* LogDslGrammarAccess */Object _logDslGrammarAccess;
+  private LogDslGrammarAccess _logDslGrammarAccess;
   
   protected void _format(final LogDocument logDocument, @Extension final IFormattableDocument document) {
-    EList<BaseEntity> _baseentities = logDocument.getBaseentities();
-    for (final BaseEntity baseEntity : _baseentities) {
-      document.<BaseEntity>format(baseEntity);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field baseentities is undefined for the type LogDocument"
+      + "\nformat cannot be resolved");
   }
   
   public void format(final Object logDocument, final IFormattableDocument document) {

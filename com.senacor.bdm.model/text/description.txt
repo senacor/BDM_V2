@@ -7,9 +7,28 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 
 Package logmetamodel <http://www.example.org/logmetamodel>
 
-  Class LogDocument -> Document
-    Reference baseentities : BaseEntity<<0..*>>
-
-  Class BaseEntity
-    Reference document : LogDocument
+  Class Document
     Attribute name : EString
+
+  Class LogDocument -> Document
+    Reference member : member<<0..*>>
+
+  Class member -> IDescribable
+    Reference logdocument : LogDocument
+
+  Class Entity -> INamedElement, member
+    Reference fields : Field<<0..*>>
+
+  Class INamedElement
+    Attribute name : EString
+
+  Class Field -> INamedElement, member
+    Attribute dtype : DataTypes
+
+  Class IDescribable
+    Attribute description : EString
+
+  Enum DataTypes
+    Literal None = 0
+    Literal String = 1
+    Literal Number = 2

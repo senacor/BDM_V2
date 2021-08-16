@@ -5,6 +5,7 @@ package com.senacor.bdm.model.logmetamodel.impl;
 import com.senacor.bdm.model.logmetamodel.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -57,9 +58,40 @@ public class LogmetamodelFactoryImpl extends EFactoryImpl implements Logmetamode
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case LogmetamodelPackage.LOG_DOCUMENT: return createLogDocument();
-			case LogmetamodelPackage.BASE_ENTITY: return createBaseEntity();
+			case LogmetamodelPackage.ENTITY: return createEntity();
+			case LogmetamodelPackage.FIELD: return createField();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case LogmetamodelPackage.DATA_TYPES:
+				return createDataTypesFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case LogmetamodelPackage.DATA_TYPES:
+				return convertDataTypesToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -78,9 +110,39 @@ public class LogmetamodelFactoryImpl extends EFactoryImpl implements Logmetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BaseEntity createBaseEntity() {
-		BaseEntityImpl baseEntity = new BaseEntityImpl();
-		return baseEntity;
+	public Entity createEntity() {
+		EntityImpl entity = new EntityImpl();
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Field createField() {
+		FieldImpl field = new FieldImpl();
+		return field;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataTypes createDataTypesFromString(EDataType eDataType, String initialValue) {
+		DataTypes result = DataTypes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDataTypesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

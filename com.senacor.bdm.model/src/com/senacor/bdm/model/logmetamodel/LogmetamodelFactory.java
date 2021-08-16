@@ -31,13 +31,22 @@ public interface LogmetamodelFactory extends EFactory {
 	LogDocument createLogDocument();
 
 	/**
-	 * Returns a new object of class '<em>Base Entity</em>'.
+	 * Returns a new object of class '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Base Entity</em>'.
+	 * @return a new object of class '<em>Entity</em>'.
 	 * @generated
 	 */
-	BaseEntity createBaseEntity();
+	Entity createEntity();
+
+	/**
+	 * Returns a new object of class '<em>Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Field</em>'.
+	 * @generated
+	 */
+	Field createField();
 
 	/**
 	 * Returns the package supported by this factory.

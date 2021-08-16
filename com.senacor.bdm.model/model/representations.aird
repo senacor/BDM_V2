@@ -793,33 +793,33 @@
     <semanticResources>java:/Objects/com.senacor.bdm.model.logmetamodel.BaseEntity</semanticResources>
     <semanticResources>java:/Objects/java.lang.SuppressWarnings</semanticResources>
     <semanticResources>java:/Objects/java.lang.Override</semanticResources>
-    <semanticResources>platform:/resource/com.senacor.bdm.model/model/commonmetamodel.ecore</semanticResources>
-    <semanticResources>platform:/resource/com.senacor.bdm.model/model/logmetamodel.ecore</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl.tests/src/com/senacor/bdm/logdsl/tests/LogDslParsingTest.xtend</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/src/com/senacor/bdm/techdsl/GenerateTechDsl.mwe2</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/src/com/senacor/bdm/techdsl/TechDsl.xtext</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl.tests/src/com/senacor/bdm/techdsl/tests/TechDslParsingTest.xtend</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/src/com/senacor/bdm/logdsl/GenerateLogDsl.mwe2</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/src/com/senacor/bdm/logdsl/LogDsl.xtext</semanticResources>
+    <semanticResources>commonmetamodel.ecore</semanticResources>
+    <semanticResources>logmetamodel.ecore</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl.tests/src/com/senacor/bdm/logdsl/tests/LogDslParsingTest.xtend</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/src/com/senacor/bdm/techdsl/GenerateTechDsl.mwe2</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/src/com/senacor/bdm/techdsl/TechDsl.xtext</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl.tests/src/com/senacor/bdm/techdsl/tests/TechDslParsingTest.xtend</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/src/com/senacor/bdm/logdsl/GenerateLogDsl.mwe2</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/src/com/senacor/bdm/logdsl/LogDsl.xtext</semanticResources>
     <semanticResources>bundleresource://862.fwk2002237981/org/eclipse/xtext/common/Terminals.xtext</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/src/com/senacor/bdm/logdsl/formatting2/LogDslFormatter.xtend</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/src/com/senacor/bdm/logdsl/generator/LogDslGenerator.xtend</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/src/com/senacor/bdm/techdsl/formatting2/TechDslFormatter.xtend</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/src/com/senacor/bdm/techdsl/generator/TechDslGenerator.xtend</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/target/classes/com/senacor/bdm/logdsl/GenerateLogDsl.mwe2</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/target/classes/com/senacor/bdm/techdsl/GenerateTechDsl.mwe2</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/xtend-gen/com/senacor/bdm/logdsl/formatting2/.LogDslFormatter.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/xtend-gen/com/senacor/bdm/logdsl/generator/.LogDslGenerator.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/target/classes/com/senacor/bdm/logdsl/formatting2/.LogDslFormatter.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl/target/classes/com/senacor/bdm/logdsl/generator/.LogDslGenerator.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl.tests/xtend-gen/com/senacor/bdm/logdsl/tests/.LogDslParsingTest.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.logdsl.tests/target/classes/com/senacor/bdm/logdsl/tests/.LogDslParsingTest.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/xtend-gen/com/senacor/bdm/techdsl/formatting2/.TechDslFormatter.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/xtend-gen/com/senacor/bdm/techdsl/generator/.TechDslGenerator.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/target/classes/com/senacor/bdm/techdsl/formatting2/.TechDslFormatter.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl/target/classes/com/senacor/bdm/techdsl/generator/.TechDslGenerator.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl.tests/xtend-gen/com/senacor/bdm/techdsl/tests/.TechDslParsingTest.java._trace</semanticResources>
-    <semanticResources>../../com.senacor.bdm.techdsl.tests/target/classes/com/senacor/bdm/techdsl/tests/.TechDslParsingTest.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/src/com/senacor/bdm/logdsl/formatting2/LogDslFormatter.xtend</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/src/com/senacor/bdm/logdsl/generator/LogDslGenerator.xtend</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/src/com/senacor/bdm/techdsl/formatting2/TechDslFormatter.xtend</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/src/com/senacor/bdm/techdsl/generator/TechDslGenerator.xtend</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/target/classes/com/senacor/bdm/logdsl/GenerateLogDsl.mwe2</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/target/classes/com/senacor/bdm/techdsl/GenerateTechDsl.mwe2</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/xtend-gen/com/senacor/bdm/logdsl/formatting2/.LogDslFormatter.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/xtend-gen/com/senacor/bdm/logdsl/generator/.LogDslGenerator.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/target/classes/com/senacor/bdm/logdsl/formatting2/.LogDslFormatter.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl/target/classes/com/senacor/bdm/logdsl/generator/.LogDslGenerator.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl.tests/xtend-gen/com/senacor/bdm/logdsl/tests/.LogDslParsingTest.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.logdsl.tests/target/classes/com/senacor/bdm/logdsl/tests/.LogDslParsingTest.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/xtend-gen/com/senacor/bdm/techdsl/formatting2/.TechDslFormatter.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/xtend-gen/com/senacor/bdm/techdsl/generator/.TechDslGenerator.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/target/classes/com/senacor/bdm/techdsl/formatting2/.TechDslFormatter.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl/target/classes/com/senacor/bdm/techdsl/generator/.TechDslGenerator.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl.tests/xtend-gen/com/senacor/bdm/techdsl/tests/.TechDslParsingTest.java._trace</semanticResources>
+    <semanticResources>platform:/resource/com.senacor.bdm.techdsl.tests/target/classes/com/senacor/bdm/techdsl/tests/.TechDslParsingTest.java._trace</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_VFDCIN4vEeu3-OCFu87Lmw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_VFqtMN4vEeu3-OCFu87Lmw" name="commonmetamodel" repPath="#_VFmbwN4vEeu3-OCFu87Lmw" changeId="b0b86c5a-d8b2-4474-b2f3-886e15000162">

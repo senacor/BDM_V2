@@ -2,15 +2,20 @@
  */
 package com.senacor.bdm.model.logmetamodel.impl;
 
-import com.senacor.bdm.model.commonmetamodel.CommonmetamodelPackage;
-
-import com.senacor.bdm.model.logmetamodel.BaseEntity;
+import com.senacor.bdm.model.logmetamodel.DataTypes;
+import com.senacor.bdm.model.logmetamodel.Document;
+import com.senacor.bdm.model.logmetamodel.Entity;
+import com.senacor.bdm.model.logmetamodel.Field;
+import com.senacor.bdm.model.logmetamodel.IDescribable;
+import com.senacor.bdm.model.logmetamodel.INamedElement;
 import com.senacor.bdm.model.logmetamodel.LogDocument;
 import com.senacor.bdm.model.logmetamodel.LogmetamodelFactory;
 import com.senacor.bdm.model.logmetamodel.LogmetamodelPackage;
 
+import com.senacor.bdm.model.logmetamodel.member;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -28,6 +33,13 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass documentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass logDocumentEClass = null;
 
 	/**
@@ -35,7 +47,42 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass baseEntityEClass = null;
+	private EClass memberEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iNamedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fieldEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iDescribableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum dataTypesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -84,9 +131,6 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		CommonmetamodelPackage.eINSTANCE.eClass();
-
 		// Create package meta-data objects
 		theLogmetamodelPackage.createPackageContents();
 
@@ -106,6 +150,24 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDocument() {
+		return documentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocument_Name() {
+		return (EAttribute)documentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLogDocument() {
 		return logDocumentEClass;
 	}
@@ -115,7 +177,7 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLogDocument_Baseentities() {
+	public EReference getLogDocument_Member() {
 		return (EReference)logDocumentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -124,8 +186,8 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBaseEntity() {
-		return baseEntityEClass;
+	public EClass getmember() {
+		return memberEClass;
 	}
 
 	/**
@@ -133,8 +195,8 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBaseEntity_Document() {
-		return (EReference)baseEntityEClass.getEStructuralFeatures().get(0);
+	public EReference getmember_Logdocument() {
+		return (EReference)memberEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -142,8 +204,80 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBaseEntity_Name() {
-		return (EAttribute)baseEntityEClass.getEStructuralFeatures().get(1);
+	public EClass getEntity() {
+		return entityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_Fields() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getINamedElement() {
+		return iNamedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getINamedElement_Name() {
+		return (EAttribute)iNamedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getField() {
+		return fieldEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getField_Dtype() {
+		return (EAttribute)fieldEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIDescribable() {
+		return iDescribableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIDescribable_Description() {
+		return (EAttribute)iDescribableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getDataTypes() {
+		return dataTypesEEnum;
 	}
 
 	/**
@@ -174,12 +308,29 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 		isCreated = true;
 
 		// Create classes and their features
-		logDocumentEClass = createEClass(LOG_DOCUMENT);
-		createEReference(logDocumentEClass, LOG_DOCUMENT__BASEENTITIES);
+		documentEClass = createEClass(DOCUMENT);
+		createEAttribute(documentEClass, DOCUMENT__NAME);
 
-		baseEntityEClass = createEClass(BASE_ENTITY);
-		createEReference(baseEntityEClass, BASE_ENTITY__DOCUMENT);
-		createEAttribute(baseEntityEClass, BASE_ENTITY__NAME);
+		logDocumentEClass = createEClass(LOG_DOCUMENT);
+		createEReference(logDocumentEClass, LOG_DOCUMENT__MEMBER);
+
+		memberEClass = createEClass(MEMBER);
+		createEReference(memberEClass, MEMBER__LOGDOCUMENT);
+
+		entityEClass = createEClass(ENTITY);
+		createEReference(entityEClass, ENTITY__FIELDS);
+
+		iNamedElementEClass = createEClass(INAMED_ELEMENT);
+		createEAttribute(iNamedElementEClass, INAMED_ELEMENT__NAME);
+
+		fieldEClass = createEClass(FIELD);
+		createEAttribute(fieldEClass, FIELD__DTYPE);
+
+		iDescribableEClass = createEClass(IDESCRIBABLE);
+		createEAttribute(iDescribableEClass, IDESCRIBABLE__DESCRIPTION);
+
+		// Create enums
+		dataTypesEEnum = createEEnum(DATA_TYPES);
 	}
 
 	/**
@@ -205,23 +356,45 @@ public class LogmetamodelPackageImpl extends EPackageImpl implements Logmetamode
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		CommonmetamodelPackage theCommonmetamodelPackage = (CommonmetamodelPackage)EPackage.Registry.INSTANCE.getEPackage(CommonmetamodelPackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		logDocumentEClass.getESuperTypes().add(theCommonmetamodelPackage.getDocument());
+		logDocumentEClass.getESuperTypes().add(this.getDocument());
+		memberEClass.getESuperTypes().add(this.getIDescribable());
+		entityEClass.getESuperTypes().add(this.getINamedElement());
+		entityEClass.getESuperTypes().add(this.getmember());
+		fieldEClass.getESuperTypes().add(this.getINamedElement());
+		fieldEClass.getESuperTypes().add(this.getmember());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(logDocumentEClass, LogDocument.class, "LogDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLogDocument_Baseentities(), this.getBaseEntity(), this.getBaseEntity_Document(), "baseentities", null, 0, -1, LogDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(documentEClass, Document.class, "Document", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(baseEntityEClass, BaseEntity.class, "BaseEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBaseEntity_Document(), this.getLogDocument(), this.getLogDocument_Baseentities(), "document", null, 0, 1, BaseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBaseEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, BaseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(logDocumentEClass, LogDocument.class, "LogDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLogDocument_Member(), this.getmember(), this.getmember_Logdocument(), "member", null, 0, -1, LogDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(memberEClass, member.class, "member", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getmember_Logdocument(), this.getLogDocument(), this.getLogDocument_Member(), "logdocument", null, 0, 1, member.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntity_Fields(), this.getField(), null, "fields", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(iNamedElementEClass, INamedElement.class, "INamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getINamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, INamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getField_Dtype(), this.getDataTypes(), "dtype", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(iDescribableEClass, IDescribable.class, "IDescribable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIDescribable_Description(), ecorePackage.getEString(), "description", null, 0, 1, IDescribable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(dataTypesEEnum, DataTypes.class, "DataTypes");
+		addEEnumLiteral(dataTypesEEnum, DataTypes.NONE);
+		addEEnumLiteral(dataTypesEEnum, DataTypes.STRING);
+		addEEnumLiteral(dataTypesEEnum, DataTypes.NUMBER);
 
 		// Create resource
 		createResource(eNS_URI);

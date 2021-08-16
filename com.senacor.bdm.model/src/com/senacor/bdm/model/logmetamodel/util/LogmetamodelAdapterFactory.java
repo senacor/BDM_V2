@@ -2,8 +2,6 @@
  */
 package com.senacor.bdm.model.logmetamodel.util;
 
-import com.senacor.bdm.model.commonmetamodel.Document;
-
 import com.senacor.bdm.model.logmetamodel.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -70,16 +68,32 @@ public class LogmetamodelAdapterFactory extends AdapterFactoryImpl {
 	protected LogmetamodelSwitch<Adapter> modelSwitch =
 		new LogmetamodelSwitch<Adapter>() {
 			@Override
+			public Adapter caseDocument(com.senacor.bdm.model.logmetamodel.Document object) {
+				return createDocumentAdapter();
+			}
+			@Override
 			public Adapter caseLogDocument(LogDocument object) {
 				return createLogDocumentAdapter();
 			}
 			@Override
-			public Adapter caseBaseEntity(BaseEntity object) {
-				return createBaseEntityAdapter();
+			public Adapter casemember(member object) {
+				return creatememberAdapter();
 			}
 			@Override
-			public Adapter caseDocument(Document object) {
-				return createDocumentAdapter();
+			public Adapter caseEntity(Entity object) {
+				return createEntityAdapter();
+			}
+			@Override
+			public Adapter caseINamedElement(INamedElement object) {
+				return createINamedElementAdapter();
+			}
+			@Override
+			public Adapter caseField(Field object) {
+				return createFieldAdapter();
+			}
+			@Override
+			public Adapter caseIDescribable(IDescribable object) {
+				return createIDescribableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -116,27 +130,83 @@ public class LogmetamodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.logmetamodel.BaseEntity <em>Base Entity</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.logmetamodel.member <em>member</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.senacor.bdm.model.logmetamodel.BaseEntity
+	 * @see com.senacor.bdm.model.logmetamodel.member
 	 * @generated
 	 */
-	public Adapter createBaseEntityAdapter() {
+	public Adapter creatememberAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.commonmetamodel.Document <em>Document</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.logmetamodel.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.senacor.bdm.model.commonmetamodel.Document
+	 * @see com.senacor.bdm.model.logmetamodel.Entity
+	 * @generated
+	 */
+	public Adapter createEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.logmetamodel.INamedElement <em>INamed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.logmetamodel.INamedElement
+	 * @generated
+	 */
+	public Adapter createINamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.logmetamodel.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.logmetamodel.Field
+	 * @generated
+	 */
+	public Adapter createFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.logmetamodel.IDescribable <em>IDescribable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.logmetamodel.IDescribable
+	 * @generated
+	 */
+	public Adapter createIDescribableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.logmetamodel.Document <em>Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.logmetamodel.Document
 	 * @generated
 	 */
 	public Adapter createDocumentAdapter() {
