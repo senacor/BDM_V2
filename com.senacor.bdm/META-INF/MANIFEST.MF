@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.senacor.bdm
+Bundle-ManifestVersion: 2
+Bundle-Name: com.senacor.bdm
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.senacor.bdm; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.senacor.bdm.model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: com.senacor.bdm.generator,
+ com.senacor.bdm.scoping,
+ com.senacor.bdm.services,
+ com.senacor.bdm.validation,
+ com.senacor.bdm,
+ com.senacor.bdm.serializer,
+ com.senacor.bdm.parser.antlr.internal,
+ com.senacor.bdm.parser.antlr,
+ com.senacor.bdm.formatting2
+Import-Package: org.apache.log4j
