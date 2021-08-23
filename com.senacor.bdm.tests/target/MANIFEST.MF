@@ -3,7 +3,7 @@ Automatic-Module-Name: com.senacor.bdm.tests
 Bundle-ManifestVersion: 2
 Bundle-Name: com.senacor.bdm.tests
 Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.202108231119
+Bundle-Version: 1.0.0.202108231604
 Bundle-SymbolicName: com.senacor.bdm.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: com.senacor.bdm,com.senacor.bdm.model,org.junit.jupiter.

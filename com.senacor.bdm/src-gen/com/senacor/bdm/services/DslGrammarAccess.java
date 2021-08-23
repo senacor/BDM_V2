@@ -283,7 +283,7 @@ public class DslGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//@Override
 	//terminal ID:
 	//    '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
-	////    '^'?('a'..'z'|'A'..'Z'|'_'|'ä'|'ö'|'ü'|'Ä'|'Ö'|'Ü') ('a'..'z'|'A'..'Z'|'ä'|'ö'|'ü'|'Ä'|'Ö'|'Ü'|'ß'|'_'|'0'..'9')*
+	////    '^'?('a'..'z'|'A'..'Z'|'_'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½') ('a'..'z'|'A'..'Z'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'_'|'0'..'9')*
 	//;
 	public TerminalRule getIDRule() {
 		return tID;

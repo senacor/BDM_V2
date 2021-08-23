@@ -3,7 +3,7 @@ Automatic-Module-Name: com.senacor.bdm.ide
 Bundle-ManifestVersion: 2
 Bundle-Name: com.senacor.bdm.ide
 Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.202108231119
+Bundle-Version: 1.0.0.202108231604
 Bundle-SymbolicName: com.senacor.bdm.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: com.senacor.bdm,com.senacor.bdm.model,org.eclipse.xtext.
