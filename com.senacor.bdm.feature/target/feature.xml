@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="com.senacor.bdm.feature"
+	label="Dsl Feature "
+	version="1.0.0.202108231119">
+	<plugin
+			id="com.senacor.bdm"
+			download-size="41"
+			install-size="84"
+			version="1.0.0.202108231119"
+			unpack="false"/>
+	<plugin
+			id="com.senacor.bdm.ide"
+			download-size="22"
+			install-size="52"
+			version="1.0.0.202108231119"
+			unpack="false"/>
+	<plugin
+			id="com.senacor.bdm.ui"
+			download-size="15"
+			install-size="41"
+			version="1.0.0.202108231119"
+			unpack="false"/>
+</feature>

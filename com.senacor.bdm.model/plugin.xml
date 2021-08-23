@@ -7,19 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated commonmetamodel -->
+      <!-- @generated metamodel -->
       <package
-            uri="http://www.example.org/commonmetamodel"
-            class="com.senacor.bdm.model.commonmetamodel.CommonmetamodelPackage"
-            genModel="model/commonmetamodel.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated logmetamodel -->
-      <package
-            uri="http://www.example.org/logmetamodel"
-            class="com.senacor.bdm.model.logmetamodel.LogmetamodelPackage"
-            genModel="model/logmetamodel.genmodel"/>
+            uri="http://www.example.org/metamodel"
+            class="com.senacor.bdm.model.metamodel.MetamodelPackage"
+            genModel="model/metamodel.genmodel"/>
    </extension>
 
 </plugin>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature id="com.senacor.bdm.feature"
-	label="LogDsl Feature "
+	label="Dsl Feature "
 	version="1.0.0.qualifier">
 	<plugin
-			id="com.senacor.bdm.logdsl"
+			id="com.senacor.bdm"
 			download-size="0"
 			install-size="0"
 			version="0.0.0"
 			unpack="false"/>
 	<plugin
-			id="com.senacor.bdm.logdsl.ide"
+			id="com.senacor.bdm.ide"
 			download-size="0"
 			install-size="0"
 			version="0.0.0"
 			unpack="false"/>
 	<plugin
-			id="com.senacor.bdm.logdsl.ui"
+			id="com.senacor.bdm.ui"
 			download-size="0"
 			install-size="0"
 			version="0.0.0"

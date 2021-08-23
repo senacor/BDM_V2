@@ -7,14 +7,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: com.senacor.bdm.model.commonmetamodel,
- com.senacor.bdm.model.commonmetamodel.impl,
- com.senacor.bdm.model.commonmetamodel.util,
- com.senacor.bdm.model.logmetamodel,
- com.senacor.bdm.model.logmetamodel.impl,
- com.senacor.bdm.model.logmetamodel.util
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: com.senacor.bdm.model.metamodel,
+ com.senacor.bdm.model.metamodel.impl,
+ com.senacor.bdm.model.metamodel.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
- com.senacor.bdm.model;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
