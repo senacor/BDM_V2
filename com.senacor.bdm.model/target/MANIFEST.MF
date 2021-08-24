@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: com.senacor.bdm.model;singleton:=true
 Automatic-Module-Name: com.senacor.bdm.model
-Bundle-Version: 1.0.0.202108231604
+Bundle-Version: 1.0.0.202108241029
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

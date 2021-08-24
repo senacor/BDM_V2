@@ -33,7 +33,7 @@ public class DslGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cBaseentitiesAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cBaseentitiesBaseEntityParserRuleCall_3_0 = (RuleCall)cBaseentitiesAssignment_3.eContents().get(0);
 		
-		//Document returns Document:
+		//Document:
 		//    {Document}
 		//    'package' name=QualifiedName
 		//    baseentities+=BaseEntity;
@@ -72,7 +72,7 @@ public class DslGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//BaseEntity returns BaseEntity:
+		//BaseEntity:
 		//    {BaseEntity}
 		//    'BaseEntity' name=ID '{'
 		//    '}'
@@ -234,7 +234,7 @@ public class DslGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 
 	
-	//Document returns Document:
+	//Document:
 	//    {Document}
 	//    'package' name=QualifiedName
 	//    baseentities+=BaseEntity;
@@ -246,7 +246,7 @@ public class DslGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getDocumentAccess().getRule();
 	}
 	
-	//BaseEntity returns BaseEntity:
+	//BaseEntity:
 	//    {BaseEntity}
 	//    'BaseEntity' name=ID '{'
 	//    '}'

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature id="com.senacor.bdm.feature"
 	label="Dsl Feature "
-	version="1.0.0.202108231604">
+	version="1.0.0.202108241029">
 	<plugin
 			id="com.senacor.bdm"
 			download-size="43"
 			install-size="85"
-			version="1.0.0.202108231604"
+			version="1.0.0.202108241029"
 			unpack="false"/>
 	<plugin
 			id="com.senacor.bdm.ide"
 			download-size="23"
 			install-size="53"
-			version="1.0.0.202108231604"
+			version="1.0.0.202108241029"
 			unpack="false"/>
 	<plugin
 			id="com.senacor.bdm.ui"
 			download-size="18"
 			install-size="43"
-			version="1.0.0.202108231604"
+			version="1.0.0.202108241029"
 			unpack="false"/>
 </feature>

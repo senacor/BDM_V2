@@ -152,30 +152,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.senacor.bdm.feature.feature.group' version='1.0.0.202108231604' singleton='false'>
-      <update id='com.senacor.bdm.feature.feature.group' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
-      <properties size='5'>
-        <property name='org.eclipse.equinox.p2.name' value='Dsl Feature'/>
-        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
-        <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.feature'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.feature.group' version='1.0.0.202108231604'/>
-      </provides>
-      <requires size='4'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm' range='[1.0.0.202108231604,1.0.0.202108231604]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ide' range='[1.0.0.202108231604,1.0.0.202108231604]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ui' range='[1.0.0.202108231604,1.0.0.202108231604]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.feature.jar' range='[1.0.0.202108231604,1.0.0.202108231604]'>
-          <filter>
-            (org.eclipse.update.install.features=true)
-          </filter>
-        </required>
-      </requires>
-      <touchpoint id='null' version='0.0.0'/>
-    </unit>
     <unit id='org.eclipse.debug.ui' version='3.14.800.v20210222-1101' generation='2'>
       <update id='org.eclipse.debug.ui' range='[0.0.0,3.14.800.v20210222-1101)' severity='0'/>
       <properties size='8'>
@@ -969,31 +945,41 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.senacor.bdm.feature.source.feature.group' version='1.0.0.202108231604' singleton='false'>
-      <update id='com.senacor.bdm.feature.source.feature.group' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
-      <properties size='6'>
-        <property name='org.eclipse.equinox.p2.name' value='Dsl Feature  Developer Resources'/>
-        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+    <unit id='com.senacor.bdm.ide.source' version='1.0.0.202108241029' singleton='false'>
+      <update id='com.senacor.bdm.ide.source' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
+      <properties size='9'>
+        <property name='df_LT.bundleVendor' value='My Company'/>
+        <property name='df_LT.bundleName' value='com.senacor.bdm.ide Source'/>
+        <property name='org.eclipse.equinox.p2.name' value='%bundleName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%bundleVendor'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='OSGI-INF/l10n/bundle-src'/>
         <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.feature'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.ide'/>
         <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-        <property name='maven-classifier' value='sources-feature'/>
+        <property name='maven-classifier' value='sources'/>
       </properties>
-      <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.source.feature.group' version='1.0.0.202108231604'/>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ide.source' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.bundle' name='com.senacor.bdm.ide.source' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.identity' name='com.senacor.bdm.ide.source' version='1.0.0.202108241029'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='source' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
       </provides>
-      <requires size='5'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.feature.group' range='[1.0.0.202108231604,1.0.0.202108231604]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.source' range='[1.0.0.202108231604,1.0.0.202108231604]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ide.source' range='[1.0.0.202108231604,1.0.0.202108231604]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ui.source' range='[1.0.0.202108231604,1.0.0.202108231604]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.source.feature.jar' range='[1.0.0.202108231604,1.0.0.202108231604]'>
-          <filter>
-            (org.eclipse.update.install.features=true)
-          </filter>
-        </required>
-      </requires>
-      <touchpoint id='null' version='0.0.0'/>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.senacor.bdm.ide.source' version='1.0.0.202108241029'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.senacor.bdm.ide.source&#xA;Bundle-Version: 1.0.0.202108241029
+          </instruction>
+        </instructions>
+      </touchpointData>
     </unit>
     <unit id='org.eclipse.e4.emf.xpath' version='0.2.800.v20200609-0849' singleton='false' generation='2'>
       <update id='org.eclipse.e4.emf.xpath' range='[0.0.0,0.2.800.v20200609-0849)' severity='0'/>
@@ -3278,43 +3264,53 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.senacor.bdm.ide' version='1.0.0.202108231604' generation='2'>
-      <update id='com.senacor.bdm.ide' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
+    <unit id='com.senacor.bdm.ui' version='1.0.0.202108241029' generation='2'>
+      <update id='com.senacor.bdm.ui' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
       <properties size='5'>
-        <property name='org.eclipse.equinox.p2.name' value='com.senacor.bdm.ide'/>
+        <property name='org.eclipse.equinox.p2.name' value='com.senacor.bdm.ui'/>
         <property name='org.eclipse.equinox.p2.provider' value='My Company'/>
         <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.ide'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.ui'/>
         <property name='maven-version' value='1.0.0-SNAPSHOT'/>
       </properties>
-      <provides size='6'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ide' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.bundle' name='com.senacor.bdm.ide' version='1.0.0.202108231604'/>
-        <provided namespace='java.package' name='com.senacor.bdm.ide.contentassist.antlr.internal' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.ide.contentassist.antlr' version='0.0.0'/>
-        <provided namespace='osgi.identity' name='com.senacor.bdm.ide' version='1.0.0.202108231604'>
+      <provides size='7'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ui' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.bundle' name='com.senacor.bdm.ui' version='1.0.0.202108241029'/>
+        <provided namespace='java.package' name='com.senacor.bdm.ui.internal' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.ui.contentassist' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.ui.quickfix' version='0.0.0'/>
+        <provided namespace='osgi.identity' name='com.senacor.bdm.ui' version='1.0.0.202108241029'>
           <properties size='1'>
             <property name='type' value='osgi.bundle'/>
           </properties>
         </provided>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
       </provides>
-      <requires size='6'>
+      <requires size='15'>
         <required namespace='osgi.bundle' name='com.senacor.bdm' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='com.senacor.bdm.ide' range='0.0.0'/>
         <required namespace='osgi.bundle' name='com.senacor.bdm.model' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.ide' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.ide' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.antlr.runtime' range='[3.2.0,3.2.1)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.ui' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.ui.shared' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.ui.codetemplates.ui' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.editors' range='3.5.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui.ide' range='3.5.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.compare' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.builder' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.lib' range='2.14.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtend.lib' range='2.14.0' optional='true' greedy='false'/>
+        <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
         <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=11))'/>
       </requires>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.senacor.bdm.ide' version='1.0.0.202108231604'/>
+        <artifact classifier='osgi.bundle' id='com.senacor.bdm.ui' version='1.0.0.202108241029'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
           <instruction key='manifest'>
-            Bundle-SymbolicName: com.senacor.bdm.ide; singleton:=true&#xA;Bundle-Version: 1.0.0.202108231604
+            Bundle-SymbolicName: com.senacor.bdm.ui; singleton:=true&#xA;Bundle-Version: 1.0.0.202108241029
           </instruction>
         </instructions>
       </touchpointData>
@@ -3642,34 +3638,6 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.equinox.bidi;singleton:=true&#xA;Bundle-Version: 1.3.100.v20210212-1143
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
-    <unit id='com.senacor.bdm.feature.source.feature.jar' version='1.0.0.202108231604'>
-      <properties size='5'>
-        <property name='org.eclipse.equinox.p2.name' value='Dsl Feature  Developer Resources'/>
-        <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.feature'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-        <property name='maven-classifier' value='sources-feature'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.source.feature.jar' version='1.0.0.202108231604'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='com.senacor.bdm.feature.source' version='1.0.0.202108231604'/>
-      </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='com.senacor.bdm.feature.source' version='1.0.0.202108231604'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='zipped'>
-            true
           </instruction>
         </instructions>
       </touchpointData>
@@ -4769,6 +4737,42 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.equinox.p2.metadata.repository;singleton:=true&#xA;Bundle-Version: 1.3.500.v20210108-0738
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.senacor.bdm.ui.source' version='1.0.0.202108241029' singleton='false'>
+      <update id='com.senacor.bdm.ui.source' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
+      <properties size='9'>
+        <property name='df_LT.bundleVendor' value='My Company'/>
+        <property name='df_LT.bundleName' value='com.senacor.bdm.ui Source'/>
+        <property name='org.eclipse.equinox.p2.name' value='%bundleName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%bundleVendor'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='OSGI-INF/l10n/bundle-src'/>
+        <property name='maven-groupId' value='com.senacor.bdm'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.ui'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+        <property name='maven-classifier' value='sources'/>
+      </properties>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ui.source' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.bundle' name='com.senacor.bdm.ui.source' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.identity' name='com.senacor.bdm.ui.source' version='1.0.0.202108241029'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='source' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.senacor.bdm.ui.source' version='1.0.0.202108241029'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.senacor.bdm.ui.source&#xA;Bundle-Version: 1.0.0.202108241029
           </instruction>
         </instructions>
       </touchpointData>
@@ -5899,42 +5903,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.senacor.bdm.source' version='1.0.0.202108231604' singleton='false'>
-      <update id='com.senacor.bdm.source' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
-      <properties size='9'>
-        <property name='df_LT.bundleVendor' value='My Company'/>
-        <property name='df_LT.bundleName' value='com.senacor.bdm Source'/>
-        <property name='org.eclipse.equinox.p2.name' value='%bundleName'/>
-        <property name='org.eclipse.equinox.p2.provider' value='%bundleVendor'/>
-        <property name='org.eclipse.equinox.p2.bundle.localization' value='OSGI-INF/l10n/bundle-src'/>
-        <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-        <property name='maven-classifier' value='sources'/>
-      </properties>
-      <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.source' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.bundle' name='com.senacor.bdm.source' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.identity' name='com.senacor.bdm.source' version='1.0.0.202108231604'>
-          <properties size='1'>
-            <property name='type' value='osgi.bundle'/>
-          </properties>
-        </provided>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='source' version='1.0.0'/>
-        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
-      </provides>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.senacor.bdm.source' version='1.0.0.202108231604'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.senacor.bdm.source&#xA;Bundle-Version: 1.0.0.202108231604
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
     <unit id='org.eclipse.ui' version='3.119.0.v20210111-1350' generation='2'>
       <update id='org.eclipse.ui' range='[0.0.0,3.119.0.v20210111-1350)' severity='0'/>
       <properties size='8'>
@@ -6070,33 +6038,6 @@
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.x86_64;singleton:=true&#xA;Bundle-Version: 1.2.100.v20210209-1541&#xA;Fragment-Host: org.eclipse.equinox.launcher;bundle-version=&quot;[1.5.0,1.7.0)&quot;
           </instruction>
-          <instruction key='zipped'>
-            true
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
-    <unit id='com.senacor.bdm.feature.feature.jar' version='1.0.0.202108231604'>
-      <properties size='4'>
-        <property name='org.eclipse.equinox.p2.name' value='Dsl Feature'/>
-        <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.feature'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.feature.jar' version='1.0.0.202108231604'/>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='com.senacor.bdm.feature' version='1.0.0.202108231604'/>
-      </provides>
-      <filter>
-        (org.eclipse.update.install.features=true)
-      </filter>
-      <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='com.senacor.bdm.feature' version='1.0.0.202108231604'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
           <instruction key='zipped'>
             true
           </instruction>
@@ -6304,57 +6245,6 @@
       <copyright uri='http://www.eclipse.org/legal/epl-v20.html' url='http://www.eclipse.org/legal/epl-v20.html'>
         Copyright (c) 2002-2018 IBM Corporation and others.&#xA;All rights reserved.   This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v2.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v20.html
       </copyright>
-    </unit>
-    <unit id='com.senacor.bdm.ui' version='1.0.0.202108231604' generation='2'>
-      <update id='com.senacor.bdm.ui' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
-      <properties size='5'>
-        <property name='org.eclipse.equinox.p2.name' value='com.senacor.bdm.ui'/>
-        <property name='org.eclipse.equinox.p2.provider' value='My Company'/>
-        <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.ui'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='7'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ui' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.bundle' name='com.senacor.bdm.ui' version='1.0.0.202108231604'/>
-        <provided namespace='java.package' name='com.senacor.bdm.ui.internal' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.ui.contentassist' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.ui.quickfix' version='0.0.0'/>
-        <provided namespace='osgi.identity' name='com.senacor.bdm.ui' version='1.0.0.202108231604'>
-          <properties size='1'>
-            <property name='type' value='osgi.bundle'/>
-          </properties>
-        </provided>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='15'>
-        <required namespace='osgi.bundle' name='com.senacor.bdm' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='com.senacor.bdm.ide' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='com.senacor.bdm.model' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.ui' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.ui.shared' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.ui.codetemplates.ui' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui.editors' range='3.5.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui.ide' range='3.5.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.ui' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.compare' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.builder' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.lib' range='2.14.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtend.lib' range='2.14.0' optional='true' greedy='false'/>
-        <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
-        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=11))'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.senacor.bdm.ui' version='1.0.0.202108231604'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.senacor.bdm.ui; singleton:=true&#xA;Bundle-Version: 1.0.0.202108231604
-          </instruction>
-        </instructions>
-      </touchpointData>
     </unit>
     <unit id='org.eclipse.xtext.xbase' version='2.25.0.v20210301-0909' generation='2'>
       <update id='org.eclipse.xtext.xbase' range='[0.0.0,2.25.0.v20210301-0909)' severity='0'/>
@@ -6664,58 +6554,6 @@
       </provides>
       <touchpoint id='org.eclipse.equinox.p2.native' version='1.0.0'/>
     </unit>
-    <unit id='com.senacor.bdm' version='1.0.0.202108231604' generation='2'>
-      <update id='com.senacor.bdm' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
-      <properties size='5'>
-        <property name='org.eclipse.equinox.p2.name' value='com.senacor.bdm'/>
-        <property name='org.eclipse.equinox.p2.provider' value='My Company'/>
-        <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='13'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.bundle' name='com.senacor.bdm' version='1.0.0.202108231604'/>
-        <provided namespace='java.package' name='com.senacor.bdm.generator' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.scoping' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.services' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.validation' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.serializer' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.parser.antlr.internal' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.parser.antlr' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.formatting2' version='0.0.0'/>
-        <provided namespace='osgi.identity' name='com.senacor.bdm' version='1.0.0.202108231604'>
-          <properties size='1'>
-            <property name='type' value='osgi.bundle'/>
-          </properties>
-        </provided>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-      </provides>
-      <requires size='10'>
-        <required namespace='osgi.bundle' name='com.senacor.bdm.model' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='3.5.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.lib' range='2.14.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtext.util' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.antlr.runtime' range='[3.2.0,3.2.1)'/>
-        <required namespace='osgi.bundle' name='org.eclipse.xtend.lib' range='2.14.0'/>
-        <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
-        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=11))'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.senacor.bdm' version='1.0.0.202108231604'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.senacor.bdm; singleton:=true&#xA;Bundle-Version: 1.0.0.202108231604
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
     <unit id='org.antlr.runtime' version='3.2.0.v201101311130' singleton='false'>
       <update id='org.antlr.runtime' range='[0.0.0,3.2.0.v201101311130)' severity='0'/>
       <properties size='8'>
@@ -6746,6 +6584,47 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.antlr.runtime&#xA;Bundle-Version: 3.2.0.v201101311130
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.senacor.bdm.ide' version='1.0.0.202108241029' generation='2'>
+      <update id='com.senacor.bdm.ide' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='com.senacor.bdm.ide'/>
+        <property name='org.eclipse.equinox.p2.provider' value='My Company'/>
+        <property name='maven-groupId' value='com.senacor.bdm'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.ide'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='6'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ide' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.bundle' name='com.senacor.bdm.ide' version='1.0.0.202108241029'/>
+        <provided namespace='java.package' name='com.senacor.bdm.ide.contentassist.antlr.internal' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.ide.contentassist.antlr' version='0.0.0'/>
+        <provided namespace='osgi.identity' name='com.senacor.bdm.ide' version='1.0.0.202108241029'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='6'>
+        <required namespace='osgi.bundle' name='com.senacor.bdm' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='com.senacor.bdm.model' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.ide' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.ide' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.antlr.runtime' range='[3.2.0,3.2.1)'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=11))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.senacor.bdm.ide' version='1.0.0.202108241029'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.senacor.bdm.ide; singleton:=true&#xA;Bundle-Version: 1.0.0.202108241029
           </instruction>
         </instructions>
       </touchpointData>
@@ -8573,42 +8452,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.senacor.bdm.ui.source' version='1.0.0.202108231604' singleton='false'>
-      <update id='com.senacor.bdm.ui.source' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
-      <properties size='9'>
-        <property name='df_LT.bundleVendor' value='My Company'/>
-        <property name='df_LT.bundleName' value='com.senacor.bdm.ui Source'/>
-        <property name='org.eclipse.equinox.p2.name' value='%bundleName'/>
-        <property name='org.eclipse.equinox.p2.provider' value='%bundleVendor'/>
-        <property name='org.eclipse.equinox.p2.bundle.localization' value='OSGI-INF/l10n/bundle-src'/>
-        <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.ui'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-        <property name='maven-classifier' value='sources'/>
-      </properties>
-      <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ui.source' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.bundle' name='com.senacor.bdm.ui.source' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.identity' name='com.senacor.bdm.ui.source' version='1.0.0.202108231604'>
-          <properties size='1'>
-            <property name='type' value='osgi.bundle'/>
-          </properties>
-        </provided>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='source' version='1.0.0'/>
-        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
-      </provides>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.senacor.bdm.ui.source' version='1.0.0.202108231604'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.senacor.bdm.ui.source&#xA;Bundle-Version: 1.0.0.202108231604
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
     <unit id='org.eclipse.ui.forms' version='3.11.100.v20210108-1139' generation='2'>
       <update id='org.eclipse.ui.forms' range='[0.0.0,3.11.100.v20210108-1139)' severity='0'/>
       <properties size='8'>
@@ -8746,6 +8589,49 @@
         Copyright (c) 2002-2018 IBM Corporation and others.&#xA;All rights reserved.   This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v2.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v20.html
       </copyright>
     </unit>
+    <unit id='com.senacor.bdm.model' version='1.0.0.202108241029' generation='2'>
+      <update id='com.senacor.bdm.model' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
+      <properties size='8'>
+        <property name='df_LT.pluginName' value='com.senacor.bdm.model'/>
+        <property name='df_LT.providerName' value='www.example.org'/>
+        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
+        <property name='maven-groupId' value='com.senacor.bdm'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.model'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='8'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.model' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.bundle' name='com.senacor.bdm.model' version='1.0.0.202108241029'/>
+        <provided namespace='java.package' name='com.senacor.bdm.model.metamodel' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.model.metamodel.impl' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.model.metamodel.util' version='0.0.0'/>
+        <provided namespace='osgi.identity' name='com.senacor.bdm.model' version='1.0.0.202108241029'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='3'>
+        <required namespace='osgi.bundle' name='org.eclipse.emf.ecore' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.5))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.senacor.bdm.model' version='1.0.0.202108241029'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.senacor.bdm.model;singleton:=true&#xA;Bundle-Version: 1.0.0.202108241029
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
     <unit id='org.eclipse.e4.ui.dialogs' version='1.2.100.v20201109-2317' singleton='false' generation='2'>
       <update id='org.eclipse.e4.ui.dialogs' range='[0.0.0,1.2.100.v20201109-2317)' severity='0'/>
       <properties size='8'>
@@ -8790,6 +8676,42 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.e4.ui.dialogs&#xA;Bundle-Version: 1.2.100.v20201109-2317
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.senacor.bdm.source' version='1.0.0.202108241029' singleton='false'>
+      <update id='com.senacor.bdm.source' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
+      <properties size='9'>
+        <property name='df_LT.bundleVendor' value='My Company'/>
+        <property name='df_LT.bundleName' value='com.senacor.bdm Source'/>
+        <property name='org.eclipse.equinox.p2.name' value='%bundleName'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%bundleVendor'/>
+        <property name='org.eclipse.equinox.p2.bundle.localization' value='OSGI-INF/l10n/bundle-src'/>
+        <property name='maven-groupId' value='com.senacor.bdm'/>
+        <property name='maven-artifactId' value='com.senacor.bdm'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+        <property name='maven-classifier' value='sources'/>
+      </properties>
+      <provides size='5'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.source' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.bundle' name='com.senacor.bdm.source' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.identity' name='com.senacor.bdm.source' version='1.0.0.202108241029'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='source' version='1.0.0'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.senacor.bdm.source' version='1.0.0.202108241029'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.senacor.bdm.source&#xA;Bundle-Version: 1.0.0.202108241029
           </instruction>
         </instructions>
       </touchpointData>
@@ -9221,6 +9143,58 @@
         <instructions size='1'>
           <instruction key='manifest'>
             Bundle-SymbolicName: org.eclipse.e4.ui.workbench.addons.swt;singleton:=true&#xA;Bundle-Version: 1.4.100.v20201221-2332
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+    <unit id='com.senacor.bdm' version='1.0.0.202108241029' generation='2'>
+      <update id='com.senacor.bdm' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='com.senacor.bdm'/>
+        <property name='org.eclipse.equinox.p2.provider' value='My Company'/>
+        <property name='maven-groupId' value='com.senacor.bdm'/>
+        <property name='maven-artifactId' value='com.senacor.bdm'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='13'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm' version='1.0.0.202108241029'/>
+        <provided namespace='osgi.bundle' name='com.senacor.bdm' version='1.0.0.202108241029'/>
+        <provided namespace='java.package' name='com.senacor.bdm.generator' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.scoping' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.services' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.validation' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.serializer' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.parser.antlr.internal' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.parser.antlr' version='0.0.0'/>
+        <provided namespace='java.package' name='com.senacor.bdm.formatting2' version='0.0.0'/>
+        <provided namespace='osgi.identity' name='com.senacor.bdm' version='1.0.0.202108241029'>
+          <properties size='1'>
+            <property name='type' value='osgi.bundle'/>
+          </properties>
+        </provided>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='10'>
+        <required namespace='osgi.bundle' name='com.senacor.bdm.model' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='3.5.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.lib' range='2.14.0'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtext.util' range='0.0.0'/>
+        <required namespace='osgi.bundle' name='org.antlr.runtime' range='[3.2.0,3.2.1)'/>
+        <required namespace='osgi.bundle' name='org.eclipse.xtend.lib' range='2.14.0'/>
+        <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
+        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=11))'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.senacor.bdm' version='1.0.0.202108241029'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.senacor.bdm; singleton:=true&#xA;Bundle-Version: 1.0.0.202108241029
           </instruction>
         </instructions>
       </touchpointData>
@@ -9732,6 +9706,34 @@
         </instructions>
       </touchpointData>
     </unit>
+    <unit id='com.senacor.bdm.feature.source.feature.jar' version='1.0.0.202108241029'>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Dsl Feature  Developer Resources'/>
+        <property name='maven-groupId' value='com.senacor.bdm'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.feature'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+        <property name='maven-classifier' value='sources-feature'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.source.feature.jar' version='1.0.0.202108241029'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='com.senacor.bdm.feature.source' version='1.0.0.202108241029'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='com.senacor.bdm.feature.source' version='1.0.0.202108241029'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
     <unit id='org.eclipse.xtext.common.types' version='2.25.0.v20210301-0909' generation='2'>
       <update id='org.eclipse.xtext.common.types' range='[0.0.0,2.25.0.v20210301-0909)' severity='0'/>
       <properties size='5'>
@@ -9786,41 +9788,58 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.senacor.bdm.ide.source' version='1.0.0.202108231604' singleton='false'>
-      <update id='com.senacor.bdm.ide.source' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
-      <properties size='9'>
-        <property name='df_LT.bundleVendor' value='My Company'/>
-        <property name='df_LT.bundleName' value='com.senacor.bdm.ide Source'/>
-        <property name='org.eclipse.equinox.p2.name' value='%bundleName'/>
-        <property name='org.eclipse.equinox.p2.provider' value='%bundleVendor'/>
-        <property name='org.eclipse.equinox.p2.bundle.localization' value='OSGI-INF/l10n/bundle-src'/>
+    <unit id='com.senacor.bdm.feature.feature.jar' version='1.0.0.202108241029'>
+      <properties size='4'>
+        <property name='org.eclipse.equinox.p2.name' value='Dsl Feature'/>
         <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.ide'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.feature'/>
         <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-        <property name='maven-classifier' value='sources'/>
       </properties>
-      <provides size='5'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ide.source' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.bundle' name='com.senacor.bdm.ide.source' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.identity' name='com.senacor.bdm.ide.source' version='1.0.0.202108231604'>
-          <properties size='1'>
-            <property name='type' value='osgi.bundle'/>
-          </properties>
-        </provided>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='source' version='1.0.0'/>
-        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.feature.jar' version='1.0.0.202108241029'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='com.senacor.bdm.feature' version='1.0.0.202108241029'/>
       </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.senacor.bdm.ide.source' version='1.0.0.202108231604'/>
+        <artifact classifier='org.eclipse.update.feature' id='com.senacor.bdm.feature' version='1.0.0.202108241029'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.senacor.bdm.ide.source&#xA;Bundle-Version: 1.0.0.202108231604
+          <instruction key='zipped'>
+            true
           </instruction>
         </instructions>
       </touchpointData>
+    </unit>
+    <unit id='com.senacor.bdm.feature.source.feature.group' version='1.0.0.202108241029' singleton='false'>
+      <update id='com.senacor.bdm.feature.source.feature.group' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
+      <properties size='6'>
+        <property name='org.eclipse.equinox.p2.name' value='Dsl Feature  Developer Resources'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+        <property name='maven-groupId' value='com.senacor.bdm'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.feature'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+        <property name='maven-classifier' value='sources-feature'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.source.feature.group' version='1.0.0.202108241029'/>
+      </provides>
+      <requires size='5'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.feature.group' range='[1.0.0.202108241029,1.0.0.202108241029]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.source' range='[1.0.0.202108241029,1.0.0.202108241029]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ide.source' range='[1.0.0.202108241029,1.0.0.202108241029]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ui.source' range='[1.0.0.202108241029,1.0.0.202108241029]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.source.feature.jar' range='[1.0.0.202108241029,1.0.0.202108241029]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
     </unit>
     <unit id='org.eclipse.equinox.security' version='1.3.600.v20210126-1005' generation='2'>
       <update id='org.eclipse.equinox.security' range='[0.0.0,1.3.600.v20210126-1005)' severity='0'/>
@@ -10194,49 +10213,6 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='com.senacor.bdm.model' version='1.0.0.202108231604' generation='2'>
-      <update id='com.senacor.bdm.model' range='[0.0.0,1.0.0.202108231604)' severity='0'/>
-      <properties size='8'>
-        <property name='df_LT.pluginName' value='com.senacor.bdm.model'/>
-        <property name='df_LT.providerName' value='www.example.org'/>
-        <property name='org.eclipse.equinox.p2.name' value='%pluginName'/>
-        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
-        <property name='org.eclipse.equinox.p2.bundle.localization' value='plugin'/>
-        <property name='maven-groupId' value='com.senacor.bdm'/>
-        <property name='maven-artifactId' value='com.senacor.bdm.model'/>
-        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
-      </properties>
-      <provides size='8'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.model' version='1.0.0.202108231604'/>
-        <provided namespace='osgi.bundle' name='com.senacor.bdm.model' version='1.0.0.202108231604'/>
-        <provided namespace='java.package' name='com.senacor.bdm.model.metamodel' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.model.metamodel.impl' version='0.0.0'/>
-        <provided namespace='java.package' name='com.senacor.bdm.model.metamodel.util' version='0.0.0'/>
-        <provided namespace='osgi.identity' name='com.senacor.bdm.model' version='1.0.0.202108231604'>
-          <properties size='1'>
-            <property name='type' value='osgi.bundle'/>
-          </properties>
-        </provided>
-        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
-        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
-      </provides>
-      <requires size='3'>
-        <required namespace='osgi.bundle' name='org.eclipse.emf.ecore' range='0.0.0'/>
-        <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
-        <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.5))'/>
-      </requires>
-      <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='com.senacor.bdm.model' version='1.0.0.202108231604'/>
-      </artifacts>
-      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
-      <touchpointData size='1'>
-        <instructions size='1'>
-          <instruction key='manifest'>
-            Bundle-SymbolicName: com.senacor.bdm.model;singleton:=true&#xA;Bundle-Version: 1.0.0.202108231604
-          </instruction>
-        </instructions>
-      </touchpointData>
-    </unit>
     <unit id='org.apache.xmlgraphics' version='2.4.0.v20200622-2037' singleton='false' generation='2'>
       <update id='org.apache.xmlgraphics' range='[0.0.0,2.4.0.v20200622-2037)' severity='0'/>
       <properties size='7'>
@@ -10467,6 +10443,30 @@
           </instruction>
         </instructions>
       </touchpointData>
+    </unit>
+    <unit id='com.senacor.bdm.feature.feature.group' version='1.0.0.202108241029' singleton='false'>
+      <update id='com.senacor.bdm.feature.feature.group' range='[0.0.0,1.0.0.202108241029)' severity='0'/>
+      <properties size='5'>
+        <property name='org.eclipse.equinox.p2.name' value='Dsl Feature'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+        <property name='maven-groupId' value='com.senacor.bdm'/>
+        <property name='maven-artifactId' value='com.senacor.bdm.feature'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.feature.group' version='1.0.0.202108241029'/>
+      </provides>
+      <requires size='4'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm' range='[1.0.0.202108241029,1.0.0.202108241029]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ide' range='[1.0.0.202108241029,1.0.0.202108241029]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.ui' range='[1.0.0.202108241029,1.0.0.202108241029]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.senacor.bdm.feature.feature.jar' range='[1.0.0.202108241029,1.0.0.202108241029]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
     </unit>
     <unit id='org.eclipse.e4.ui.css.swt.theme' version='0.13.0.v20201026-1147' generation='2'>
       <update id='org.eclipse.e4.ui.css.swt.theme' range='[0.0.0,0.13.0.v20201026-1147)' severity='0'/>

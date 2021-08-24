@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='2'>
-  <artifact classifier='osgi.bundle' id='com.senacor.bdm.ide' version='1.0.0.202108231604'>
+  <artifact classifier='osgi.bundle' id='com.senacor.bdm.ide' version='1.0.0.202108241029'>
     <properties size='5'>
-      <property name='artifact.size' value='24160'/>
-      <property name='download.size' value='24160'/>
+      <property name='artifact.size' value='24159'/>
+      <property name='download.size' value='24159'/>
       <property name='maven-groupId' value='com.senacor.bdm'/>
       <property name='maven-artifactId' value='com.senacor.bdm.ide'/>
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
   </artifact>
-  <artifact classifier='osgi.bundle' id='com.senacor.bdm.ide.source' version='1.0.0.202108231604'>
+  <artifact classifier='osgi.bundle' id='com.senacor.bdm.ide.source' version='1.0.0.202108241029'>
     <properties size='6'>
       <property name='artifact.size' value='17245'/>
       <property name='download.size' value='17245'/>
