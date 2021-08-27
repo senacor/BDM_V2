@@ -57,14 +57,14 @@ public interface MetamodelPackage extends EPackage {
 	MetamodelPackage eINSTANCE = com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.DocumentImpl <em>Document</em>}' class.
+	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl <em>Log Document</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see com.senacor.bdm.model.metamodel.impl.DocumentImpl
-	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getDocument()
+	 * @see com.senacor.bdm.model.metamodel.impl.LogDocumentImpl
+	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getLogDocument()
 	 * @generated
 	 */
-	int DOCUMENT = 0;
+	int LOG_DOCUMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -73,7 +73,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT__NAME = 0;
+	int LOG_DOCUMENT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Baseentities</b></em>' containment reference list.
@@ -82,25 +82,25 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT__BASEENTITIES = 1;
+	int LOG_DOCUMENT__BASEENTITIES = 1;
 
 	/**
-	 * The number of structural features of the '<em>Document</em>' class.
+	 * The number of structural features of the '<em>Log Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_FEATURE_COUNT = 2;
+	int LOG_DOCUMENT_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Document</em>' class.
+	 * The number of operations of the '<em>Log Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_OPERATION_COUNT = 0;
+	int LOG_DOCUMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl <em>Base Entity</em>}' class.
@@ -122,13 +122,13 @@ public interface MetamodelPackage extends EPackage {
 	int BASE_ENTITY__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Document</b></em>' container reference.
+	 * The feature id for the '<em><b>Logdocument</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASE_ENTITY__DOCUMENT = 1;
+	int BASE_ENTITY__LOGDOCUMENT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Base Entity</em>' class.
@@ -149,36 +149,36 @@ public interface MetamodelPackage extends EPackage {
 	int BASE_ENTITY_OPERATION_COUNT = 0;
 
 	/**
-	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.Document <em>Document</em>}'.
+	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.LogDocument <em>Log Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Document</em>'.
-	 * @see com.senacor.bdm.model.metamodel.Document
+	 * @return the meta object for class '<em>Log Document</em>'.
+	 * @see com.senacor.bdm.model.metamodel.LogDocument
 	 * @generated
 	 */
-	EClass getDocument();
+	EClass getLogDocument();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.senacor.bdm.model.metamodel.Document#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link com.senacor.bdm.model.metamodel.LogDocument#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see com.senacor.bdm.model.metamodel.Document#getName()
-	 * @see #getDocument()
+	 * @see com.senacor.bdm.model.metamodel.LogDocument#getName()
+	 * @see #getLogDocument()
 	 * @generated
 	 */
-	EAttribute getDocument_Name();
+	EAttribute getLogDocument_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.Document#getBaseentities <em>Baseentities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.LogDocument#getBaseentities <em>Baseentities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Baseentities</em>'.
-	 * @see com.senacor.bdm.model.metamodel.Document#getBaseentities()
-	 * @see #getDocument()
+	 * @see com.senacor.bdm.model.metamodel.LogDocument#getBaseentities()
+	 * @see #getLogDocument()
 	 * @generated
 	 */
-	EReference getDocument_Baseentities();
+	EReference getLogDocument_Baseentities();
 
 	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.BaseEntity <em>Base Entity</em>}'.
@@ -202,15 +202,15 @@ public interface MetamodelPackage extends EPackage {
 	EAttribute getBaseEntity_Name();
 
 	/**
-	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.BaseEntity#getDocument <em>Document</em>}'.
+	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.BaseEntity#getLogdocument <em>Logdocument</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Document</em>'.
-	 * @see com.senacor.bdm.model.metamodel.BaseEntity#getDocument()
+	 * @return the meta object for the container reference '<em>Logdocument</em>'.
+	 * @see com.senacor.bdm.model.metamodel.BaseEntity#getLogdocument()
 	 * @see #getBaseEntity()
 	 * @generated
 	 */
-	EReference getBaseEntity_Document();
+	EReference getBaseEntity_Logdocument();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -236,14 +236,14 @@ public interface MetamodelPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.DocumentImpl <em>Document</em>}' class.
+		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl <em>Log Document</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.senacor.bdm.model.metamodel.impl.DocumentImpl
-		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getDocument()
+		 * @see com.senacor.bdm.model.metamodel.impl.LogDocumentImpl
+		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getLogDocument()
 		 * @generated
 		 */
-		EClass DOCUMENT = eINSTANCE.getDocument();
+		EClass LOG_DOCUMENT = eINSTANCE.getLogDocument();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -251,7 +251,7 @@ public interface MetamodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENT__NAME = eINSTANCE.getDocument_Name();
+		EAttribute LOG_DOCUMENT__NAME = eINSTANCE.getLogDocument_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Baseentities</b></em>' containment reference list feature.
@@ -259,7 +259,7 @@ public interface MetamodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DOCUMENT__BASEENTITIES = eINSTANCE.getDocument_Baseentities();
+		EReference LOG_DOCUMENT__BASEENTITIES = eINSTANCE.getLogDocument_Baseentities();
 
 		/**
 		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl <em>Base Entity</em>}' class.
@@ -280,12 +280,12 @@ public interface MetamodelPackage extends EPackage {
 		EAttribute BASE_ENTITY__NAME = eINSTANCE.getBaseEntity_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Document</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Logdocument</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BASE_ENTITY__DOCUMENT = eINSTANCE.getBaseEntity_Document();
+		EReference BASE_ENTITY__LOGDOCUMENT = eINSTANCE.getBaseEntity_Logdocument();
 
 	}
 

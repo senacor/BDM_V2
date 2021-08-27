@@ -22,13 +22,13 @@ public interface MetamodelFactory extends EFactory {
 	MetamodelFactory eINSTANCE = com.senacor.bdm.model.metamodel.impl.MetamodelFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Document</em>'.
+	 * Returns a new object of class '<em>Log Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Document</em>'.
+	 * @return a new object of class '<em>Log Document</em>'.
 	 * @generated
 	 */
-	Document createDocument();
+	LogDocument createLogDocument();
 
 	/**
 	 * Returns a new object of class '<em>Base Entity</em>'.

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.BaseEntity#getName <em>Name</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.BaseEntity#getDocument <em>Document</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.BaseEntity#getLogdocument <em>Logdocument</em>}</li>
  * </ul>
  *
  * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getBaseEntity()
@@ -45,27 +45,27 @@ public interface BaseEntity extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Document</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.Document#getBaseentities <em>Baseentities</em>}'.
+	 * Returns the value of the '<em><b>Logdocument</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.LogDocument#getBaseentities <em>Baseentities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Document</em>' container reference.
-	 * @see #setDocument(Document)
-	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getBaseEntity_Document()
-	 * @see com.senacor.bdm.model.metamodel.Document#getBaseentities
+	 * @return the value of the '<em>Logdocument</em>' container reference.
+	 * @see #setLogdocument(LogDocument)
+	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getBaseEntity_Logdocument()
+	 * @see com.senacor.bdm.model.metamodel.LogDocument#getBaseentities
 	 * @model opposite="baseentities" transient="false"
 	 * @generated
 	 */
-	Document getDocument();
+	LogDocument getLogdocument();
 
 	/**
-	 * Sets the value of the '{@link com.senacor.bdm.model.metamodel.BaseEntity#getDocument <em>Document</em>}' container reference.
+	 * Sets the value of the '{@link com.senacor.bdm.model.metamodel.BaseEntity#getLogdocument <em>Logdocument</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Document</em>' container reference.
-	 * @see #getDocument()
+	 * @param value the new value of the '<em>Logdocument</em>' container reference.
+	 * @see #getLogdocument()
 	 * @generated
 	 */
-	void setDocument(Document value);
+	void setLogdocument(LogDocument value);
 
 } // BaseEntity

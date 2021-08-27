@@ -56,8 +56,8 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case MetamodelPackage.DOCUMENT:
-			return createDocument();
+		case MetamodelPackage.LOG_DOCUMENT:
+			return createLogDocument();
 		case MetamodelPackage.BASE_ENTITY:
 			return createBaseEntity();
 		default:
@@ -70,9 +70,9 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Document createDocument() {
-		DocumentImpl document = new DocumentImpl();
-		return document;
+	public LogDocument createLogDocument() {
+		LogDocumentImpl logDocument = new LogDocumentImpl();
+		return logDocument;
 	}
 
 	/**

@@ -3,7 +3,7 @@
 package com.senacor.bdm.model.metamodel.impl;
 
 import com.senacor.bdm.model.metamodel.BaseEntity;
-import com.senacor.bdm.model.metamodel.Document;
+import com.senacor.bdm.model.metamodel.LogDocument;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getDocument <em>Document</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getLogdocument <em>Logdocument</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,10 +97,10 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Document getDocument() {
-		if (eContainerFeatureID() != MetamodelPackage.BASE_ENTITY__DOCUMENT)
+	public LogDocument getLogdocument() {
+		if (eContainerFeatureID() != MetamodelPackage.BASE_ENTITY__LOGDOCUMENT)
 			return null;
-		return (Document) eInternalContainer();
+		return (LogDocument) eInternalContainer();
 	}
 
 	/**
@@ -108,8 +108,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDocument(Document newDocument, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newDocument, MetamodelPackage.BASE_ENTITY__DOCUMENT, msgs);
+	public NotificationChain basicSetLogdocument(LogDocument newLogdocument, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newLogdocument, MetamodelPackage.BASE_ENTITY__LOGDOCUMENT, msgs);
 		return msgs;
 	}
 
@@ -118,23 +118,23 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDocument(Document newDocument) {
-		if (newDocument != eInternalContainer()
-				|| (eContainerFeatureID() != MetamodelPackage.BASE_ENTITY__DOCUMENT && newDocument != null)) {
-			if (EcoreUtil.isAncestor(this, newDocument))
+	public void setLogdocument(LogDocument newLogdocument) {
+		if (newLogdocument != eInternalContainer()
+				|| (eContainerFeatureID() != MetamodelPackage.BASE_ENTITY__LOGDOCUMENT && newLogdocument != null)) {
+			if (EcoreUtil.isAncestor(this, newLogdocument))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newDocument != null)
-				msgs = ((InternalEObject) newDocument).eInverseAdd(this, MetamodelPackage.DOCUMENT__BASEENTITIES,
-						Document.class, msgs);
-			msgs = basicSetDocument(newDocument, msgs);
+			if (newLogdocument != null)
+				msgs = ((InternalEObject) newLogdocument).eInverseAdd(this, MetamodelPackage.LOG_DOCUMENT__BASEENTITIES,
+						LogDocument.class, msgs);
+			msgs = basicSetLogdocument(newLogdocument, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BASE_ENTITY__DOCUMENT, newDocument,
-					newDocument));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BASE_ENTITY__LOGDOCUMENT,
+					newLogdocument, newLogdocument));
 	}
 
 	/**
@@ -145,10 +145,10 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.BASE_ENTITY__DOCUMENT:
+		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetDocument((Document) otherEnd, msgs);
+			return basicSetLogdocument((LogDocument) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -161,8 +161,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.BASE_ENTITY__DOCUMENT:
-			return basicSetDocument(null, msgs);
+		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
+			return basicSetLogdocument(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -175,9 +175,9 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case MetamodelPackage.BASE_ENTITY__DOCUMENT:
-			return eInternalContainer().eInverseRemove(this, MetamodelPackage.DOCUMENT__BASEENTITIES, Document.class,
-					msgs);
+		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
+			return eInternalContainer().eInverseRemove(this, MetamodelPackage.LOG_DOCUMENT__BASEENTITIES,
+					LogDocument.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -192,8 +192,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 		switch (featureID) {
 		case MetamodelPackage.BASE_ENTITY__NAME:
 			return getName();
-		case MetamodelPackage.BASE_ENTITY__DOCUMENT:
-			return getDocument();
+		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
+			return getLogdocument();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,8 +209,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 		case MetamodelPackage.BASE_ENTITY__NAME:
 			setName((String) newValue);
 			return;
-		case MetamodelPackage.BASE_ENTITY__DOCUMENT:
-			setDocument((Document) newValue);
+		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
+			setLogdocument((LogDocument) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,8 +227,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 		case MetamodelPackage.BASE_ENTITY__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case MetamodelPackage.BASE_ENTITY__DOCUMENT:
-			setDocument((Document) null);
+		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
+			setLogdocument((LogDocument) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -244,8 +244,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 		switch (featureID) {
 		case MetamodelPackage.BASE_ENTITY__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case MetamodelPackage.BASE_ENTITY__DOCUMENT:
-			return getDocument() != null;
+		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
+			return getLogdocument() != null;
 		}
 		return super.eIsSet(featureID);
 	}

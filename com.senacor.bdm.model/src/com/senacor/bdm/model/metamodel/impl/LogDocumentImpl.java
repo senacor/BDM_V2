@@ -3,7 +3,7 @@
 package com.senacor.bdm.model.metamodel.impl;
 
 import com.senacor.bdm.model.metamodel.BaseEntity;
-import com.senacor.bdm.model.metamodel.Document;
+import com.senacor.bdm.model.metamodel.LogDocument;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
 import java.util.Collection;
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Document</b></em>'.
+ * An implementation of the model object '<em><b>Log Document</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.DocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.DocumentImpl#getBaseentities <em>Baseentities</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl#getBaseentities <em>Baseentities</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DocumentImpl extends MinimalEObjectImpl.Container implements Document {
+public class LogDocumentImpl extends MinimalEObjectImpl.Container implements LogDocument {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DocumentImpl() {
+	protected LogDocumentImpl() {
 		super();
 	}
 
@@ -83,7 +83,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MetamodelPackage.Literals.DOCUMENT;
+		return MetamodelPackage.Literals.LOG_DOCUMENT;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.DOCUMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.LOG_DOCUMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -115,7 +115,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	public EList<BaseEntity> getBaseentities() {
 		if (baseentities == null) {
 			baseentities = new EObjectContainmentWithInverseEList<BaseEntity>(BaseEntity.class, this,
-					MetamodelPackage.DOCUMENT__BASEENTITIES, MetamodelPackage.BASE_ENTITY__DOCUMENT);
+					MetamodelPackage.LOG_DOCUMENT__BASEENTITIES, MetamodelPackage.BASE_ENTITY__LOGDOCUMENT);
 		}
 		return baseentities;
 	}
@@ -129,7 +129,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.DOCUMENT__BASEENTITIES:
+		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBaseentities()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -143,7 +143,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.DOCUMENT__BASEENTITIES:
+		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
 			return ((InternalEList<?>) getBaseentities()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -157,9 +157,9 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MetamodelPackage.DOCUMENT__NAME:
+		case MetamodelPackage.LOG_DOCUMENT__NAME:
 			return getName();
-		case MetamodelPackage.DOCUMENT__BASEENTITIES:
+		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
 			return getBaseentities();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -174,10 +174,10 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MetamodelPackage.DOCUMENT__NAME:
+		case MetamodelPackage.LOG_DOCUMENT__NAME:
 			setName((String) newValue);
 			return;
-		case MetamodelPackage.DOCUMENT__BASEENTITIES:
+		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
 			getBaseentities().clear();
 			getBaseentities().addAll((Collection<? extends BaseEntity>) newValue);
 			return;
@@ -193,10 +193,10 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MetamodelPackage.DOCUMENT__NAME:
+		case MetamodelPackage.LOG_DOCUMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case MetamodelPackage.DOCUMENT__BASEENTITIES:
+		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
 			getBaseentities().clear();
 			return;
 		}
@@ -211,9 +211,9 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MetamodelPackage.DOCUMENT__NAME:
+		case MetamodelPackage.LOG_DOCUMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case MetamodelPackage.DOCUMENT__BASEENTITIES:
+		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
 			return baseentities != null && !baseentities.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -236,4 +236,4 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
 		return result.toString();
 	}
 
-} //DocumentImpl
+} //LogDocumentImpl

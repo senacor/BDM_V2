@@ -5,7 +5,7 @@
     <semanticResources>metamodel.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_HT2n4AM2Eeyug6cndo_Gvw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_HWyAEAM2Eeyug6cndo_Gvw" name="metamodel" repPath="#_HVrM0AM2Eeyug6cndo_Gvw" changeId="def321e3-9ce4-4765-a56d-85367a5b51b1">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_HWyAEAM2Eeyug6cndo_Gvw" name="metamodel" repPath="#_HVrM0AM2Eeyug6cndo_Gvw" changeId="cc43fbec-8b94-4041-a2dd-94d997627754">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="metamodel.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -72,9 +72,9 @@
         </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_RXwVwAM2Eeyug6cndo_Gvw" name="Document" tooltipText="" outgoingEdges="_c3M0kAM2Eeyug6cndo_Gvw" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="metamodel.ecore#//Document"/>
-      <semanticElements xmi:type="ecore:EClass" href="metamodel.ecore#//Document"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_RXwVwAM2Eeyug6cndo_Gvw" name="LogDocument" tooltipText="" outgoingEdges="_c3M0kAM2Eeyug6cndo_Gvw" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="metamodel.ecore#//LogDocument"/>
+      <semanticElements xmi:type="ecore:EClass" href="metamodel.ecore#//LogDocument"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -83,8 +83,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_TIWJoAM2Eeyug6cndo_Gvw" name="name : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="metamodel.ecore#//Document/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="metamodel.ecore#//Document/name"/>
+        <target xmi:type="ecore:EAttribute" href="metamodel.ecore#//LogDocument/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="metamodel.ecore#//LogDocument/name"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_Trxm0QM2Eeyug6cndo_Gvw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -110,10 +110,10 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_c3M0kAM2Eeyug6cndo_Gvw" sourceNode="_RXwVwAM2Eeyug6cndo_Gvw" targetNode="_UecZ4AM2Eeyug6cndo_Gvw" beginLabel="[0..1] document" endLabel="[0..*] baseentities">
-      <target xmi:type="ecore:EReference" href="metamodel.ecore#//Document/baseentities"/>
-      <semanticElements xmi:type="ecore:EReference" href="metamodel.ecore#//Document/baseentities"/>
-      <semanticElements xmi:type="ecore:EReference" href="metamodel.ecore#//BaseEntity/document"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_c3M0kAM2Eeyug6cndo_Gvw" sourceNode="_RXwVwAM2Eeyug6cndo_Gvw" targetNode="_UecZ4AM2Eeyug6cndo_Gvw" beginLabel="[0..1] logdocument" endLabel="[0..*] baseentities">
+      <target xmi:type="ecore:EReference" href="metamodel.ecore#//LogDocument/baseentities"/>
+      <semanticElements xmi:type="ecore:EReference" href="metamodel.ecore#//LogDocument/baseentities"/>
+      <semanticElements xmi:type="ecore:EReference" href="metamodel.ecore#//BaseEntity/logdocument"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_c3OCswM2Eeyug6cndo_Gvw" description="_c3OCsAM2Eeyug6cndo_Gvw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_c3OCtAM2Eeyug6cndo_Gvw" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_c3OCtQM2Eeyug6cndo_Gvw" showIcon="false"/>

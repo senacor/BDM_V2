@@ -67,8 +67,8 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected MetamodelSwitch<Adapter> modelSwitch = new MetamodelSwitch<Adapter>() {
 		@Override
-		public Adapter caseDocument(Document object) {
-			return createDocumentAdapter();
+		public Adapter caseLogDocument(LogDocument object) {
+			return createLogDocumentAdapter();
 		}
 
 		@Override
@@ -96,16 +96,16 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.Document <em>Document</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.LogDocument <em>Log Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.senacor.bdm.model.metamodel.Document
+	 * @see com.senacor.bdm.model.metamodel.LogDocument
 	 * @generated
 	 */
-	public Adapter createDocumentAdapter() {
+	public Adapter createLogDocumentAdapter() {
 		return null;
 	}
 

@@ -3,7 +3,7 @@
 package com.senacor.bdm.model.metamodel.impl;
 
 import com.senacor.bdm.model.metamodel.BaseEntity;
-import com.senacor.bdm.model.metamodel.Document;
+import com.senacor.bdm.model.metamodel.LogDocument;
 import com.senacor.bdm.model.metamodel.MetamodelFactory;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
@@ -26,7 +26,7 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass documentEClass = null;
+	private EClass logDocumentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,8 +104,8 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDocument() {
-		return documentEClass;
+	public EClass getLogDocument() {
+		return logDocumentEClass;
 	}
 
 	/**
@@ -113,8 +113,8 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDocument_Name() {
-		return (EAttribute) documentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getLogDocument_Name() {
+		return (EAttribute) logDocumentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -122,8 +122,8 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocument_Baseentities() {
-		return (EReference) documentEClass.getEStructuralFeatures().get(1);
+	public EReference getLogDocument_Baseentities() {
+		return (EReference) logDocumentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -149,7 +149,7 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBaseEntity_Document() {
+	public EReference getBaseEntity_Logdocument() {
 		return (EReference) baseEntityEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -182,13 +182,13 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		isCreated = true;
 
 		// Create classes and their features
-		documentEClass = createEClass(DOCUMENT);
-		createEAttribute(documentEClass, DOCUMENT__NAME);
-		createEReference(documentEClass, DOCUMENT__BASEENTITIES);
+		logDocumentEClass = createEClass(LOG_DOCUMENT);
+		createEAttribute(logDocumentEClass, LOG_DOCUMENT__NAME);
+		createEReference(logDocumentEClass, LOG_DOCUMENT__BASEENTITIES);
 
 		baseEntityEClass = createEClass(BASE_ENTITY);
 		createEAttribute(baseEntityEClass, BASE_ENTITY__NAME);
-		createEReference(baseEntityEClass, BASE_ENTITY__DOCUMENT);
+		createEReference(baseEntityEClass, BASE_ENTITY__LOGDOCUMENT);
 	}
 
 	/**
@@ -222,21 +222,21 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(logDocumentEClass, LogDocument.class, "LogDocument", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, Document.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocument_Baseentities(), this.getBaseEntity(), this.getBaseEntity_Document(), "baseentities",
-				null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, LogDocument.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogDocument_Baseentities(), this.getBaseEntity(), this.getBaseEntity_Logdocument(),
+				"baseentities", null, 0, -1, LogDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(baseEntityEClass, BaseEntity.class, "BaseEntity", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBaseEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, BaseEntity.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBaseEntity_Document(), this.getDocument(), this.getDocument_Baseentities(), "document", null,
-				0, 1, BaseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBaseEntity_Logdocument(), this.getLogDocument(), this.getLogDocument_Baseentities(),
+				"logdocument", null, 0, 1, BaseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
