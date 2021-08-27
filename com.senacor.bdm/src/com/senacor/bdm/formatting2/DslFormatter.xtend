@@ -3,20 +3,20 @@
  */
 package com.senacor.bdm.formatting2
 
-import com.google.inject.Inject;
-import com.senacor.bdm.model.metamodel.Document;
-import com.senacor.bdm.services.DslGrammarAccess;
-import org.eclipse.xtext.formatting2.AbstractFormatter2;
+import com.google.inject.Inject
+import com.senacor.bdm.model.metamodel.LogDocument
+import com.senacor.bdm.services.DslGrammarAccess
+import org.eclipse.xtext.formatting2.AbstractFormatter2
+import org.eclipse.xtext.formatting2.IFormattableDocument
 
-abstract class DslFormatter extends AbstractFormatter2 {
+class DslFormatter extends AbstractFormatter2 {
 	
 	@Inject extension DslGrammarAccess
 
-	def dispatch void format(Document document) {
+	def dispatch void format(LogDocument doc, IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (baseEntity : document.baseentities) {
-			document.format
-		}
-	}
-	
+//		for (baseEntity : document.baseentities) {
+//			document.format
+//		}
+	}	
 }
