@@ -8,15 +8,37 @@ LogDocument:
 	{LogDocument}
 	'package' name=QualifiedName 
 	
-	baseentities+=BaseEntity;
+	members+=Member;
+	
+Member returns Member:
+	BaseEntity|FieldDeclaration|ExtensionSatelite
+;	
+	
+
 	
 BaseEntity:
 	{BaseEntity}
 	'BaseEntity' name=ID '{'
-	
+	fielddeclarations+=FieldDeclaration
 	'}'
 	;
+ExtensionSatelite returns ExtensionSatelite:
+	{ExtensionSatelite} 
+	'ExtensionSatelite' name=ID '{'
+	fielddeclarations+=FieldDeclaration
+	'}'
+;
 
+FieldDeclaration returns FieldDeclaration: 
+	Field
+;
+
+
+
+Field returns Field:
+	{Field}
+	'Field' name=ID
+;
 
 QualifiedName: 
 	(ID '.')* ID
@@ -28,7 +50,7 @@ EString returns ecore::EString:
 @Override 
 terminal ID: 
 	'^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
-//	'^'?('a'..'z'|'A'..'Z'|'_'|'ä'|'ö'|'ü'|'Ä'|'Ö'|'Ü') ('a'..'z'|'A'..'Z'|'ä'|'ö'|'ü'|'Ä'|'Ö'|'Ü'|'ß'|'_'|'0'..'9')*
+//	'^'?('a'..'z'|'A'..'Z'|'_'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½') ('a'..'z'|'A'..'Z'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'ï¿½'|'_'|'0'..'9')*
 ;
 
 EInt returns ecore::EInt:
