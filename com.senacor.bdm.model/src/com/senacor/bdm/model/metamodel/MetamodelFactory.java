@@ -31,6 +31,33 @@ public interface MetamodelFactory extends EFactory {
 	LogDocument createLogDocument();
 
 	/**
+	 * Returns a new object of class '<em>Tech Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tech Document</em>'.
+	 * @generated
+	 */
+	TechDocument createTechDocument();
+
+	/**
+	 * Returns a new object of class '<em>Mapping Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping Document</em>'.
+	 * @generated
+	 */
+	MappingDocument createMappingDocument();
+
+	/**
+	 * Returns a new object of class '<em>Extension Satelite</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Extension Satelite</em>'.
+	 * @generated
+	 */
+	ExtensionSatelite createExtensionSatelite();
+
+	/**
 	 * Returns a new object of class '<em>Base Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,6 +65,24 @@ public interface MetamodelFactory extends EFactory {
 	 * @generated
 	 */
 	BaseEntity createBaseEntity();
+
+	/**
+	 * Returns a new object of class '<em>Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Field</em>'.
+	 * @generated
+	 */
+	Field createField();
+
+	/**
+	 * Returns a new object of class '<em>Business Key</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Business Key</em>'.
+	 * @generated
+	 */
+	BusinessKey createBusinessKey();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -2,8 +2,6 @@
  */
 package com.senacor.bdm.model.metamodel;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Base Entity</b></em>'.
@@ -13,59 +11,36 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.senacor.bdm.model.metamodel.BaseEntity#getName <em>Name</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.BaseEntity#getLogdocument <em>Logdocument</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.BaseEntity#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getBaseEntity()
  * @model
  * @generated
  */
-public interface BaseEntity extends EObject {
+public interface BaseEntity extends INamedElement, Entity {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Entity</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.Entity#getMainsatelit <em>Mainsatelit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getBaseEntity_Name()
-	 * @model
+	 * @return the value of the '<em>Entity</em>' container reference.
+	 * @see #setEntity(Entity)
+	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getBaseEntity_Entity()
+	 * @see com.senacor.bdm.model.metamodel.Entity#getMainsatelit
+	 * @model opposite="mainsatelit" transient="false"
 	 * @generated
 	 */
-	String getName();
+	Entity getEntity();
 
 	/**
-	 * Sets the value of the '{@link com.senacor.bdm.model.metamodel.BaseEntity#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link com.senacor.bdm.model.metamodel.BaseEntity#getEntity <em>Entity</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Entity</em>' container reference.
+	 * @see #getEntity()
 	 * @generated
 	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Logdocument</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.LogDocument#getBaseentities <em>Baseentities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Logdocument</em>' container reference.
-	 * @see #setLogdocument(LogDocument)
-	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getBaseEntity_Logdocument()
-	 * @see com.senacor.bdm.model.metamodel.LogDocument#getBaseentities
-	 * @model opposite="baseentities" transient="false"
-	 * @generated
-	 */
-	LogDocument getLogdocument();
-
-	/**
-	 * Sets the value of the '{@link com.senacor.bdm.model.metamodel.BaseEntity#getLogdocument <em>Logdocument</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Logdocument</em>' container reference.
-	 * @see #getLogdocument()
-	 * @generated
-	 */
-	void setLogdocument(LogDocument value);
+	void setEntity(Entity value);
 
 } // BaseEntity

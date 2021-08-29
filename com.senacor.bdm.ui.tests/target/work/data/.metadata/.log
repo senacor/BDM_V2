@@ -1,0 +1,10 @@
+!SESSION 2021-08-29 16:09:56.271 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.10
+java.vendor=GraalVM Community
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=de_DE
+Framework arguments:  -application org.eclipse.tycho.surefire.osgibooter.uitest -testproperties /Users/oliver/eclipse-workspace/bdm/BDM_V2/com.senacor.bdm.ui.tests/target/surefire.properties
+Command-line arguments:  -data /Users/oliver/eclipse-workspace/bdm/BDM_V2/com.senacor.bdm.ui.tests/target/work/data -application org.eclipse.tycho.surefire.osgibooter.uitest -testproperties /Users/oliver/eclipse-workspace/bdm/BDM_V2/com.senacor.bdm.ui.tests/target/surefire.properties
+
+!ENTRY org.eclipse.core.jobs 2 2 2021-08-29 16:10:05.240
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.urischeme.AutoRegisterSchemeHandlersJob

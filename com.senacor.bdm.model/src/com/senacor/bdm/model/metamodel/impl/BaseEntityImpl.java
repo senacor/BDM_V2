@@ -3,19 +3,26 @@
 package com.senacor.bdm.model.metamodel.impl;
 
 import com.senacor.bdm.model.metamodel.BaseEntity;
+import com.senacor.bdm.model.metamodel.BusinessKey;
+import com.senacor.bdm.model.metamodel.Entity;
+import com.senacor.bdm.model.metamodel.ExtensionSatelite;
+import com.senacor.bdm.model.metamodel.FieldDeclaration;
 import com.senacor.bdm.model.metamodel.LogDocument;
+import com.senacor.bdm.model.metamodel.Member;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,32 +32,53 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getLogdocument <em>Logdocument</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getFielddeclarations <em>Fielddeclarations</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getEntitysatelite <em>Entitysatelite</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getMainsatelit <em>Mainsatelit</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getBusinesskeys <em>Businesskeys</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BaseEntityImpl extends MinimalEObjectImpl.Container implements BaseEntity {
+public class BaseEntityImpl extends INamedElementImpl implements BaseEntity {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getFielddeclarations() <em>Fielddeclarations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getFielddeclarations()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
-
+	protected EList<FieldDeclaration> fielddeclarations;
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getEntitysatelite() <em>Entitysatelite</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getEntitysatelite()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected EList<ExtensionSatelite> entitysatelite;
+	/**
+	 * The cached value of the '{@link #getMainsatelit() <em>Mainsatelit</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMainsatelit()
+	 * @generated
+	 * @ordered
+	 */
+	protected BaseEntity mainsatelit;
+	/**
+	 * The cached value of the '{@link #getBusinesskeys() <em>Businesskeys</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBusinesskeys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BusinessKey> businesskeys;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,27 +97,6 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	@Override
 	protected EClass eStaticClass() {
 		return MetamodelPackage.Literals.BASE_ENTITY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BASE_ENTITY__NAME, oldName, name));
 	}
 
 	/**
@@ -127,7 +134,7 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newLogdocument != null)
-				msgs = ((InternalEObject) newLogdocument).eInverseAdd(this, MetamodelPackage.LOG_DOCUMENT__BASEENTITIES,
+				msgs = ((InternalEObject) newLogdocument).eInverseAdd(this, MetamodelPackage.LOG_DOCUMENT__MEMBERS,
 						LogDocument.class, msgs);
 			msgs = basicSetLogdocument(newLogdocument, msgs);
 			if (msgs != null)
@@ -142,6 +149,141 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<FieldDeclaration> getFielddeclarations() {
+		if (fielddeclarations == null) {
+			fielddeclarations = new EObjectContainmentWithInverseEList<FieldDeclaration>(FieldDeclaration.class, this,
+					MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS, MetamodelPackage.FIELD_DECLARATION__MEMBER);
+		}
+		return fielddeclarations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ExtensionSatelite> getEntitysatelite() {
+		if (entitysatelite == null) {
+			entitysatelite = new EObjectContainmentWithInverseEList<ExtensionSatelite>(ExtensionSatelite.class, this,
+					MetamodelPackage.BASE_ENTITY__ENTITYSATELITE, MetamodelPackage.EXTENSION_SATELITE__ENTITY);
+		}
+		return entitysatelite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseEntity getMainsatelit() {
+		return mainsatelit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMainsatelit(BaseEntity newMainsatelit, NotificationChain msgs) {
+		BaseEntity oldMainsatelit = mainsatelit;
+		mainsatelit = newMainsatelit;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					MetamodelPackage.BASE_ENTITY__MAINSATELIT, oldMainsatelit, newMainsatelit);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMainsatelit(BaseEntity newMainsatelit) {
+		if (newMainsatelit != mainsatelit) {
+			NotificationChain msgs = null;
+			if (mainsatelit != null)
+				msgs = ((InternalEObject) mainsatelit).eInverseRemove(this, MetamodelPackage.BASE_ENTITY__ENTITY,
+						BaseEntity.class, msgs);
+			if (newMainsatelit != null)
+				msgs = ((InternalEObject) newMainsatelit).eInverseAdd(this, MetamodelPackage.BASE_ENTITY__ENTITY,
+						BaseEntity.class, msgs);
+			msgs = basicSetMainsatelit(newMainsatelit, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BASE_ENTITY__MAINSATELIT,
+					newMainsatelit, newMainsatelit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<BusinessKey> getBusinesskeys() {
+		if (businesskeys == null) {
+			businesskeys = new EObjectContainmentWithInverseEList<BusinessKey>(BusinessKey.class, this,
+					MetamodelPackage.BASE_ENTITY__BUSINESSKEYS, MetamodelPackage.BUSINESS_KEY__ENTITY);
+		}
+		return businesskeys;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity getEntity() {
+		if (eContainerFeatureID() != MetamodelPackage.BASE_ENTITY__ENTITY)
+			return null;
+		return (Entity) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEntity(Entity newEntity, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newEntity, MetamodelPackage.BASE_ENTITY__ENTITY, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEntity(Entity newEntity) {
+		if (newEntity != eInternalContainer()
+				|| (eContainerFeatureID() != MetamodelPackage.BASE_ENTITY__ENTITY && newEntity != null)) {
+			if (EcoreUtil.isAncestor(this, newEntity))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newEntity != null)
+				msgs = ((InternalEObject) newEntity).eInverseAdd(this, MetamodelPackage.ENTITY__MAINSATELIT,
+						Entity.class, msgs);
+			msgs = basicSetEntity(newEntity, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BASE_ENTITY__ENTITY, newEntity,
+					newEntity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -149,6 +291,22 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetLogdocument((LogDocument) otherEnd, msgs);
+		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFielddeclarations()).basicAdd(otherEnd,
+					msgs);
+		case MetamodelPackage.BASE_ENTITY__ENTITYSATELITE:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getEntitysatelite()).basicAdd(otherEnd, msgs);
+		case MetamodelPackage.BASE_ENTITY__MAINSATELIT:
+			if (mainsatelit != null)
+				msgs = ((InternalEObject) mainsatelit).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - MetamodelPackage.BASE_ENTITY__MAINSATELIT, null, msgs);
+			return basicSetMainsatelit((BaseEntity) otherEnd, msgs);
+		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBusinesskeys()).basicAdd(otherEnd, msgs);
+		case MetamodelPackage.BASE_ENTITY__ENTITY:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetEntity((Entity) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -163,6 +321,16 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 		switch (featureID) {
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			return basicSetLogdocument(null, msgs);
+		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
+			return ((InternalEList<?>) getFielddeclarations()).basicRemove(otherEnd, msgs);
+		case MetamodelPackage.BASE_ENTITY__ENTITYSATELITE:
+			return ((InternalEList<?>) getEntitysatelite()).basicRemove(otherEnd, msgs);
+		case MetamodelPackage.BASE_ENTITY__MAINSATELIT:
+			return basicSetMainsatelit(null, msgs);
+		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
+			return ((InternalEList<?>) getBusinesskeys()).basicRemove(otherEnd, msgs);
+		case MetamodelPackage.BASE_ENTITY__ENTITY:
+			return basicSetEntity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -176,8 +344,10 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
-			return eInternalContainer().eInverseRemove(this, MetamodelPackage.LOG_DOCUMENT__BASEENTITIES,
-					LogDocument.class, msgs);
+			return eInternalContainer().eInverseRemove(this, MetamodelPackage.LOG_DOCUMENT__MEMBERS, LogDocument.class,
+					msgs);
+		case MetamodelPackage.BASE_ENTITY__ENTITY:
+			return eInternalContainer().eInverseRemove(this, MetamodelPackage.ENTITY__MAINSATELIT, Entity.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -190,10 +360,18 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MetamodelPackage.BASE_ENTITY__NAME:
-			return getName();
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			return getLogdocument();
+		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
+			return getFielddeclarations();
+		case MetamodelPackage.BASE_ENTITY__ENTITYSATELITE:
+			return getEntitysatelite();
+		case MetamodelPackage.BASE_ENTITY__MAINSATELIT:
+			return getMainsatelit();
+		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
+			return getBusinesskeys();
+		case MetamodelPackage.BASE_ENTITY__ENTITY:
+			return getEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,14 +381,30 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MetamodelPackage.BASE_ENTITY__NAME:
-			setName((String) newValue);
-			return;
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			setLogdocument((LogDocument) newValue);
+			return;
+		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
+			getFielddeclarations().clear();
+			getFielddeclarations().addAll((Collection<? extends FieldDeclaration>) newValue);
+			return;
+		case MetamodelPackage.BASE_ENTITY__ENTITYSATELITE:
+			getEntitysatelite().clear();
+			getEntitysatelite().addAll((Collection<? extends ExtensionSatelite>) newValue);
+			return;
+		case MetamodelPackage.BASE_ENTITY__MAINSATELIT:
+			setMainsatelit((BaseEntity) newValue);
+			return;
+		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
+			getBusinesskeys().clear();
+			getBusinesskeys().addAll((Collection<? extends BusinessKey>) newValue);
+			return;
+		case MetamodelPackage.BASE_ENTITY__ENTITY:
+			setEntity((Entity) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,11 +418,23 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MetamodelPackage.BASE_ENTITY__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			setLogdocument((LogDocument) null);
+			return;
+		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
+			getFielddeclarations().clear();
+			return;
+		case MetamodelPackage.BASE_ENTITY__ENTITYSATELITE:
+			getEntitysatelite().clear();
+			return;
+		case MetamodelPackage.BASE_ENTITY__MAINSATELIT:
+			setMainsatelit((BaseEntity) null);
+			return;
+		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
+			getBusinesskeys().clear();
+			return;
+		case MetamodelPackage.BASE_ENTITY__ENTITY:
+			setEntity((Entity) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -242,10 +448,18 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MetamodelPackage.BASE_ENTITY__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			return getLogdocument() != null;
+		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
+			return fielddeclarations != null && !fielddeclarations.isEmpty();
+		case MetamodelPackage.BASE_ENTITY__ENTITYSATELITE:
+			return entitysatelite != null && !entitysatelite.isEmpty();
+		case MetamodelPackage.BASE_ENTITY__MAINSATELIT:
+			return mainsatelit != null;
+		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
+			return businesskeys != null && !businesskeys.isEmpty();
+		case MetamodelPackage.BASE_ENTITY__ENTITY:
+			return getEntity() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -256,15 +470,62 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Member.class) {
+			switch (derivedFeatureID) {
+			case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
+				return MetamodelPackage.MEMBER__LOGDOCUMENT;
+			case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
+				return MetamodelPackage.MEMBER__FIELDDECLARATIONS;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == Entity.class) {
+			switch (derivedFeatureID) {
+			case MetamodelPackage.BASE_ENTITY__ENTITYSATELITE:
+				return MetamodelPackage.ENTITY__ENTITYSATELITE;
+			case MetamodelPackage.BASE_ENTITY__MAINSATELIT:
+				return MetamodelPackage.ENTITY__MAINSATELIT;
+			case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
+				return MetamodelPackage.ENTITY__BUSINESSKEYS;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Member.class) {
+			switch (baseFeatureID) {
+			case MetamodelPackage.MEMBER__LOGDOCUMENT:
+				return MetamodelPackage.BASE_ENTITY__LOGDOCUMENT;
+			case MetamodelPackage.MEMBER__FIELDDECLARATIONS:
+				return MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == Entity.class) {
+			switch (baseFeatureID) {
+			case MetamodelPackage.ENTITY__ENTITYSATELITE:
+				return MetamodelPackage.BASE_ENTITY__ENTITYSATELITE;
+			case MetamodelPackage.ENTITY__MAINSATELIT:
+				return MetamodelPackage.BASE_ENTITY__MAINSATELIT;
+			case MetamodelPackage.ENTITY__BUSINESSKEYS:
+				return MetamodelPackage.BASE_ENTITY__BUSINESSKEYS;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //BaseEntityImpl

@@ -2,8 +2,8 @@
  */
 package com.senacor.bdm.model.metamodel.impl;
 
-import com.senacor.bdm.model.metamodel.BaseEntity;
 import com.senacor.bdm.model.metamodel.LogDocument;
+import com.senacor.bdm.model.metamodel.Member;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
 import java.util.Collection;
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl#getBaseentities <em>Baseentities</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl#getMembers <em>Members</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +58,14 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBaseentities() <em>Baseentities</em>}' containment reference list.
+	 * The cached value of the '{@link #getMembers() <em>Members</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBaseentities()
+	 * @see #getMembers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BaseEntity> baseentities;
+	protected EList<Member> members;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,12 +112,12 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BaseEntity> getBaseentities() {
-		if (baseentities == null) {
-			baseentities = new EObjectContainmentWithInverseEList<BaseEntity>(BaseEntity.class, this,
-					MetamodelPackage.LOG_DOCUMENT__BASEENTITIES, MetamodelPackage.BASE_ENTITY__LOGDOCUMENT);
+	public EList<Member> getMembers() {
+		if (members == null) {
+			members = new EObjectContainmentWithInverseEList<Member>(Member.class, this,
+					MetamodelPackage.LOG_DOCUMENT__MEMBERS, MetamodelPackage.MEMBER__LOGDOCUMENT);
 		}
-		return baseentities;
+		return members;
 	}
 
 	/**
@@ -129,8 +129,8 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBaseentities()).basicAdd(otherEnd, msgs);
+		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMembers()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -143,8 +143,8 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
-			return ((InternalEList<?>) getBaseentities()).basicRemove(otherEnd, msgs);
+		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
+			return ((InternalEList<?>) getMembers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -159,8 +159,8 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 		switch (featureID) {
 		case MetamodelPackage.LOG_DOCUMENT__NAME:
 			return getName();
-		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
-			return getBaseentities();
+		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
+			return getMembers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,9 +177,9 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 		case MetamodelPackage.LOG_DOCUMENT__NAME:
 			setName((String) newValue);
 			return;
-		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
-			getBaseentities().clear();
-			getBaseentities().addAll((Collection<? extends BaseEntity>) newValue);
+		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
+			getMembers().clear();
+			getMembers().addAll((Collection<? extends Member>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,8 +196,8 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 		case MetamodelPackage.LOG_DOCUMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
-			getBaseentities().clear();
+		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
+			getMembers().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -213,8 +213,8 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 		switch (featureID) {
 		case MetamodelPackage.LOG_DOCUMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case MetamodelPackage.LOG_DOCUMENT__BASEENTITIES:
-			return baseentities != null && !baseentities.isEmpty();
+		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
+			return members != null && !members.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

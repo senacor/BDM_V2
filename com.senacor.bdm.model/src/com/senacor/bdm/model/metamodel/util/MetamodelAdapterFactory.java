@@ -72,8 +72,58 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseMember(Member object) {
+			return createMemberAdapter();
+		}
+
+		@Override
+		public Adapter caseDocument(Document object) {
+			return createDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseTechDocument(TechDocument object) {
+			return createTechDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseMappingDocument(MappingDocument object) {
+			return createMappingDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseINamedElement(INamedElement object) {
+			return createINamedElementAdapter();
+		}
+
+		@Override
+		public Adapter caseEntity(Entity object) {
+			return createEntityAdapter();
+		}
+
+		@Override
+		public Adapter caseExtensionSatelite(ExtensionSatelite object) {
+			return createExtensionSateliteAdapter();
+		}
+
+		@Override
 		public Adapter caseBaseEntity(BaseEntity object) {
 			return createBaseEntityAdapter();
+		}
+
+		@Override
+		public Adapter caseField(Field object) {
+			return createFieldAdapter();
+		}
+
+		@Override
+		public Adapter caseBusinessKey(BusinessKey object) {
+			return createBusinessKeyAdapter();
+		}
+
+		@Override
+		public Adapter caseFieldDeclaration(FieldDeclaration object) {
+			return createFieldDeclarationAdapter();
 		}
 
 		@Override
@@ -110,6 +160,104 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.Member <em>Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.Member
+	 * @generated
+	 */
+	public Adapter createMemberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.Document <em>Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.Document
+	 * @generated
+	 */
+	public Adapter createDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.TechDocument <em>Tech Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.TechDocument
+	 * @generated
+	 */
+	public Adapter createTechDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.MappingDocument <em>Mapping Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.MappingDocument
+	 * @generated
+	 */
+	public Adapter createMappingDocumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.INamedElement <em>INamed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.INamedElement
+	 * @generated
+	 */
+	public Adapter createINamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.Entity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.Entity
+	 * @generated
+	 */
+	public Adapter createEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.ExtensionSatelite <em>Extension Satelite</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.ExtensionSatelite
+	 * @generated
+	 */
+	public Adapter createExtensionSateliteAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.BaseEntity <em>Base Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -120,6 +268,48 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBaseEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.Field
+	 * @generated
+	 */
+	public Adapter createFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.BusinessKey <em>Business Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.BusinessKey
+	 * @generated
+	 */
+	public Adapter createBusinessKeyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.FieldDeclaration <em>Field Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.FieldDeclaration
+	 * @generated
+	 */
+	public Adapter createFieldDeclarationAdapter() {
 		return null;
 	}
 
