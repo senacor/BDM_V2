@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature id="com.senacor.bdm.feature.source" version="1.0.0.202108291409" label="Dsl Feature  Developer Resources">
-  <includes id="com.senacor.bdm.feature" version="1.0.0.202108291409"/>
-  <plugin id="com.senacor.bdm.source" version="1.0.0.202108291409" download-size="0" install-size="0" unpack="false"/>
-  <plugin id="com.senacor.bdm.ide.source" version="1.0.0.202108291409" download-size="0" install-size="0" unpack="false"/>
-  <plugin id="com.senacor.bdm.ui.source" version="1.0.0.202108291409" download-size="0" install-size="0" unpack="false"/>
-</feature>
