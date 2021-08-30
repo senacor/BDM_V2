@@ -10,13 +10,39 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Metamodel" basePackage="com.senacor.bdm.model" disposableProviderFactory="true"
       ecorePackage="metamodel.ecore#/">
+    <genClasses ecoreClass="metamodel.ecore#//LogDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//LogDocument/members"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Member">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Member/logdocument"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Member/fielddeclarations"/>
+    </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//Document">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Document/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Document/baseentities"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//TechDocument"/>
+    <genClasses ecoreClass="metamodel.ecore#//MappingDocument"/>
+    <genClasses ecoreClass="metamodel.ecore#//INamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//INamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Entity">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Entity/entitysatelite"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Entity/mainsatelit"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Entity/businesskeys"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ExtensionSatelite">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//ExtensionSatelite/entity"/>
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//BaseEntity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//BaseEntity/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//BaseEntity/document"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//BaseEntity/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Field"/>
+    <genClasses ecoreClass="metamodel.ecore#//BusinessKey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//BusinessKey/fielddeclaration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//BusinessKey/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//FieldDeclaration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//FieldDeclaration/member"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

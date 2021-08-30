@@ -4,7 +4,7 @@
  */
 package com.senacor.bdm.model.metamodel.validation;
 
-import com.senacor.bdm.model.metamodel.Document;
+import com.senacor.bdm.model.metamodel.LogDocument;
 
 /**
  * A sample validator interface for {@link com.senacor.bdm.model.metamodel.BaseEntity}.
@@ -17,5 +17,5 @@ public interface BaseEntityValidator {
 
 	boolean validateName(String value);
 
-	boolean validateDocument(Document value);
+	boolean validateLogdocument(LogDocument value);
 }

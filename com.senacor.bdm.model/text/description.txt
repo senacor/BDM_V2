@@ -7,10 +7,10 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 
 Package metamodel <http://www.example.org/metamodel>
 
-  Class Document
+  Class LogDocument
     Attribute name : EString
     Reference baseentities : BaseEntity<<0..*>>
 
   Class BaseEntity
     Attribute name : EString
-    Reference document : Document
+    Reference logdocument : LogDocument

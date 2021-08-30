@@ -3,13 +3,8 @@
  */
 package com.senacor.bdm.tests
 
-import com.google.inject.Inject
-import com.senacor.bdm.model.metamodel.Document
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
-import org.eclipse.xtext.testing.util.ParseHelper
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
 
 @ExtendWith(InjectionExtension)

@@ -35,4 +35,8 @@
 			<repository location="https://download.eclipse.org/tools/orbit/downloads/2021-03"/>
 		</location>
 	</locations>
+	<environment>
+		<os>macosx</os>
+		<ws>cocoa</ws>
+	</environment>
 </target>

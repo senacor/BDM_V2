@@ -56,10 +56,20 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case MetamodelPackage.DOCUMENT:
-			return createDocument();
+		case MetamodelPackage.LOG_DOCUMENT:
+			return createLogDocument();
+		case MetamodelPackage.TECH_DOCUMENT:
+			return createTechDocument();
+		case MetamodelPackage.MAPPING_DOCUMENT:
+			return createMappingDocument();
+		case MetamodelPackage.EXTENSION_SATELITE:
+			return createExtensionSatelite();
 		case MetamodelPackage.BASE_ENTITY:
 			return createBaseEntity();
+		case MetamodelPackage.FIELD:
+			return createField();
+		case MetamodelPackage.BUSINESS_KEY:
+			return createBusinessKey();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,9 +80,39 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Document createDocument() {
-		DocumentImpl document = new DocumentImpl();
-		return document;
+	public LogDocument createLogDocument() {
+		LogDocumentImpl logDocument = new LogDocumentImpl();
+		return logDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TechDocument createTechDocument() {
+		TechDocumentImpl techDocument = new TechDocumentImpl();
+		return techDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MappingDocument createMappingDocument() {
+		MappingDocumentImpl mappingDocument = new MappingDocumentImpl();
+		return mappingDocument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExtensionSatelite createExtensionSatelite() {
+		ExtensionSateliteImpl extensionSatelite = new ExtensionSateliteImpl();
+		return extensionSatelite;
 	}
 
 	/**
@@ -83,6 +123,26 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 	public BaseEntity createBaseEntity() {
 		BaseEntityImpl baseEntity = new BaseEntityImpl();
 		return baseEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Field createField() {
+		FieldImpl field = new FieldImpl();
+		return field;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BusinessKey createBusinessKey() {
+		BusinessKeyImpl businessKey = new BusinessKeyImpl();
+		return businessKey;
 	}
 
 	/**

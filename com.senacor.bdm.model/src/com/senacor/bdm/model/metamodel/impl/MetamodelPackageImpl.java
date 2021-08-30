@@ -3,10 +3,20 @@
 package com.senacor.bdm.model.metamodel.impl;
 
 import com.senacor.bdm.model.metamodel.BaseEntity;
+import com.senacor.bdm.model.metamodel.BusinessKey;
 import com.senacor.bdm.model.metamodel.Document;
+import com.senacor.bdm.model.metamodel.Entity;
+import com.senacor.bdm.model.metamodel.ExtensionSatelite;
+import com.senacor.bdm.model.metamodel.Field;
+import com.senacor.bdm.model.metamodel.FieldDeclaration;
+import com.senacor.bdm.model.metamodel.INamedElement;
+import com.senacor.bdm.model.metamodel.LogDocument;
+import com.senacor.bdm.model.metamodel.MappingDocument;
+import com.senacor.bdm.model.metamodel.Member;
 import com.senacor.bdm.model.metamodel.MetamodelFactory;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
+import com.senacor.bdm.model.metamodel.TechDocument;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -26,6 +36,20 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass logDocumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass memberEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass documentEClass = null;
 
 	/**
@@ -33,7 +57,63 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass techDocumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mappingDocumentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iNamedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass extensionSateliteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass baseEntityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fieldEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass businessKeyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fieldDeclarationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -104,6 +184,51 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLogDocument() {
+		return logDocumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogDocument_Members() {
+		return (EReference) logDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMember() {
+		return memberEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMember_Logdocument() {
+		return (EReference) memberEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMember_Fielddeclarations() {
+		return (EReference) memberEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDocument() {
 		return documentEClass;
 	}
@@ -122,8 +247,89 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDocument_Baseentities() {
-		return (EReference) documentEClass.getEStructuralFeatures().get(1);
+	public EClass getTechDocument() {
+		return techDocumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMappingDocument() {
+		return mappingDocumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getINamedElement() {
+		return iNamedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getINamedElement_Name() {
+		return (EAttribute) iNamedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEntity() {
+		return entityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_Entitysatelite() {
+		return (EReference) entityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_Mainsatelit() {
+		return (EReference) entityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_Businesskeys() {
+		return (EReference) entityEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExtensionSatelite() {
+		return extensionSateliteEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtensionSatelite_Entity() {
+		return (EReference) extensionSateliteEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -140,8 +346,8 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBaseEntity_Name() {
-		return (EAttribute) baseEntityEClass.getEStructuralFeatures().get(0);
+	public EReference getBaseEntity_Entity() {
+		return (EReference) baseEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -149,8 +355,53 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBaseEntity_Document() {
-		return (EReference) baseEntityEClass.getEStructuralFeatures().get(1);
+	public EClass getField() {
+		return fieldEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBusinessKey() {
+		return businessKeyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBusinessKey_Fielddeclaration() {
+		return (EReference) businessKeyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBusinessKey_Entity() {
+		return (EReference) businessKeyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFieldDeclaration() {
+		return fieldDeclarationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFieldDeclaration_Member() {
+		return (EReference) fieldDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -182,13 +433,42 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		isCreated = true;
 
 		// Create classes and their features
+		logDocumentEClass = createEClass(LOG_DOCUMENT);
+		createEReference(logDocumentEClass, LOG_DOCUMENT__MEMBERS);
+
+		memberEClass = createEClass(MEMBER);
+		createEReference(memberEClass, MEMBER__LOGDOCUMENT);
+		createEReference(memberEClass, MEMBER__FIELDDECLARATIONS);
+
 		documentEClass = createEClass(DOCUMENT);
 		createEAttribute(documentEClass, DOCUMENT__NAME);
-		createEReference(documentEClass, DOCUMENT__BASEENTITIES);
+
+		techDocumentEClass = createEClass(TECH_DOCUMENT);
+
+		mappingDocumentEClass = createEClass(MAPPING_DOCUMENT);
+
+		iNamedElementEClass = createEClass(INAMED_ELEMENT);
+		createEAttribute(iNamedElementEClass, INAMED_ELEMENT__NAME);
+
+		entityEClass = createEClass(ENTITY);
+		createEReference(entityEClass, ENTITY__ENTITYSATELITE);
+		createEReference(entityEClass, ENTITY__MAINSATELIT);
+		createEReference(entityEClass, ENTITY__BUSINESSKEYS);
+
+		extensionSateliteEClass = createEClass(EXTENSION_SATELITE);
+		createEReference(extensionSateliteEClass, EXTENSION_SATELITE__ENTITY);
 
 		baseEntityEClass = createEClass(BASE_ENTITY);
-		createEAttribute(baseEntityEClass, BASE_ENTITY__NAME);
-		createEReference(baseEntityEClass, BASE_ENTITY__DOCUMENT);
+		createEReference(baseEntityEClass, BASE_ENTITY__ENTITY);
+
+		fieldEClass = createEClass(FIELD);
+
+		businessKeyEClass = createEClass(BUSINESS_KEY);
+		createEReference(businessKeyEClass, BUSINESS_KEY__FIELDDECLARATION);
+		createEReference(businessKeyEClass, BUSINESS_KEY__ENTITY);
+
+		fieldDeclarationEClass = createEClass(FIELD_DECLARATION);
+		createEReference(fieldDeclarationEClass, FIELD_DECLARATION__MEMBER);
 	}
 
 	/**
@@ -220,23 +500,88 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		logDocumentEClass.getESuperTypes().add(this.getDocument());
+		memberEClass.getESuperTypes().add(this.getINamedElement());
+		techDocumentEClass.getESuperTypes().add(this.getDocument());
+		mappingDocumentEClass.getESuperTypes().add(this.getDocument());
+		entityEClass.getESuperTypes().add(this.getMember());
+		extensionSateliteEClass.getESuperTypes().add(this.getINamedElement());
+		extensionSateliteEClass.getESuperTypes().add(this.getEntity());
+		baseEntityEClass.getESuperTypes().add(this.getINamedElement());
+		baseEntityEClass.getESuperTypes().add(this.getEntity());
+		fieldEClass.getESuperTypes().add(this.getINamedElement());
+		fieldEClass.getESuperTypes().add(this.getFieldDeclaration());
+		fieldDeclarationEClass.getESuperTypes().add(this.getMember());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(logDocumentEClass, LogDocument.class, "LogDocument", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLogDocument_Members(), this.getMember(), this.getMember_Logdocument(), "members", null, 0, -1,
+				LogDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(memberEClass, Member.class, "Member", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMember_Logdocument(), this.getLogDocument(), this.getLogDocument_Members(), "logdocument",
+				null, 0, 1, Member.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMember_Fielddeclarations(), this.getFieldDeclaration(), this.getFieldDeclaration_Member(),
+				"fielddeclarations", null, 0, -1, Member.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(documentEClass, Document.class, "Document", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, Document.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocument_Baseentities(), this.getBaseEntity(), this.getBaseEntity_Document(), "baseentities",
-				null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+
+		initEClass(techDocumentEClass, TechDocument.class, "TechDocument", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mappingDocumentEClass, MappingDocument.class, "MappingDocument", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iNamedElementEClass, INamedElement.class, "INamedElement", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getINamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, INamedElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntity_Entitysatelite(), this.getExtensionSatelite(), this.getExtensionSatelite_Entity(),
+				"entitysatelite", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Mainsatelit(), this.getBaseEntity(), this.getBaseEntity_Entity(), "mainsatelit", null,
+				0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Businesskeys(), this.getBusinessKey(), this.getBusinessKey_Entity(), "businesskeys",
+				null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(extensionSateliteEClass, ExtensionSatelite.class, "ExtensionSatelite", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExtensionSatelite_Entity(), this.getEntity(), this.getEntity_Entitysatelite(), "entity", null,
+				0, 1, ExtensionSatelite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(baseEntityEClass, BaseEntity.class, "BaseEntity", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBaseEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, BaseEntity.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBaseEntity_Document(), this.getDocument(), this.getDocument_Baseentities(), "document", null,
-				0, 1, BaseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getBaseEntity_Entity(), this.getEntity(), this.getEntity_Mainsatelit(), "entity", null, 0, 1,
+				BaseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(businessKeyEClass, BusinessKey.class, "BusinessKey", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBusinessKey_Fielddeclaration(), this.getFieldDeclaration(), null, "fielddeclaration", null, 0,
+				-1, BusinessKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessKey_Entity(), this.getEntity(), this.getEntity_Businesskeys(), "entity", null, 0, 1,
+				BusinessKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fieldDeclarationEClass, FieldDeclaration.class, "FieldDeclaration", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFieldDeclaration_Member(), this.getMember(), this.getMember_Fielddeclarations(), "member",
+				null, 0, 1, FieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
