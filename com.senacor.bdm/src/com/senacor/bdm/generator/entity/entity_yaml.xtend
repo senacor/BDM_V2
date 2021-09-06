@@ -26,6 +26,7 @@ class entity_yaml extends AbstractGenerator{
 			txt = txt+"\t"+"\t"+member.name
 			
 		}
+		return txt
 	}
 	
 	def gen_entity(BaseEntity entity) 
