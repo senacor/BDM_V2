@@ -22,4 +22,7 @@ class DslGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		ey.doGenerate(resource,fsa,context)
 	}
+	
+	def foo() {
+	}
 }

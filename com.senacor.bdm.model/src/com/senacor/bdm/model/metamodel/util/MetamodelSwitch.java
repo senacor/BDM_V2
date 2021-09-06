@@ -91,24 +91,6 @@ public class MetamodelSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case MetamodelPackage.TECH_DOCUMENT: {
-			TechDocument techDocument = (TechDocument) theEObject;
-			T result = caseTechDocument(techDocument);
-			if (result == null)
-				result = caseDocument(techDocument);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case MetamodelPackage.MAPPING_DOCUMENT: {
-			MappingDocument mappingDocument = (MappingDocument) theEObject;
-			T result = caseMappingDocument(mappingDocument);
-			if (result == null)
-				result = caseDocument(mappingDocument);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case MetamodelPackage.INAMED_ELEMENT: {
 			INamedElement iNamedElement = (INamedElement) theEObject;
 			T result = caseINamedElement(iNamedElement);
@@ -123,19 +105,6 @@ public class MetamodelSwitch<T> extends Switch<T> {
 				result = caseMember(entity);
 			if (result == null)
 				result = caseINamedElement(entity);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case MetamodelPackage.EXTENSION_SATELITE: {
-			ExtensionSatelite extensionSatelite = (ExtensionSatelite) theEObject;
-			T result = caseExtensionSatelite(extensionSatelite);
-			if (result == null)
-				result = caseEntity(extensionSatelite);
-			if (result == null)
-				result = caseMember(extensionSatelite);
-			if (result == null)
-				result = caseINamedElement(extensionSatelite);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -159,8 +128,6 @@ public class MetamodelSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseFieldDeclaration(field);
 			if (result == null)
-				result = caseMember(field);
-			if (result == null)
 				result = caseINamedElement(field);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -170,14 +137,14 @@ public class MetamodelSwitch<T> extends Switch<T> {
 			BusinessKey businessKey = (BusinessKey) theEObject;
 			T result = caseBusinessKey(businessKey);
 			if (result == null)
+				result = caseINamedElement(businessKey);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case MetamodelPackage.FIELD_DECLARATION: {
 			FieldDeclaration fieldDeclaration = (FieldDeclaration) theEObject;
 			T result = caseFieldDeclaration(fieldDeclaration);
-			if (result == null)
-				result = caseMember(fieldDeclaration);
 			if (result == null)
 				result = caseINamedElement(fieldDeclaration);
 			if (result == null)
@@ -235,36 +202,6 @@ public class MetamodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Tech Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Tech Document</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTechDocument(TechDocument object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mapping Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mapping Document</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMappingDocument(MappingDocument object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>INamed Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -291,21 +228,6 @@ public class MetamodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntity(Entity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extension Satelite</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extension Satelite</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtensionSatelite(ExtensionSatelite object) {
 		return null;
 	}
 

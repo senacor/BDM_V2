@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getINamedElement()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface INamedElement extends EObject {

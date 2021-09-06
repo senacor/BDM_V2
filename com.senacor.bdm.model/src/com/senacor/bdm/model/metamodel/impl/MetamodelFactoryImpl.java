@@ -58,12 +58,6 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 		switch (eClass.getClassifierID()) {
 		case MetamodelPackage.LOG_DOCUMENT:
 			return createLogDocument();
-		case MetamodelPackage.TECH_DOCUMENT:
-			return createTechDocument();
-		case MetamodelPackage.MAPPING_DOCUMENT:
-			return createMappingDocument();
-		case MetamodelPackage.EXTENSION_SATELITE:
-			return createExtensionSatelite();
 		case MetamodelPackage.BASE_ENTITY:
 			return createBaseEntity();
 		case MetamodelPackage.FIELD:
@@ -83,36 +77,6 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 	public LogDocument createLogDocument() {
 		LogDocumentImpl logDocument = new LogDocumentImpl();
 		return logDocument;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TechDocument createTechDocument() {
-		TechDocumentImpl techDocument = new TechDocumentImpl();
-		return techDocument;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MappingDocument createMappingDocument() {
-		MappingDocumentImpl mappingDocument = new MappingDocumentImpl();
-		return mappingDocument;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExtensionSatelite createExtensionSatelite() {
-		ExtensionSateliteImpl extensionSatelite = new ExtensionSateliteImpl();
-		return extensionSatelite;
 	}
 
 	/**

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -29,13 +30,32 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.MemberImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.MemberImpl#getLogdocument <em>Logdocument</em>}</li>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.MemberImpl#getFielddeclarations <em>Fielddeclarations</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class MemberImpl extends INamedElementImpl implements Member {
+public abstract class MemberImpl extends MinimalEObjectImpl.Container implements Member {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getFielddeclarations() <em>Fielddeclarations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -63,6 +83,27 @@ public abstract class MemberImpl extends INamedElementImpl implements Member {
 	@Override
 	protected EClass eStaticClass() {
 		return MetamodelPackage.Literals.MEMBER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.MEMBER__NAME, oldName, name));
 	}
 
 	/**
@@ -182,6 +223,8 @@ public abstract class MemberImpl extends INamedElementImpl implements Member {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case MetamodelPackage.MEMBER__NAME:
+			return getName();
 		case MetamodelPackage.MEMBER__LOGDOCUMENT:
 			return getLogdocument();
 		case MetamodelPackage.MEMBER__FIELDDECLARATIONS:
@@ -199,6 +242,9 @@ public abstract class MemberImpl extends INamedElementImpl implements Member {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case MetamodelPackage.MEMBER__NAME:
+			setName((String) newValue);
+			return;
 		case MetamodelPackage.MEMBER__LOGDOCUMENT:
 			setLogdocument((LogDocument) newValue);
 			return;
@@ -218,6 +264,9 @@ public abstract class MemberImpl extends INamedElementImpl implements Member {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case MetamodelPackage.MEMBER__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		case MetamodelPackage.MEMBER__LOGDOCUMENT:
 			setLogdocument((LogDocument) null);
 			return;
@@ -236,12 +285,31 @@ public abstract class MemberImpl extends INamedElementImpl implements Member {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case MetamodelPackage.MEMBER__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case MetamodelPackage.MEMBER__LOGDOCUMENT:
 			return getLogdocument() != null;
 		case MetamodelPackage.MEMBER__FIELDDECLARATIONS:
 			return fielddeclarations != null && !fielddeclarations.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MemberImpl
