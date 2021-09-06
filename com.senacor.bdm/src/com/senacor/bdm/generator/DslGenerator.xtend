@@ -3,10 +3,12 @@
  */
 package com.senacor.bdm.generator
 
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtext.generator.AbstractGenerator;
-import org.eclipse.xtext.generator.IFileSystemAccess2;
-import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.generator.AbstractGenerator
+import org.eclipse.xtext.generator.IFileSystemAccess2
+import org.eclipse.xtext.generator.IGeneratorContext
+import com.google.inject.Inject
+import com.senacor.bdm.generator.entity.entity_yaml
 
 /**
  * Generates code from your model files on save.
@@ -15,11 +17,9 @@ import org.eclipse.xtext.generator.IGeneratorContext;
  */
 class DslGenerator extends AbstractGenerator {
 
+@Inject entity_yaml ey
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		ey.doGenerate(resource,fsa,context)
 	}
 }
