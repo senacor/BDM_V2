@@ -36,7 +36,5 @@
 		</location>
 	</locations>
 	<environment>
-		<os>macosx</os>
-		<ws>cocoa</ws>
 	</environment>
 </target>
