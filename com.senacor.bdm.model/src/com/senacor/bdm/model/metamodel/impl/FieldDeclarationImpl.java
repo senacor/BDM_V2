@@ -2,17 +2,12 @@
  */
 package com.senacor.bdm.model.metamodel.impl;
 
-import com.senacor.bdm.model.metamodel.BusinessKey;
-import com.senacor.bdm.model.metamodel.Entity;
 import com.senacor.bdm.model.metamodel.FieldDeclaration;
+import com.senacor.bdm.model.metamodel.Member;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -20,25 +15,23 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Business Key</b></em>'.
+ * An implementation of the model object '<em><b>Field Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl#getFielddeclaration <em>Fielddeclaration</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl#getMember <em>Member</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements BusinessKey {
+public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container implements FieldDeclaration {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,6 +41,7 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,22 +51,13 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getFielddeclaration() <em>Fielddeclaration</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFielddeclaration()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FieldDeclaration> fielddeclaration;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BusinessKeyImpl() {
+	protected FieldDeclarationImpl() {
 		super();
 	}
 
@@ -83,7 +68,7 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MetamodelPackage.Literals.BUSINESS_KEY;
+		return MetamodelPackage.Literals.FIELD_DECLARATION;
 	}
 
 	/**
@@ -104,7 +89,8 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BUSINESS_KEY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.FIELD_DECLARATION__NAME, oldName,
+					name));
 	}
 
 	/**
@@ -112,23 +98,10 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FieldDeclaration> getFielddeclaration() {
-		if (fielddeclaration == null) {
-			fielddeclaration = new EObjectResolvingEList<FieldDeclaration>(FieldDeclaration.class, this,
-					MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION);
-		}
-		return fielddeclaration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity getEntity() {
-		if (eContainerFeatureID() != MetamodelPackage.BUSINESS_KEY__ENTITY)
+	public Member getMember() {
+		if (eContainerFeatureID() != MetamodelPackage.FIELD_DECLARATION__MEMBER)
 			return null;
-		return (Entity) eInternalContainer();
+		return (Member) eInternalContainer();
 	}
 
 	/**
@@ -136,8 +109,8 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEntity(Entity newEntity, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newEntity, MetamodelPackage.BUSINESS_KEY__ENTITY, msgs);
+	public NotificationChain basicSetMember(Member newMember, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newMember, MetamodelPackage.FIELD_DECLARATION__MEMBER, msgs);
 		return msgs;
 	}
 
@@ -146,23 +119,23 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntity(Entity newEntity) {
-		if (newEntity != eInternalContainer()
-				|| (eContainerFeatureID() != MetamodelPackage.BUSINESS_KEY__ENTITY && newEntity != null)) {
-			if (EcoreUtil.isAncestor(this, newEntity))
+	public void setMember(Member newMember) {
+		if (newMember != eInternalContainer()
+				|| (eContainerFeatureID() != MetamodelPackage.FIELD_DECLARATION__MEMBER && newMember != null)) {
+			if (EcoreUtil.isAncestor(this, newMember))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newEntity != null)
-				msgs = ((InternalEObject) newEntity).eInverseAdd(this, MetamodelPackage.ENTITY__BUSINESSKEYS,
-						Entity.class, msgs);
-			msgs = basicSetEntity(newEntity, msgs);
+			if (newMember != null)
+				msgs = ((InternalEObject) newMember).eInverseAdd(this, MetamodelPackage.MEMBER__FIELDDECLARATIONS,
+						Member.class, msgs);
+			msgs = basicSetMember(newMember, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BUSINESS_KEY__ENTITY, newEntity,
-					newEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.FIELD_DECLARATION__MEMBER, newMember,
+					newMember));
 	}
 
 	/**
@@ -173,10 +146,10 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
+		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetEntity((Entity) otherEnd, msgs);
+			return basicSetMember((Member) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -189,8 +162,8 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			return basicSetEntity(null, msgs);
+		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
+			return basicSetMember(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -203,8 +176,9 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			return eInternalContainer().eInverseRemove(this, MetamodelPackage.ENTITY__BUSINESSKEYS, Entity.class, msgs);
+		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
+			return eInternalContainer().eInverseRemove(this, MetamodelPackage.MEMBER__FIELDDECLARATIONS, Member.class,
+					msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -217,12 +191,10 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MetamodelPackage.BUSINESS_KEY__NAME:
+		case MetamodelPackage.FIELD_DECLARATION__NAME:
 			return getName();
-		case MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION:
-			return getFielddeclaration();
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			return getEntity();
+		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
+			return getMember();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -232,19 +204,14 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MetamodelPackage.BUSINESS_KEY__NAME:
+		case MetamodelPackage.FIELD_DECLARATION__NAME:
 			setName((String) newValue);
 			return;
-		case MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION:
-			getFielddeclaration().clear();
-			getFielddeclaration().addAll((Collection<? extends FieldDeclaration>) newValue);
-			return;
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			setEntity((Entity) newValue);
+		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
+			setMember((Member) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -258,14 +225,11 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MetamodelPackage.BUSINESS_KEY__NAME:
+		case MetamodelPackage.FIELD_DECLARATION__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION:
-			getFielddeclaration().clear();
-			return;
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			setEntity((Entity) null);
+		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
+			setMember((Member) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -279,12 +243,10 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MetamodelPackage.BUSINESS_KEY__NAME:
+		case MetamodelPackage.FIELD_DECLARATION__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION:
-			return fielddeclaration != null && !fielddeclaration.isEmpty();
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			return getEntity() != null;
+		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
+			return getMember() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -306,4 +268,4 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 		return result.toString();
 	}
 
-} //BusinessKeyImpl
+} //FieldDeclarationImpl

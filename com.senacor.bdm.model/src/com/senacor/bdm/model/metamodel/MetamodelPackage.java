@@ -140,14 +140,14 @@ public interface MetamodelPackage extends EPackage {
 	int LOG_DOCUMENT_OPERATION_COUNT = DOCUMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.INamedElementImpl <em>INamed Element</em>}' class.
+	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.INamedElement <em>INamed Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see com.senacor.bdm.model.metamodel.impl.INamedElementImpl
+	 * @see com.senacor.bdm.model.metamodel.INamedElement
 	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getINamedElement()
 	 * @generated
 	 */
-	int INAMED_ELEMENT = 5;
+	int INAMED_ELEMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -232,80 +232,6 @@ public interface MetamodelPackage extends EPackage {
 	int MEMBER_OPERATION_COUNT = INAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.TechDocumentImpl <em>Tech Document</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.senacor.bdm.model.metamodel.impl.TechDocumentImpl
-	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getTechDocument()
-	 * @generated
-	 */
-	int TECH_DOCUMENT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DOCUMENT__NAME = DOCUMENT__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Tech Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DOCUMENT_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Tech Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TECH_DOCUMENT_OPERATION_COUNT = DOCUMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.MappingDocumentImpl <em>Mapping Document</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.senacor.bdm.model.metamodel.impl.MappingDocumentImpl
-	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getMappingDocument()
-	 * @generated
-	 */
-	int MAPPING_DOCUMENT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAPPING_DOCUMENT__NAME = DOCUMENT__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Mapping Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAPPING_DOCUMENT_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Mapping Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAPPING_DOCUMENT_OPERATION_COUNT = DOCUMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.EntityImpl <em>Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -313,7 +239,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 6;
+	int ENTITY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -343,31 +269,13 @@ public interface MetamodelPackage extends EPackage {
 	int ENTITY__FIELDDECLARATIONS = MEMBER__FIELDDECLARATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Entitysatelite</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__ENTITYSATELITE = MEMBER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Mainsatelit</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__MAINSATELIT = MEMBER_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Businesskeys</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__BUSINESSKEYS = MEMBER_FEATURE_COUNT + 2;
+	int ENTITY__BUSINESSKEYS = MEMBER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -376,7 +284,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = MEMBER_FEATURE_COUNT + 3;
+	int ENTITY_FEATURE_COUNT = MEMBER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -388,97 +296,6 @@ public interface MetamodelPackage extends EPackage {
 	int ENTITY_OPERATION_COUNT = MEMBER_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.ExtensionSateliteImpl <em>Extension Satelite</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.senacor.bdm.model.metamodel.impl.ExtensionSateliteImpl
-	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getExtensionSatelite()
-	 * @generated
-	 */
-	int EXTENSION_SATELITE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE__NAME = INAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Logdocument</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE__LOGDOCUMENT = INAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Fielddeclarations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE__FIELDDECLARATIONS = INAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Entitysatelite</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE__ENTITYSATELITE = INAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Mainsatelit</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE__MAINSATELIT = INAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Businesskeys</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE__BUSINESSKEYS = INAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE__ENTITY = INAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Extension Satelite</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE_FEATURE_COUNT = INAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of operations of the '<em>Extension Satelite</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTENSION_SATELITE_OPERATION_COUNT = INAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl <em>Base Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,7 +303,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getBaseEntity()
 	 * @generated
 	 */
-	int BASE_ENTITY = 8;
+	int BASE_ENTITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -516,40 +333,13 @@ public interface MetamodelPackage extends EPackage {
 	int BASE_ENTITY__FIELDDECLARATIONS = INAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Entitysatelite</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_ENTITY__ENTITYSATELITE = INAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Mainsatelit</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_ENTITY__MAINSATELIT = INAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Businesskeys</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASE_ENTITY__BUSINESSKEYS = INAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_ENTITY__ENTITY = INAMED_ELEMENT_FEATURE_COUNT + 5;
+	int BASE_ENTITY__BUSINESSKEYS = INAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Base Entity</em>' class.
@@ -558,7 +348,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BASE_ENTITY_FEATURE_COUNT = INAMED_ELEMENT_FEATURE_COUNT + 6;
+	int BASE_ENTITY_FEATURE_COUNT = INAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Base Entity</em>' class.
@@ -577,61 +367,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 9;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD__NAME = INAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Logdocument</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD__LOGDOCUMENT = INAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Fielddeclarations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD__FIELDDECLARATIONS = INAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Member</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD__MEMBER = INAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Field</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD_FEATURE_COUNT = INAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Field</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD_OPERATION_COUNT = INAMED_ELEMENT_OPERATION_COUNT + 0;
+	int FIELD = 6;
 
 	/**
 	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl <em>Business Key</em>}' class.
@@ -641,53 +377,17 @@ public interface MetamodelPackage extends EPackage {
 	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getBusinessKey()
 	 * @generated
 	 */
-	int BUSINESS_KEY = 10;
+	int BUSINESS_KEY = 7;
 
 	/**
-	 * The feature id for the '<em><b>Fielddeclaration</b></em>' reference list.
+	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl <em>Field Declaration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_KEY__FIELDDECLARATION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_KEY__ENTITY = 1;
-
-	/**
-	 * The number of structural features of the '<em>Business Key</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_KEY_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Business Key</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_KEY_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.FieldDeclaration <em>Field Declaration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.senacor.bdm.model.metamodel.FieldDeclaration
+	 * @see com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl
 	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getFieldDeclaration()
 	 * @generated
 	 */
-	int FIELD_DECLARATION = 11;
+	int FIELD_DECLARATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -696,25 +396,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DECLARATION__NAME = MEMBER__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Logdocument</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD_DECLARATION__LOGDOCUMENT = MEMBER__LOGDOCUMENT;
-
-	/**
-	 * The feature id for the '<em><b>Fielddeclarations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD_DECLARATION__FIELDDECLARATIONS = MEMBER__FIELDDECLARATIONS;
+	int FIELD_DECLARATION__NAME = INAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Member</b></em>' container reference.
@@ -723,7 +405,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DECLARATION__MEMBER = MEMBER_FEATURE_COUNT + 0;
+	int FIELD_DECLARATION__MEMBER = INAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Field Declaration</em>' class.
@@ -732,7 +414,7 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DECLARATION_FEATURE_COUNT = MEMBER_FEATURE_COUNT + 1;
+	int FIELD_DECLARATION_FEATURE_COUNT = INAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Field Declaration</em>' class.
@@ -741,7 +423,88 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DECLARATION_OPERATION_COUNT = MEMBER_OPERATION_COUNT + 0;
+	int FIELD_DECLARATION_OPERATION_COUNT = INAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__NAME = FIELD_DECLARATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Member</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__MEMBER = FIELD_DECLARATION__MEMBER;
+
+	/**
+	 * The number of structural features of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_FEATURE_COUNT = FIELD_DECLARATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_OPERATION_COUNT = FIELD_DECLARATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_KEY__NAME = INAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Fielddeclaration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_KEY__FIELDDECLARATION = INAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_KEY__ENTITY = INAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Business Key</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_KEY_FEATURE_COUNT = INAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Business Key</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_KEY_OPERATION_COUNT = INAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.LogDocument <em>Log Document</em>}'.
@@ -818,26 +581,6 @@ public interface MetamodelPackage extends EPackage {
 	EAttribute getDocument_Name();
 
 	/**
-	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.TechDocument <em>Tech Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tech Document</em>'.
-	 * @see com.senacor.bdm.model.metamodel.TechDocument
-	 * @generated
-	 */
-	EClass getTechDocument();
-
-	/**
-	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.MappingDocument <em>Mapping Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mapping Document</em>'.
-	 * @see com.senacor.bdm.model.metamodel.MappingDocument
-	 * @generated
-	 */
-	EClass getMappingDocument();
-
-	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.INamedElement <em>INamed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -869,28 +612,6 @@ public interface MetamodelPackage extends EPackage {
 	EClass getEntity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.Entity#getEntitysatelite <em>Entitysatelite</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Entitysatelite</em>'.
-	 * @see com.senacor.bdm.model.metamodel.Entity#getEntitysatelite()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EReference getEntity_Entitysatelite();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link com.senacor.bdm.model.metamodel.Entity#getMainsatelit <em>Mainsatelit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Mainsatelit</em>'.
-	 * @see com.senacor.bdm.model.metamodel.Entity#getMainsatelit()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EReference getEntity_Mainsatelit();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.Entity#getBusinesskeys <em>Businesskeys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -902,27 +623,6 @@ public interface MetamodelPackage extends EPackage {
 	EReference getEntity_Businesskeys();
 
 	/**
-	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.ExtensionSatelite <em>Extension Satelite</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Extension Satelite</em>'.
-	 * @see com.senacor.bdm.model.metamodel.ExtensionSatelite
-	 * @generated
-	 */
-	EClass getExtensionSatelite();
-
-	/**
-	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.ExtensionSatelite#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Entity</em>'.
-	 * @see com.senacor.bdm.model.metamodel.ExtensionSatelite#getEntity()
-	 * @see #getExtensionSatelite()
-	 * @generated
-	 */
-	EReference getExtensionSatelite_Entity();
-
-	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.BaseEntity <em>Base Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -931,17 +631,6 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBaseEntity();
-
-	/**
-	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.BaseEntity#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Entity</em>'.
-	 * @see com.senacor.bdm.model.metamodel.BaseEntity#getEntity()
-	 * @see #getBaseEntity()
-	 * @generated
-	 */
-	EReference getBaseEntity_Entity();
 
 	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.Field <em>Field</em>}'.
@@ -1092,30 +781,10 @@ public interface MetamodelPackage extends EPackage {
 		EAttribute DOCUMENT__NAME = eINSTANCE.getDocument_Name();
 
 		/**
-		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.TechDocumentImpl <em>Tech Document</em>}' class.
+		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.INamedElement <em>INamed Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.senacor.bdm.model.metamodel.impl.TechDocumentImpl
-		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getTechDocument()
-		 * @generated
-		 */
-		EClass TECH_DOCUMENT = eINSTANCE.getTechDocument();
-
-		/**
-		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.MappingDocumentImpl <em>Mapping Document</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.senacor.bdm.model.metamodel.impl.MappingDocumentImpl
-		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getMappingDocument()
-		 * @generated
-		 */
-		EClass MAPPING_DOCUMENT = eINSTANCE.getMappingDocument();
-
-		/**
-		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.INamedElementImpl <em>INamed Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.senacor.bdm.model.metamodel.impl.INamedElementImpl
+		 * @see com.senacor.bdm.model.metamodel.INamedElement
 		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getINamedElement()
 		 * @generated
 		 */
@@ -1140,46 +809,12 @@ public interface MetamodelPackage extends EPackage {
 		EClass ENTITY = eINSTANCE.getEntity();
 
 		/**
-		 * The meta object literal for the '<em><b>Entitysatelite</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY__ENTITYSATELITE = eINSTANCE.getEntity_Entitysatelite();
-
-		/**
-		 * The meta object literal for the '<em><b>Mainsatelit</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY__MAINSATELIT = eINSTANCE.getEntity_Mainsatelit();
-
-		/**
 		 * The meta object literal for the '<em><b>Businesskeys</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ENTITY__BUSINESSKEYS = eINSTANCE.getEntity_Businesskeys();
-
-		/**
-		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.ExtensionSateliteImpl <em>Extension Satelite</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.senacor.bdm.model.metamodel.impl.ExtensionSateliteImpl
-		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getExtensionSatelite()
-		 * @generated
-		 */
-		EClass EXTENSION_SATELITE = eINSTANCE.getExtensionSatelite();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXTENSION_SATELITE__ENTITY = eINSTANCE.getExtensionSatelite_Entity();
 
 		/**
 		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl <em>Base Entity</em>}' class.
@@ -1190,14 +825,6 @@ public interface MetamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BASE_ENTITY = eINSTANCE.getBaseEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BASE_ENTITY__ENTITY = eINSTANCE.getBaseEntity_Entity();
 
 		/**
 		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.FieldImpl <em>Field</em>}' class.
@@ -1236,10 +863,10 @@ public interface MetamodelPackage extends EPackage {
 		EReference BUSINESS_KEY__ENTITY = eINSTANCE.getBusinessKey_Entity();
 
 		/**
-		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.FieldDeclaration <em>Field Declaration</em>}' class.
+		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl <em>Field Declaration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.senacor.bdm.model.metamodel.FieldDeclaration
+		 * @see com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl
 		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getFieldDeclaration()
 		 * @generated
 		 */

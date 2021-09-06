@@ -12,6 +12,6 @@ package com.senacor.bdm.model.metamodel;
  * @model
  * @generated
  */
-public interface Field extends INamedElement, FieldDeclaration {
+public interface Field extends FieldDeclaration {
 
 } // Field

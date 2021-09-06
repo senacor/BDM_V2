@@ -15,10 +15,10 @@ package com.senacor.bdm.model.metamodel;
  * </ul>
  *
  * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getFieldDeclaration()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
-public interface FieldDeclaration extends Member {
+public interface FieldDeclaration extends INamedElement {
 	/**
 	 * Returns the value of the '<em><b>Member</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.Member#getFielddeclarations <em>Fielddeclarations</em>}'.

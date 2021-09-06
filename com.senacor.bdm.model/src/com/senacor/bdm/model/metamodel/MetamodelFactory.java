@@ -31,33 +31,6 @@ public interface MetamodelFactory extends EFactory {
 	LogDocument createLogDocument();
 
 	/**
-	 * Returns a new object of class '<em>Tech Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Tech Document</em>'.
-	 * @generated
-	 */
-	TechDocument createTechDocument();
-
-	/**
-	 * Returns a new object of class '<em>Mapping Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mapping Document</em>'.
-	 * @generated
-	 */
-	MappingDocument createMappingDocument();
-
-	/**
-	 * Returns a new object of class '<em>Extension Satelite</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Extension Satelite</em>'.
-	 * @generated
-	 */
-	ExtensionSatelite createExtensionSatelite();
-
-	/**
 	 * Returns a new object of class '<em>Base Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

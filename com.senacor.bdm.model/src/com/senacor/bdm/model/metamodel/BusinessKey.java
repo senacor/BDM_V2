@@ -4,8 +4,6 @@ package com.senacor.bdm.model.metamodel;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Business Key</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface BusinessKey extends EObject {
+public interface BusinessKey extends INamedElement {
 	/**
 	 * Returns the value of the '<em><b>Fielddeclaration</b></em>' reference list.
 	 * The list contents are of type {@link com.senacor.bdm.model.metamodel.FieldDeclaration}.

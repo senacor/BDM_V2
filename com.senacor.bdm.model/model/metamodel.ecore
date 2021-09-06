@@ -14,36 +14,22 @@
   <eClassifiers xsi:type="ecore:EClass" name="Document" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TechDocument" eSuperTypes="#//Document"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MappingDocument" eSuperTypes="#//Document"/>
-  <eClassifiers xsi:type="ecore:EClass" name="INamedElement" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="INamedElement" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="#//Member">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entitysatelite" upperBound="-1"
-        eType="#//ExtensionSatelite" containment="true" eOpposite="#//ExtensionSatelite/entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mainsatelit" eType="#//BaseEntity"
-        containment="true" eOpposite="#//BaseEntity/entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="businesskeys" upperBound="-1"
         eType="#//BusinessKey" containment="true" eOpposite="#//BusinessKey/entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExtensionSatelite" eSuperTypes="#//INamedElement #//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
-        eOpposite="#//Entity/entitysatelite"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BaseEntity" eSuperTypes="#//INamedElement #//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
-        eOpposite="#//Entity/mainsatelit"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//INamedElement #//FieldDeclaration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BusinessKey">
+  <eClassifiers xsi:type="ecore:EClass" name="BaseEntity" eSuperTypes="#//INamedElement #//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//FieldDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessKey" eSuperTypes="#//INamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fielddeclaration" upperBound="-1"
         eType="#//FieldDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
         eOpposite="#//Entity/businesskeys"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldDeclaration" abstract="true" interface="true"
-      eSuperTypes="#//Member">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldDeclaration" abstract="true" eSuperTypes="#//INamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="#//Member"
         eOpposite="#//Member/fielddeclarations"/>
   </eClassifiers>

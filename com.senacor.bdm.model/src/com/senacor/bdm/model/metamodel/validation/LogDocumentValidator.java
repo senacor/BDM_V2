@@ -6,6 +6,7 @@ package com.senacor.bdm.model.metamodel.validation;
 
 import com.senacor.bdm.model.metamodel.BaseEntity;
 
+import com.senacor.bdm.model.metamodel.Member;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface LogDocumentValidator {
 	boolean validate();
+
+	boolean validateMembers(EList<Member> value);
 
 	boolean validateName(String value);
 
