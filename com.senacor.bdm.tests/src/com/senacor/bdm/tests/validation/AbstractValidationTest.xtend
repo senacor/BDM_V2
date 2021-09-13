@@ -19,24 +19,14 @@ abstract class AbstractValidationTest {
 		bizModelProv.get 
 	}
 	
-	
-	def boolean throwsOnlyError(AbstractModelBuilder builder, String errorCode) {
-		val rset = builder.resourceSet
-		
-		val allIssues = rset.resources.flatMap[
-			valTestHelper.validate(it)
-		]
-		
-		val allErrors = allIssues.filter[
-			severity <= Severity.ERROR
-		]
-		
-		val expectedErrors = allErrors.filter[
-			code == errorCode
-		]
-		val unexpectedErrors  = allErrors.filter[
-			code != errorCode
-		]
+	/** Returns true if and only if at least one error of the provided errorCode is thrown after validating the 
+	 * model currently contained in the provided builder <b>and</b> no unexpected errors are thrown. If false
+	 * is returned, any  
+	 */
+	def boolean throwsOnlyError(AbstractModelBuilder it, String errorCode) {
+		val errors = allErrors
+		val expectedErrors = errors.filter[code == errorCode]
+		val unexpectedErrors  = errors.filter[code != errorCode]
 		
 		val expectedErrorsFound = !expectedErrors.nullOrEmpty
 		val unexpectedErrorsFound = !unexpectedErrors.nullOrEmpty
@@ -51,24 +41,15 @@ abstract class AbstractValidationTest {
 			}
 		}
 		
-		return !expectedErrorsFound && unexpectedErrorsFound
+		return expectedErrorsFound && !unexpectedErrorsFound
 	}
 	
 	/** Returns true if and only if there are no validation errors present in the underlying model contained
 	 * by the provided builder. Warnings will not be checked and may thus be present.
 	 */
-	def boolean throwsNoErrors(AbstractModelBuilder builder) {
-		val rset = builder.resourceSet
-		
-		val allIssues = rset.resources.flatMap[
-			valTestHelper.validate(it)
-		]
-		
-		val allErrors = allIssues.filter[
-			severity <= Severity.ERROR
-		]
-		
-		val errorsExist = !allErrors.nullOrEmpty
+	def boolean throwsNoErrors(AbstractModelBuilder it) {
+		val errors = allErrors
+		val errorsExist = !errors.nullOrEmpty
 		
 		if (errorsExist) {
 			println('''The following errors occurred:''')
@@ -78,5 +59,19 @@ abstract class AbstractValidationTest {
 		}
 		
 		return !errorsExist
+	}
+	
+	/** Returns all Issues of level ERROR or above. */
+	def getAllErrors(AbstractModelBuilder builder) {
+		val rset = builder.resourceSet
+		
+		val allIssues = rset.resources.flatMap[
+			valTestHelper.validate(it)
+		]
+		
+		val allErrors = allIssues.filter[
+			severity <= Severity.ERROR
+		]
+		return allErrors
 	}
 }

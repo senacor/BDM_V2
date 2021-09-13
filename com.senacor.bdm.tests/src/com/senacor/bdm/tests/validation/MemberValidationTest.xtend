@@ -17,12 +17,11 @@ class MemberValidationTest extends AbstractValidationTest {
 	def void testMemberIsFirstUpper() {
 		val extension it = newBizBuilder()
 		
-		val doc = createDocument("Kredit")
-		doc.createBaseEntity("Kredit")
+		createBaseEntity("Kredit")
 		
 		assertTrue(throwsNoErrors)
 		
-		doc.createBaseEntity("uknde")
+		createBaseEntity("kunde")
 		
 		assertTrue(throwsOnlyError(MEMBER_IS_FIRST_UPPER))
 	}
