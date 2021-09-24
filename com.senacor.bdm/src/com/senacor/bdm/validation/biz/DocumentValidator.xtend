@@ -5,11 +5,15 @@ import com.senacor.bdm.validation.AbstractBdmValidator
 import org.eclipse.xtext.validation.Check
 
 import static com.senacor.bdm.model.metamodel.MetamodelPackage.Literals.*
+import org.eclipse.xtext.util.Strings
+
+import static extension com.senacor.bdm.helpers.StringHelper.*
 
 class DocumentValidator extends AbstractBdmValidator {
 	public static val String CODE__PREFIX = CODE__PREFIX_ALL + "document.";
 	
 	public static val String DOCUMENT__NEEDS_PACKAGE = CODE__PREFIX + "NeedsPackage";
+	public static val String DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE = CODE__PREFIX + "PackageSectionsShouldStartLowerCase"
 	
 	
 	@Check
@@ -19,6 +23,14 @@ class DocumentValidator extends AbstractBdmValidator {
 		}
 	}
 	
-	
+	@Check
+	def checkDocumentPackageSectionsStartWithLower(LogDocument d) {
+		val sections = Strings.split(d.name,".")
+		for (section : sections) {
+			if (section.isFirstUpper) {
+				error("Dieses Dokument enthält eine Package Deklaration, die aus Sektionen mit Großbuchstaben am Anfang besteht", d, DOCUMENT__NAME, DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE)
+			}
+		}
+	}
 	
 }

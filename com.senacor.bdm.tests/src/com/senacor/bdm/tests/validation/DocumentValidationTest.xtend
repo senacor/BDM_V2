@@ -41,4 +41,23 @@ class DocumentValidationTest extends AbstractValidationTest {
 		
 		assertTrue(throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
 	}
+	
+	
+	@Test
+	def void testDocumentPackageIsAlwaysStartingLowerCase() {
+		val extension it = newBizBuilder()
+		
+		createDocument("iAm.starting.lOwer","test")
+		
+		assertTrue(throwsNoErrors)
+	}
+
+	@Test
+	def void testDocumentPackageIsNotAlwaysStartingLowerCase() {
+		val extension it = newBizBuilder()
+		
+		createDocument("Iam.starting.uPper","test")
+		
+		assertTrue(throwsOnlyError(DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE))
+	}
 }
