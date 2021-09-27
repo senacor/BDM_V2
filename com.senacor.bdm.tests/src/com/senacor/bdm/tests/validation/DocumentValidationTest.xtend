@@ -11,53 +11,43 @@ import static org.junit.jupiter.api.Assertions.*
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
-class DocumentValidationTest extends AbstractValidationTest {
+class DocumentValidationTest extends AbstractBizModelValidationTest {
 
 	@Test
 	def void testDocumentHasPackage() {
-		val extension it = newBizBuilder()
-		
 		createDocument("test")
 		
-		assertTrue(throwsNoErrors)
+		assertTrue(b.throwsNoErrors)
 	}
 	
 	@Test
 	def void testDocumentHasNoPackage() {
-		val extension it = newBizBuilder()
-		
 		val doc = createDocument("test")
 		doc.name = null
 		
-		assertTrue(throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
+		assertTrue(b.throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
 	}
 	
 	@Test
 	def void testDocumentHasEmptyPackage() {
-		val extension it = newBizBuilder()
-		
 		val doc = createDocument("test")
 		doc.name = ""
 		
-		assertTrue(throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
+		assertTrue(b.throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
 	}
 	
 	
 	@Test
 	def void testDocumentPackageIsAlwaysStartingLowerCase() {
-		val extension it = newBizBuilder()
-		
 		createDocument("iAm.starting.lOwer","test")
 		
-		assertTrue(throwsNoErrors)
+		assertTrue(b.throwsNoErrors)
 	}
 
 	@Test
 	def void testDocumentPackageIsNotAlwaysStartingLowerCase() {
-		val extension it = newBizBuilder()
-		
 		createDocument("Iam.starting.uPper","test")
 		
-		assertTrue(throwsOnlyError(DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE))
+		assertTrue(b.throwsOnlyError(DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE))
 	}
 }
