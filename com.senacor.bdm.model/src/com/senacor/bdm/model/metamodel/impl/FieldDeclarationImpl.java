@@ -2,8 +2,8 @@
  */
 package com.senacor.bdm.model.metamodel.impl;
 
+import com.senacor.bdm.model.metamodel.Entity;
 import com.senacor.bdm.model.metamodel.FieldDeclaration;
-import com.senacor.bdm.model.metamodel.Member;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl#getMember <em>Member</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,10 +98,10 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Member getMember() {
-		if (eContainerFeatureID() != MetamodelPackage.FIELD_DECLARATION__MEMBER)
+	public Entity getEntity() {
+		if (eContainerFeatureID() != MetamodelPackage.FIELD_DECLARATION__ENTITY)
 			return null;
-		return (Member) eInternalContainer();
+		return (Entity) eInternalContainer();
 	}
 
 	/**
@@ -109,8 +109,8 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMember(Member newMember, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newMember, MetamodelPackage.FIELD_DECLARATION__MEMBER, msgs);
+	public NotificationChain basicSetEntity(Entity newEntity, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newEntity, MetamodelPackage.FIELD_DECLARATION__ENTITY, msgs);
 		return msgs;
 	}
 
@@ -119,23 +119,23 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMember(Member newMember) {
-		if (newMember != eInternalContainer()
-				|| (eContainerFeatureID() != MetamodelPackage.FIELD_DECLARATION__MEMBER && newMember != null)) {
-			if (EcoreUtil.isAncestor(this, newMember))
+	public void setEntity(Entity newEntity) {
+		if (newEntity != eInternalContainer()
+				|| (eContainerFeatureID() != MetamodelPackage.FIELD_DECLARATION__ENTITY && newEntity != null)) {
+			if (EcoreUtil.isAncestor(this, newEntity))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newMember != null)
-				msgs = ((InternalEObject) newMember).eInverseAdd(this, MetamodelPackage.MEMBER__FIELDDECLARATIONS,
-						Member.class, msgs);
-			msgs = basicSetMember(newMember, msgs);
+			if (newEntity != null)
+				msgs = ((InternalEObject) newEntity).eInverseAdd(this, MetamodelPackage.ENTITY__FIELDS, Entity.class,
+						msgs);
+			msgs = basicSetEntity(newEntity, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.FIELD_DECLARATION__MEMBER, newMember,
-					newMember));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.FIELD_DECLARATION__ENTITY, newEntity,
+					newEntity));
 	}
 
 	/**
@@ -146,10 +146,10 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
+		case MetamodelPackage.FIELD_DECLARATION__ENTITY:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetMember((Member) otherEnd, msgs);
+			return basicSetEntity((Entity) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -162,8 +162,8 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
-			return basicSetMember(null, msgs);
+		case MetamodelPackage.FIELD_DECLARATION__ENTITY:
+			return basicSetEntity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -176,9 +176,8 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
-			return eInternalContainer().eInverseRemove(this, MetamodelPackage.MEMBER__FIELDDECLARATIONS, Member.class,
-					msgs);
+		case MetamodelPackage.FIELD_DECLARATION__ENTITY:
+			return eInternalContainer().eInverseRemove(this, MetamodelPackage.ENTITY__FIELDS, Entity.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -193,8 +192,8 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 		switch (featureID) {
 		case MetamodelPackage.FIELD_DECLARATION__NAME:
 			return getName();
-		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
-			return getMember();
+		case MetamodelPackage.FIELD_DECLARATION__ENTITY:
+			return getEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,8 +209,8 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 		case MetamodelPackage.FIELD_DECLARATION__NAME:
 			setName((String) newValue);
 			return;
-		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
-			setMember((Member) newValue);
+		case MetamodelPackage.FIELD_DECLARATION__ENTITY:
+			setEntity((Entity) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,8 +227,8 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 		case MetamodelPackage.FIELD_DECLARATION__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
-			setMember((Member) null);
+		case MetamodelPackage.FIELD_DECLARATION__ENTITY:
+			setEntity((Entity) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -245,8 +244,8 @@ public abstract class FieldDeclarationImpl extends MinimalEObjectImpl.Container 
 		switch (featureID) {
 		case MetamodelPackage.FIELD_DECLARATION__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case MetamodelPackage.FIELD_DECLARATION__MEMBER:
-			return getMember() != null;
+		case MetamodelPackage.FIELD_DECLARATION__ENTITY:
+			return getEntity() != null;
 		}
 		return super.eIsSet(featureID);
 	}

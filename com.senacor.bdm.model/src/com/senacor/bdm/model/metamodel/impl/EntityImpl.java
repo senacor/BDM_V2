@@ -2,8 +2,8 @@
  */
 package com.senacor.bdm.model.metamodel.impl;
 
-import com.senacor.bdm.model.metamodel.BusinessKey;
 import com.senacor.bdm.model.metamodel.Entity;
+import com.senacor.bdm.model.metamodel.FieldDeclaration;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
 import java.util.Collection;
@@ -24,21 +24,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.EntityImpl#getBusinesskeys <em>Businesskeys</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.EntityImpl#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class EntityImpl extends MemberImpl implements Entity {
 	/**
-	 * The cached value of the '{@link #getBusinesskeys() <em>Businesskeys</em>}' containment reference list.
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBusinesskeys()
+	 * @see #getFields()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BusinessKey> businesskeys;
+	protected EList<FieldDeclaration> fields;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,12 +64,12 @@ public abstract class EntityImpl extends MemberImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BusinessKey> getBusinesskeys() {
-		if (businesskeys == null) {
-			businesskeys = new EObjectContainmentWithInverseEList<BusinessKey>(BusinessKey.class, this,
-					MetamodelPackage.ENTITY__BUSINESSKEYS, MetamodelPackage.BUSINESS_KEY__ENTITY);
+	public EList<FieldDeclaration> getFields() {
+		if (fields == null) {
+			fields = new EObjectContainmentWithInverseEList<FieldDeclaration>(FieldDeclaration.class, this,
+					MetamodelPackage.ENTITY__FIELDS, MetamodelPackage.FIELD_DECLARATION__ENTITY);
 		}
-		return businesskeys;
+		return fields;
 	}
 
 	/**
@@ -81,8 +81,8 @@ public abstract class EntityImpl extends MemberImpl implements Entity {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.ENTITY__BUSINESSKEYS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBusinesskeys()).basicAdd(otherEnd, msgs);
+		case MetamodelPackage.ENTITY__FIELDS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFields()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -95,8 +95,8 @@ public abstract class EntityImpl extends MemberImpl implements Entity {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.ENTITY__BUSINESSKEYS:
-			return ((InternalEList<?>) getBusinesskeys()).basicRemove(otherEnd, msgs);
+		case MetamodelPackage.ENTITY__FIELDS:
+			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -109,8 +109,8 @@ public abstract class EntityImpl extends MemberImpl implements Entity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MetamodelPackage.ENTITY__BUSINESSKEYS:
-			return getBusinesskeys();
+		case MetamodelPackage.ENTITY__FIELDS:
+			return getFields();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,9 +124,9 @@ public abstract class EntityImpl extends MemberImpl implements Entity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MetamodelPackage.ENTITY__BUSINESSKEYS:
-			getBusinesskeys().clear();
-			getBusinesskeys().addAll((Collection<? extends BusinessKey>) newValue);
+		case MetamodelPackage.ENTITY__FIELDS:
+			getFields().clear();
+			getFields().addAll((Collection<? extends FieldDeclaration>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -140,8 +140,8 @@ public abstract class EntityImpl extends MemberImpl implements Entity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MetamodelPackage.ENTITY__BUSINESSKEYS:
-			getBusinesskeys().clear();
+		case MetamodelPackage.ENTITY__FIELDS:
+			getFields().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -155,8 +155,8 @@ public abstract class EntityImpl extends MemberImpl implements Entity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MetamodelPackage.ENTITY__BUSINESSKEYS:
-			return businesskeys != null && !businesskeys.isEmpty();
+		case MetamodelPackage.ENTITY__FIELDS:
+			return fields != null && !fields.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

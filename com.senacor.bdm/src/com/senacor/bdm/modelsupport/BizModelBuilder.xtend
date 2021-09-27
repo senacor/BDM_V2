@@ -1,6 +1,8 @@
 package com.senacor.bdm.modelsupport
 
 import com.senacor.bdm.model.metamodel.BaseEntity
+import com.senacor.bdm.model.metamodel.Entity
+import com.senacor.bdm.model.metamodel.Field
 import com.senacor.bdm.model.metamodel.LogDocument
 
 class BizModelBuilder extends AbstractModelBuilder {
@@ -17,6 +19,14 @@ class BizModelBuilder extends AbstractModelBuilder {
 		return fact.createBaseEntity => [
 			name = providedName
 			logdocument = doc
+		]
+	}
+	
+	/** Creates a new {@link Field} in the provided entity. */
+	def createField(Entity ent, String providedName) {
+		return fact.createField => [
+			name = providedName
+			entity = ent
 		]
 	}
 	

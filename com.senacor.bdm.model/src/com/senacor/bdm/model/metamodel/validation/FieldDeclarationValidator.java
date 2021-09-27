@@ -4,6 +4,7 @@
  */
 package com.senacor.bdm.model.metamodel.validation;
 
+import com.senacor.bdm.model.metamodel.Entity;
 import com.senacor.bdm.model.metamodel.Member;
 
 /**
@@ -14,6 +15,8 @@ import com.senacor.bdm.model.metamodel.Member;
  */
 public interface FieldDeclarationValidator {
 	boolean validate();
+
+	boolean validateEntity(Entity value);
 
 	boolean validateMember(Member value);
 }

@@ -4,7 +4,9 @@
  */
 package com.senacor.bdm.model.metamodel.validation;
 
+import com.senacor.bdm.model.metamodel.BusinessKey;
 import com.senacor.bdm.model.metamodel.LogDocument;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * A sample validator interface for {@link com.senacor.bdm.model.metamodel.BaseEntity}.
@@ -14,6 +16,8 @@ import com.senacor.bdm.model.metamodel.LogDocument;
  */
 public interface BaseEntityValidator {
 	boolean validate();
+
+	boolean validateBusinesskeys(EList<BusinessKey> value);
 
 	boolean validateName(String value);
 

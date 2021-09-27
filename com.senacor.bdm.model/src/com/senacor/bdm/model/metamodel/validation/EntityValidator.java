@@ -6,6 +6,7 @@ package com.senacor.bdm.model.metamodel.validation;
 
 import com.senacor.bdm.model.metamodel.BusinessKey;
 
+import com.senacor.bdm.model.metamodel.FieldDeclaration;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface EntityValidator {
 	boolean validate();
+
+	boolean validateFields(EList<FieldDeclaration> value);
 
 	boolean validateBusinesskeys(EList<BusinessKey> value);
 }

@@ -205,22 +205,13 @@ public interface MetamodelPackage extends EPackage {
 	int MEMBER__LOGDOCUMENT = INAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fielddeclarations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMBER__FIELDDECLARATIONS = INAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Member</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMBER_FEATURE_COUNT = INAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MEMBER_FEATURE_COUNT = INAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Member</em>' class.
@@ -260,22 +251,13 @@ public interface MetamodelPackage extends EPackage {
 	int ENTITY__LOGDOCUMENT = MEMBER__LOGDOCUMENT;
 
 	/**
-	 * The feature id for the '<em><b>Fielddeclarations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__FIELDDECLARATIONS = MEMBER__FIELDDECLARATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Businesskeys</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__BUSINESSKEYS = MEMBER_FEATURE_COUNT + 0;
+	int ENTITY__FIELDS = MEMBER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -324,13 +306,13 @@ public interface MetamodelPackage extends EPackage {
 	int BASE_ENTITY__LOGDOCUMENT = INAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fielddeclarations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASE_ENTITY__FIELDDECLARATIONS = INAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BASE_ENTITY__FIELDS = INAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Businesskeys</b></em>' containment reference list.
@@ -399,13 +381,13 @@ public interface MetamodelPackage extends EPackage {
 	int FIELD_DECLARATION__NAME = INAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Member</b></em>' container reference.
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_DECLARATION__MEMBER = INAMED_ELEMENT_FEATURE_COUNT + 0;
+	int FIELD_DECLARATION__ENTITY = INAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Field Declaration</em>' class.
@@ -435,13 +417,13 @@ public interface MetamodelPackage extends EPackage {
 	int FIELD__NAME = FIELD_DECLARATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Member</b></em>' container reference.
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__MEMBER = FIELD_DECLARATION__MEMBER;
+	int FIELD__ENTITY = FIELD_DECLARATION__ENTITY;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -471,22 +453,22 @@ public interface MetamodelPackage extends EPackage {
 	int BUSINESS_KEY__NAME = INAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Fielddeclaration</b></em>' reference list.
+	 * The feature id for the '<em><b>Fields</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_KEY__FIELDDECLARATION = INAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BUSINESS_KEY__FIELDS = INAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * The feature id for the '<em><b>Baseentity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_KEY__ENTITY = INAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BUSINESS_KEY__BASEENTITY = INAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Business Key</em>' class.
@@ -549,17 +531,6 @@ public interface MetamodelPackage extends EPackage {
 	EReference getMember_Logdocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.Member#getFielddeclarations <em>Fielddeclarations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fielddeclarations</em>'.
-	 * @see com.senacor.bdm.model.metamodel.Member#getFielddeclarations()
-	 * @see #getMember()
-	 * @generated
-	 */
-	EReference getMember_Fielddeclarations();
-
-	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.Document <em>Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -612,15 +583,15 @@ public interface MetamodelPackage extends EPackage {
 	EClass getEntity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.Entity#getBusinesskeys <em>Businesskeys</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.Entity#getFields <em>Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Businesskeys</em>'.
-	 * @see com.senacor.bdm.model.metamodel.Entity#getBusinesskeys()
+	 * @return the meta object for the containment reference list '<em>Fields</em>'.
+	 * @see com.senacor.bdm.model.metamodel.Entity#getFields()
 	 * @see #getEntity()
 	 * @generated
 	 */
-	EReference getEntity_Businesskeys();
+	EReference getEntity_Fields();
 
 	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.BaseEntity <em>Base Entity</em>}'.
@@ -631,6 +602,17 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBaseEntity();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.BaseEntity#getBusinesskeys <em>Businesskeys</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Businesskeys</em>'.
+	 * @see com.senacor.bdm.model.metamodel.BaseEntity#getBusinesskeys()
+	 * @see #getBaseEntity()
+	 * @generated
+	 */
+	EReference getBaseEntity_Businesskeys();
 
 	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.Field <em>Field</em>}'.
@@ -653,26 +635,26 @@ public interface MetamodelPackage extends EPackage {
 	EClass getBusinessKey();
 
 	/**
-	 * Returns the meta object for the reference list '{@link com.senacor.bdm.model.metamodel.BusinessKey#getFielddeclaration <em>Fielddeclaration</em>}'.
+	 * Returns the meta object for the reference list '{@link com.senacor.bdm.model.metamodel.BusinessKey#getFields <em>Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fielddeclaration</em>'.
-	 * @see com.senacor.bdm.model.metamodel.BusinessKey#getFielddeclaration()
+	 * @return the meta object for the reference list '<em>Fields</em>'.
+	 * @see com.senacor.bdm.model.metamodel.BusinessKey#getFields()
 	 * @see #getBusinessKey()
 	 * @generated
 	 */
-	EReference getBusinessKey_Fielddeclaration();
+	EReference getBusinessKey_Fields();
 
 	/**
-	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.BusinessKey#getEntity <em>Entity</em>}'.
+	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.BusinessKey#getBaseentity <em>Baseentity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Entity</em>'.
-	 * @see com.senacor.bdm.model.metamodel.BusinessKey#getEntity()
+	 * @return the meta object for the container reference '<em>Baseentity</em>'.
+	 * @see com.senacor.bdm.model.metamodel.BusinessKey#getBaseentity()
 	 * @see #getBusinessKey()
 	 * @generated
 	 */
-	EReference getBusinessKey_Entity();
+	EReference getBusinessKey_Baseentity();
 
 	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.FieldDeclaration <em>Field Declaration</em>}'.
@@ -685,15 +667,15 @@ public interface MetamodelPackage extends EPackage {
 	EClass getFieldDeclaration();
 
 	/**
-	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.FieldDeclaration#getMember <em>Member</em>}'.
+	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.FieldDeclaration#getEntity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Member</em>'.
-	 * @see com.senacor.bdm.model.metamodel.FieldDeclaration#getMember()
+	 * @return the meta object for the container reference '<em>Entity</em>'.
+	 * @see com.senacor.bdm.model.metamodel.FieldDeclaration#getEntity()
 	 * @see #getFieldDeclaration()
 	 * @generated
 	 */
-	EReference getFieldDeclaration_Member();
+	EReference getFieldDeclaration_Entity();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -755,14 +737,6 @@ public interface MetamodelPackage extends EPackage {
 		EReference MEMBER__LOGDOCUMENT = eINSTANCE.getMember_Logdocument();
 
 		/**
-		 * The meta object literal for the '<em><b>Fielddeclarations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MEMBER__FIELDDECLARATIONS = eINSTANCE.getMember_Fielddeclarations();
-
-		/**
 		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.Document <em>Document</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -809,12 +783,12 @@ public interface MetamodelPackage extends EPackage {
 		EClass ENTITY = eINSTANCE.getEntity();
 
 		/**
-		 * The meta object literal for the '<em><b>Businesskeys</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTITY__BUSINESSKEYS = eINSTANCE.getEntity_Businesskeys();
+		EReference ENTITY__FIELDS = eINSTANCE.getEntity_Fields();
 
 		/**
 		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl <em>Base Entity</em>}' class.
@@ -825,6 +799,14 @@ public interface MetamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BASE_ENTITY = eINSTANCE.getBaseEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Businesskeys</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BASE_ENTITY__BUSINESSKEYS = eINSTANCE.getBaseEntity_Businesskeys();
 
 		/**
 		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.FieldImpl <em>Field</em>}' class.
@@ -847,20 +829,20 @@ public interface MetamodelPackage extends EPackage {
 		EClass BUSINESS_KEY = eINSTANCE.getBusinessKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Fielddeclaration</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Fields</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUSINESS_KEY__FIELDDECLARATION = eINSTANCE.getBusinessKey_Fielddeclaration();
+		EReference BUSINESS_KEY__FIELDS = eINSTANCE.getBusinessKey_Fields();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Baseentity</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUSINESS_KEY__ENTITY = eINSTANCE.getBusinessKey_Entity();
+		EReference BUSINESS_KEY__BASEENTITY = eINSTANCE.getBusinessKey_Baseentity();
 
 		/**
 		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.FieldDeclarationImpl <em>Field Declaration</em>}' class.
@@ -873,12 +855,12 @@ public interface MetamodelPackage extends EPackage {
 		EClass FIELD_DECLARATION = eINSTANCE.getFieldDeclaration();
 
 		/**
-		 * The meta object literal for the '<em><b>Member</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Entity</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FIELD_DECLARATION__MEMBER = eINSTANCE.getFieldDeclaration_Member();
+		EReference FIELD_DECLARATION__ENTITY = eINSTANCE.getFieldDeclaration_Entity();
 
 	}
 
