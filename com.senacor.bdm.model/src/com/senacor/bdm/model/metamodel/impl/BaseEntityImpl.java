@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getLogdocument <em>Logdocument</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getFielddeclarations <em>Fielddeclarations</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.BaseEntityImpl#getBusinesskeys <em>Businesskeys</em>}</li>
  * </ul>
  *
@@ -60,14 +60,14 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	 */
 	protected String name = NAME_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getFielddeclarations() <em>Fielddeclarations</em>}' containment reference list.
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFielddeclarations()
+	 * @see #getFields()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FieldDeclaration> fielddeclarations;
+	protected EList<FieldDeclaration> fields;
 	/**
 	 * The cached value of the '{@link #getBusinesskeys() <em>Businesskeys</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -168,12 +168,12 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FieldDeclaration> getFielddeclarations() {
-		if (fielddeclarations == null) {
-			fielddeclarations = new EObjectContainmentWithInverseEList<FieldDeclaration>(FieldDeclaration.class, this,
-					MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS, MetamodelPackage.FIELD_DECLARATION__MEMBER);
+	public EList<FieldDeclaration> getFields() {
+		if (fields == null) {
+			fields = new EObjectContainmentWithInverseEList<FieldDeclaration>(FieldDeclaration.class, this,
+					MetamodelPackage.BASE_ENTITY__FIELDS, MetamodelPackage.FIELD_DECLARATION__ENTITY);
 		}
-		return fielddeclarations;
+		return fields;
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 	public EList<BusinessKey> getBusinesskeys() {
 		if (businesskeys == null) {
 			businesskeys = new EObjectContainmentWithInverseEList<BusinessKey>(BusinessKey.class, this,
-					MetamodelPackage.BASE_ENTITY__BUSINESSKEYS, MetamodelPackage.BUSINESS_KEY__ENTITY);
+					MetamodelPackage.BASE_ENTITY__BUSINESSKEYS, MetamodelPackage.BUSINESS_KEY__BASEENTITY);
 		}
 		return businesskeys;
 	}
@@ -202,9 +202,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetLogdocument((LogDocument) otherEnd, msgs);
-		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFielddeclarations()).basicAdd(otherEnd,
-					msgs);
+		case MetamodelPackage.BASE_ENTITY__FIELDS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFields()).basicAdd(otherEnd, msgs);
 		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBusinesskeys()).basicAdd(otherEnd, msgs);
 		}
@@ -221,8 +220,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 		switch (featureID) {
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			return basicSetLogdocument(null, msgs);
-		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
-			return ((InternalEList<?>) getFielddeclarations()).basicRemove(otherEnd, msgs);
+		case MetamodelPackage.BASE_ENTITY__FIELDS:
+			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
 		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
 			return ((InternalEList<?>) getBusinesskeys()).basicRemove(otherEnd, msgs);
 		}
@@ -256,8 +255,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 			return getName();
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			return getLogdocument();
-		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
-			return getFielddeclarations();
+		case MetamodelPackage.BASE_ENTITY__FIELDS:
+			return getFields();
 		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
 			return getBusinesskeys();
 		}
@@ -279,9 +278,9 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			setLogdocument((LogDocument) newValue);
 			return;
-		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
-			getFielddeclarations().clear();
-			getFielddeclarations().addAll((Collection<? extends FieldDeclaration>) newValue);
+		case MetamodelPackage.BASE_ENTITY__FIELDS:
+			getFields().clear();
+			getFields().addAll((Collection<? extends FieldDeclaration>) newValue);
 			return;
 		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
 			getBusinesskeys().clear();
@@ -305,8 +304,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			setLogdocument((LogDocument) null);
 			return;
-		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
-			getFielddeclarations().clear();
+		case MetamodelPackage.BASE_ENTITY__FIELDS:
+			getFields().clear();
 			return;
 		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
 			getBusinesskeys().clear();
@@ -327,8 +326,8 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 			return getLogdocument() != null;
-		case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
-			return fielddeclarations != null && !fielddeclarations.isEmpty();
+		case MetamodelPackage.BASE_ENTITY__FIELDS:
+			return fields != null && !fields.isEmpty();
 		case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
 			return businesskeys != null && !businesskeys.isEmpty();
 		}
@@ -346,16 +345,14 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 			switch (derivedFeatureID) {
 			case MetamodelPackage.BASE_ENTITY__LOGDOCUMENT:
 				return MetamodelPackage.MEMBER__LOGDOCUMENT;
-			case MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS:
-				return MetamodelPackage.MEMBER__FIELDDECLARATIONS;
 			default:
 				return -1;
 			}
 		}
 		if (baseClass == Entity.class) {
 			switch (derivedFeatureID) {
-			case MetamodelPackage.BASE_ENTITY__BUSINESSKEYS:
-				return MetamodelPackage.ENTITY__BUSINESSKEYS;
+			case MetamodelPackage.BASE_ENTITY__FIELDS:
+				return MetamodelPackage.ENTITY__FIELDS;
 			default:
 				return -1;
 			}
@@ -374,16 +371,14 @@ public class BaseEntityImpl extends MinimalEObjectImpl.Container implements Base
 			switch (baseFeatureID) {
 			case MetamodelPackage.MEMBER__LOGDOCUMENT:
 				return MetamodelPackage.BASE_ENTITY__LOGDOCUMENT;
-			case MetamodelPackage.MEMBER__FIELDDECLARATIONS:
-				return MetamodelPackage.BASE_ENTITY__FIELDDECLARATIONS;
 			default:
 				return -1;
 			}
 		}
 		if (baseClass == Entity.class) {
 			switch (baseFeatureID) {
-			case MetamodelPackage.ENTITY__BUSINESSKEYS:
-				return MetamodelPackage.BASE_ENTITY__BUSINESSKEYS;
+			case MetamodelPackage.ENTITY__FIELDS:
+				return MetamodelPackage.BASE_ENTITY__FIELDS;
 			default:
 				return -1;
 			}

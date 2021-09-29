@@ -2,8 +2,8 @@
  */
 package com.senacor.bdm.model.metamodel.impl;
 
+import com.senacor.bdm.model.metamodel.BaseEntity;
 import com.senacor.bdm.model.metamodel.BusinessKey;
-import com.senacor.bdm.model.metamodel.Entity;
 import com.senacor.bdm.model.metamodel.FieldDeclaration;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
 
@@ -32,8 +32,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl#getFielddeclaration <em>Fielddeclaration</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl#getBaseentity <em>Baseentity</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +58,14 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 */
 	protected String name = NAME_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getFielddeclaration() <em>Fielddeclaration</em>}' reference list.
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFielddeclaration()
+	 * @see #getFields()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FieldDeclaration> fielddeclaration;
+	protected EList<FieldDeclaration> fields;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,12 +112,12 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FieldDeclaration> getFielddeclaration() {
-		if (fielddeclaration == null) {
-			fielddeclaration = new EObjectResolvingEList<FieldDeclaration>(FieldDeclaration.class, this,
-					MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION);
+	public EList<FieldDeclaration> getFields() {
+		if (fields == null) {
+			fields = new EObjectResolvingEList<FieldDeclaration>(FieldDeclaration.class, this,
+					MetamodelPackage.BUSINESS_KEY__FIELDS);
 		}
-		return fielddeclaration;
+		return fields;
 	}
 
 	/**
@@ -125,10 +125,10 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity getEntity() {
-		if (eContainerFeatureID() != MetamodelPackage.BUSINESS_KEY__ENTITY)
+	public BaseEntity getBaseentity() {
+		if (eContainerFeatureID() != MetamodelPackage.BUSINESS_KEY__BASEENTITY)
 			return null;
-		return (Entity) eInternalContainer();
+		return (BaseEntity) eInternalContainer();
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEntity(Entity newEntity, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newEntity, MetamodelPackage.BUSINESS_KEY__ENTITY, msgs);
+	public NotificationChain basicSetBaseentity(BaseEntity newBaseentity, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newBaseentity, MetamodelPackage.BUSINESS_KEY__BASEENTITY, msgs);
 		return msgs;
 	}
 
@@ -146,23 +146,23 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntity(Entity newEntity) {
-		if (newEntity != eInternalContainer()
-				|| (eContainerFeatureID() != MetamodelPackage.BUSINESS_KEY__ENTITY && newEntity != null)) {
-			if (EcoreUtil.isAncestor(this, newEntity))
+	public void setBaseentity(BaseEntity newBaseentity) {
+		if (newBaseentity != eInternalContainer()
+				|| (eContainerFeatureID() != MetamodelPackage.BUSINESS_KEY__BASEENTITY && newBaseentity != null)) {
+			if (EcoreUtil.isAncestor(this, newBaseentity))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newEntity != null)
-				msgs = ((InternalEObject) newEntity).eInverseAdd(this, MetamodelPackage.ENTITY__BUSINESSKEYS,
-						Entity.class, msgs);
-			msgs = basicSetEntity(newEntity, msgs);
+			if (newBaseentity != null)
+				msgs = ((InternalEObject) newBaseentity).eInverseAdd(this, MetamodelPackage.BASE_ENTITY__BUSINESSKEYS,
+						BaseEntity.class, msgs);
+			msgs = basicSetBaseentity(newBaseentity, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BUSINESS_KEY__ENTITY, newEntity,
-					newEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.BUSINESS_KEY__BASEENTITY,
+					newBaseentity, newBaseentity));
 	}
 
 	/**
@@ -173,10 +173,10 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
+		case MetamodelPackage.BUSINESS_KEY__BASEENTITY:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetEntity((Entity) otherEnd, msgs);
+			return basicSetBaseentity((BaseEntity) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -189,8 +189,8 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			return basicSetEntity(null, msgs);
+		case MetamodelPackage.BUSINESS_KEY__BASEENTITY:
+			return basicSetBaseentity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -203,8 +203,9 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			return eInternalContainer().eInverseRemove(this, MetamodelPackage.ENTITY__BUSINESSKEYS, Entity.class, msgs);
+		case MetamodelPackage.BUSINESS_KEY__BASEENTITY:
+			return eInternalContainer().eInverseRemove(this, MetamodelPackage.BASE_ENTITY__BUSINESSKEYS,
+					BaseEntity.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -219,10 +220,10 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 		switch (featureID) {
 		case MetamodelPackage.BUSINESS_KEY__NAME:
 			return getName();
-		case MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION:
-			return getFielddeclaration();
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			return getEntity();
+		case MetamodelPackage.BUSINESS_KEY__FIELDS:
+			return getFields();
+		case MetamodelPackage.BUSINESS_KEY__BASEENTITY:
+			return getBaseentity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,12 +240,12 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 		case MetamodelPackage.BUSINESS_KEY__NAME:
 			setName((String) newValue);
 			return;
-		case MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION:
-			getFielddeclaration().clear();
-			getFielddeclaration().addAll((Collection<? extends FieldDeclaration>) newValue);
+		case MetamodelPackage.BUSINESS_KEY__FIELDS:
+			getFields().clear();
+			getFields().addAll((Collection<? extends FieldDeclaration>) newValue);
 			return;
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			setEntity((Entity) newValue);
+		case MetamodelPackage.BUSINESS_KEY__BASEENTITY:
+			setBaseentity((BaseEntity) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -261,11 +262,11 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 		case MetamodelPackage.BUSINESS_KEY__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION:
-			getFielddeclaration().clear();
+		case MetamodelPackage.BUSINESS_KEY__FIELDS:
+			getFields().clear();
 			return;
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			setEntity((Entity) null);
+		case MetamodelPackage.BUSINESS_KEY__BASEENTITY:
+			setBaseentity((BaseEntity) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -281,10 +282,10 @@ public class BusinessKeyImpl extends MinimalEObjectImpl.Container implements Bus
 		switch (featureID) {
 		case MetamodelPackage.BUSINESS_KEY__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case MetamodelPackage.BUSINESS_KEY__FIELDDECLARATION:
-			return fielddeclaration != null && !fielddeclaration.isEmpty();
-		case MetamodelPackage.BUSINESS_KEY__ENTITY:
-			return getEntity() != null;
+		case MetamodelPackage.BUSINESS_KEY__FIELDS:
+			return fields != null && !fields.isEmpty();
+		case MetamodelPackage.BUSINESS_KEY__BASEENTITY:
+			return getBaseentity() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -12,7 +12,6 @@ Package metamodel <http://www.example.org/metamodel>
 
   Class Member -> INamedElement
     Reference logdocument : LogDocument
-    Reference fielddeclarations : FieldDeclaration<<0..*>>
 
   Class Document
     Attribute name : EString
@@ -21,15 +20,16 @@ Package metamodel <http://www.example.org/metamodel>
     Attribute name : EString
 
   Class Entity -> Member
-    Reference businesskeys : BusinessKey<<0..*>>
+    Reference fields : FieldDeclaration<<0..*>>
 
   Class BaseEntity -> INamedElement, Entity
+    Reference businesskeys : BusinessKey<<0..*>>
 
   Class Field -> FieldDeclaration
 
   Class BusinessKey -> INamedElement
-    Reference fielddeclaration : FieldDeclaration<<0..*>>
-    Reference entity : Entity
+    Reference fields : FieldDeclaration<<0..*>>
+    Reference baseentity : BaseEntity
 
   Class FieldDeclaration -> INamedElement
-    Reference member : Member
+    Reference entity : Entity

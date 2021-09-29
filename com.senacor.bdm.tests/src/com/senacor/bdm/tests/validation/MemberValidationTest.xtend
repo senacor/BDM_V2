@@ -11,18 +11,16 @@ import static org.junit.jupiter.api.Assertions.*
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
-class MemberValidationTest extends AbstractValidationTest {
+class MemberValidationTest extends AbstractBizModelValidationTest {
 
 	@Test
 	def void testMemberIsFirstUpper() {
-		val extension it = newBizBuilder()
-		
 		createBaseEntity("Kredit")
 		
-		assertTrue(throwsNoErrors)
+		assertTrue(b.throwsNoErrors)
 		
 		createBaseEntity("kunde")
 		
-		assertTrue(throwsOnlyError(MEMBER_IS_FIRST_UPPER))
+		assertTrue(b.throwsOnlyError(MEMBER_IS_FIRST_UPPER))
 	}
 }

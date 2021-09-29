@@ -195,15 +195,6 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMember_Fielddeclarations() {
-		return (EReference) memberEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDocument() {
 		return documentEClass;
 	}
@@ -249,7 +240,7 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Businesskeys() {
+	public EReference getEntity_Fields() {
 		return (EReference) entityEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -260,6 +251,15 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 */
 	public EClass getBaseEntity() {
 		return baseEntityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBaseEntity_Businesskeys() {
+		return (EReference) baseEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -285,7 +285,7 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBusinessKey_Fielddeclaration() {
+	public EReference getBusinessKey_Fields() {
 		return (EReference) businessKeyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -294,7 +294,7 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBusinessKey_Entity() {
+	public EReference getBusinessKey_Baseentity() {
 		return (EReference) businessKeyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -312,7 +312,7 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFieldDeclaration_Member() {
+	public EReference getFieldDeclaration_Entity() {
 		return (EReference) fieldDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -350,7 +350,6 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 
 		memberEClass = createEClass(MEMBER);
 		createEReference(memberEClass, MEMBER__LOGDOCUMENT);
-		createEReference(memberEClass, MEMBER__FIELDDECLARATIONS);
 
 		documentEClass = createEClass(DOCUMENT);
 		createEAttribute(documentEClass, DOCUMENT__NAME);
@@ -359,18 +358,19 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		createEAttribute(iNamedElementEClass, INAMED_ELEMENT__NAME);
 
 		entityEClass = createEClass(ENTITY);
-		createEReference(entityEClass, ENTITY__BUSINESSKEYS);
+		createEReference(entityEClass, ENTITY__FIELDS);
 
 		baseEntityEClass = createEClass(BASE_ENTITY);
+		createEReference(baseEntityEClass, BASE_ENTITY__BUSINESSKEYS);
 
 		fieldEClass = createEClass(FIELD);
 
 		businessKeyEClass = createEClass(BUSINESS_KEY);
-		createEReference(businessKeyEClass, BUSINESS_KEY__FIELDDECLARATION);
-		createEReference(businessKeyEClass, BUSINESS_KEY__ENTITY);
+		createEReference(businessKeyEClass, BUSINESS_KEY__FIELDS);
+		createEReference(businessKeyEClass, BUSINESS_KEY__BASEENTITY);
 
 		fieldDeclarationEClass = createEClass(FIELD_DECLARATION);
-		createEReference(fieldDeclarationEClass, FIELD_DECLARATION__MEMBER);
+		createEReference(fieldDeclarationEClass, FIELD_DECLARATION__ENTITY);
 	}
 
 	/**
@@ -422,9 +422,6 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		initEReference(getMember_Logdocument(), this.getLogDocument(), this.getLogDocument_Members(), "logdocument",
 				null, 0, 1, Member.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMember_Fielddeclarations(), this.getFieldDeclaration(), this.getFieldDeclaration_Member(),
-				"fielddeclarations", null, 0, -1, Member.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentEClass, Document.class, "Document", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, Document.class, !IS_TRANSIENT,
@@ -436,29 +433,32 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntity_Businesskeys(), this.getBusinessKey(), this.getBusinessKey_Entity(), "businesskeys",
+		initEReference(getEntity_Fields(), this.getFieldDeclaration(), this.getFieldDeclaration_Entity(), "fields",
 				null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(baseEntityEClass, BaseEntity.class, "BaseEntity", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBaseEntity_Businesskeys(), this.getBusinessKey(), this.getBusinessKey_Baseentity(),
+				"businesskeys", null, 0, -1, BaseEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(businessKeyEClass, BusinessKey.class, "BusinessKey", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBusinessKey_Fielddeclaration(), this.getFieldDeclaration(), null, "fielddeclaration", null, 0,
-				-1, BusinessKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getBusinessKey_Fields(), this.getFieldDeclaration(), null, "fields", null, 0, -1,
+				BusinessKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessKey_Entity(), this.getEntity(), this.getEntity_Businesskeys(), "entity", null, 0, 1,
-				BusinessKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessKey_Baseentity(), this.getBaseEntity(), this.getBaseEntity_Businesskeys(),
+				"baseentity", null, 0, 1, BusinessKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldDeclarationEClass, FieldDeclaration.class, "FieldDeclaration", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFieldDeclaration_Member(), this.getMember(), this.getMember_Fielddeclarations(), "member",
-				null, 0, 1, FieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFieldDeclaration_Entity(), this.getEntity(), this.getEntity_Fields(), "entity", null, 0, 1,
+				FieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

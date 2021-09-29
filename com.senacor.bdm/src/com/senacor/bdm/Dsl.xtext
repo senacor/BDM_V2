@@ -18,15 +18,14 @@ Member:
 	
 BaseEntity:
 	'BaseEntity' name=ID '{'
-		fielddeclarations+=FieldDeclaration (',' fielddeclarations+=FieldDeclaration)* (',')?
+		fields+=FieldDeclaration (',' fields+=FieldDeclaration)* (',')?
+//		businesskeys+=Busines (',' fields+=FieldDeclaration)* (',')?
 	'}'
 ;
 
 FieldDeclaration: 
 	Field
 ;
-
-
 
 Field:
 	'Field' name=ID

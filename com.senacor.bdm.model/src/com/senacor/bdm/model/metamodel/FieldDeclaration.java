@@ -11,7 +11,7 @@ package com.senacor.bdm.model.metamodel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.senacor.bdm.model.metamodel.FieldDeclaration#getMember <em>Member</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.FieldDeclaration#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getFieldDeclaration()
@@ -20,27 +20,27 @@ package com.senacor.bdm.model.metamodel;
  */
 public interface FieldDeclaration extends INamedElement {
 	/**
-	 * Returns the value of the '<em><b>Member</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.Member#getFielddeclarations <em>Fielddeclarations</em>}'.
+	 * Returns the value of the '<em><b>Entity</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.Entity#getFields <em>Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Member</em>' container reference.
-	 * @see #setMember(Member)
-	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getFieldDeclaration_Member()
-	 * @see com.senacor.bdm.model.metamodel.Member#getFielddeclarations
-	 * @model opposite="fielddeclarations" transient="false"
+	 * @return the value of the '<em>Entity</em>' container reference.
+	 * @see #setEntity(Entity)
+	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getFieldDeclaration_Entity()
+	 * @see com.senacor.bdm.model.metamodel.Entity#getFields
+	 * @model opposite="fields" transient="false"
 	 * @generated
 	 */
-	Member getMember();
+	Entity getEntity();
 
 	/**
-	 * Sets the value of the '{@link com.senacor.bdm.model.metamodel.FieldDeclaration#getMember <em>Member</em>}' container reference.
+	 * Sets the value of the '{@link com.senacor.bdm.model.metamodel.FieldDeclaration#getEntity <em>Entity</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Member</em>' container reference.
-	 * @see #getMember()
+	 * @param value the new value of the '<em>Entity</em>' container reference.
+	 * @see #getEntity()
 	 * @generated
 	 */
-	void setMember(Member value);
+	void setEntity(Entity value);
 
 } // FieldDeclaration

@@ -6,19 +6,30 @@ import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
 
+import static com.senacor.bdm.validation.biz.INamedElementValidator.*
 import static org.junit.jupiter.api.Assertions.*
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
-class INamedElementValidationTest extends AbstractValidationTest {
+class INamedElementValidationTest extends AbstractBizModelValidationTest {
 
 	@Test
 	def void testINamedElementIsFirstUpper() {
-		val extension it = newBizBuilder()
+		val be = createBaseEntity("Test")
+		be.createField("TestFeld")
 		
-		createBaseEntity("Test")
+		assertTrue(b.throwsNoErrors)
 		
-		assertTrue(throwsNoErrors)
+		
+	}
+	
+	@Test
+	def void test_INAMED_ELEMENT__IS_FIRST_UPPER() {
+		val be = createBaseEntity("Test")
+		be.createField("testFeld")
+		
+		
+		assertTrue(b.throwsOnlyError(INAMED_ELEMENT__IS_FIRST_UPPER))
 	}
 	
 }

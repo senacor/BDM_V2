@@ -2,8 +2,6 @@
  */
 package com.senacor.bdm.model.metamodel;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Member</b></em>'.
@@ -14,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.Member#getLogdocument <em>Logdocument</em>}</li>
- *   <li>{@link com.senacor.bdm.model.metamodel.Member#getFielddeclarations <em>Fielddeclarations</em>}</li>
  * </ul>
  *
  * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getMember()
@@ -45,19 +42,5 @@ public interface Member extends INamedElement {
 	 * @generated
 	 */
 	void setLogdocument(LogDocument value);
-
-	/**
-	 * Returns the value of the '<em><b>Fielddeclarations</b></em>' containment reference list.
-	 * The list contents are of type {@link com.senacor.bdm.model.metamodel.FieldDeclaration}.
-	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.FieldDeclaration#getMember <em>Member</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fielddeclarations</em>' containment reference list.
-	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getMember_Fielddeclarations()
-	 * @see com.senacor.bdm.model.metamodel.FieldDeclaration#getMember
-	 * @model opposite="member" containment="true"
-	 * @generated
-	 */
-	EList<FieldDeclaration> getFielddeclarations();
 
 } // Member
