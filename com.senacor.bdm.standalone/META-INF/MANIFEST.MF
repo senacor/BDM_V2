@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Standalone
+Bundle-SymbolicName: com.senacor.bdm.standalone
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: com.senacor.bdm.standalone
+Export-Package: com.senacor.bdm.standalone
+Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.25.0"

@@ -30,6 +30,7 @@
 		<module>../com.senacor.bdm.tests</module>
 		<module>../com.senacor.bdm.ui.tests</module>
 		<module>../com.senacor.bdm.model</module>
+		<module>../com.senacor.bdm.standalone</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>

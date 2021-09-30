@@ -18,8 +18,22 @@ Member:
 	
 BaseEntity:
 	'BaseEntity' name=ID '{'
-		fields+=FieldDeclaration (',' fields+=FieldDeclaration)* (',')?
-//		businesskeys+=Busines (',' fields+=FieldDeclaration)* (',')?
+		(
+			EntityElement (',' EntityElement)* (',')?
+		)?
+	'}'
+;
+
+fragment EntityElement *:
+	fields+=FieldDeclaration |businesskeys+=BusinessKey
+;
+
+
+BusinessKey:
+	'BusinessKey' name=ID '{'
+		(
+			fields+=[FieldDeclaration|QualifiedName]  (',' fields+=[FieldDeclaration|QualifiedName])*
+		)
 	'}'
 ;
 
