@@ -149,14 +149,14 @@
 					</transformers>
 					<artifactSet>
 						<excludes><!-- avoid duplicate inclusion due to addjars plugin -->
-							<exclude>*:lsMavenTychoFatjar.ide-org.eclipse.lsp4j*</exclude>
-							<exclude>*:lsMavenTychoFatjar.ide-org.eclipse.xtext.xbase.lib*</exclude>
-							<exclude>*:lsMavenTychoFatjar.ide-org.eclipse.xtend.lib*</exclude>
-							<exclude>*:lsMavenTychoFatjar.ide-com.google.guava*</exclude>
-							<exclude>*:lsMavenTychoFatjar.ide-asm*</exclude>
-							<exclude>*:lsMavenTychoFatjar.ide-log4j*</exclude>
-							<exclude>*:lsMavenTychoFatjar.ide-org.objectweb.asm*</exclude>
-							<exclude>*:lsMavenTychoFatjar.ide-org.apache.log4j*</exclude>
+							<!-- <exclude>*:lsMavenTychoFatjar.ide-org.eclipse.lsp4j*</exclude>           -->
+							<!-- <exclude>*:lsMavenTychoFatjar.ide-org.eclipse.xtext.xbase.lib*</exclude> -->
+							<!-- <exclude>*:lsMavenTychoFatjar.ide-org.eclipse.xtend.lib*</exclude>       -->
+							<!-- <exclude>*:lsMavenTychoFatjar.ide-com.google.guava*</exclude>            -->
+							<!-- <exclude>*:lsMavenTychoFatjar.ide-asm*</exclude>                         -->
+							<!-- <exclude>*:lsMavenTychoFatjar.ide-log4j*</exclude>                       -->
+							<!-- <exclude>*:lsMavenTychoFatjar.ide-org.objectweb.asm*</exclude>           -->
+							<!-- <exclude>*:lsMavenTychoFatjar.ide-org.apache.log4j*</exclude>            -->
 						</excludes>
 					</artifactSet>
 					<filters>
