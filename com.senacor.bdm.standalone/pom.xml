@@ -16,29 +16,17 @@
 			<artifactId>log4j</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.lsp4j</groupId>
-			<artifactId>org.eclipse.lsp4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.ow2.asm</groupId>
-			<artifactId>asm</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.ow2.asm</groupId>
-			<artifactId>asm-commons</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.ow2.asm</groupId>
-			<artifactId>asm-tree</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.eclipse.xtend</groupId>
 			<artifactId>org.eclipse.xtend.lib</artifactId>
 			<version>2.25.0</version>
 		</dependency>
 	</dependencies>
+	
+	
 	<build>
 		<plugins>
+		
+			<!-- compile xtend-files -->
 			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
 				<artifactId>xtend-maven-plugin</artifactId>
@@ -56,6 +44,7 @@
 				</executions>
 			</plugin>
 			
+			<!-- sets the target platform (but also includes dependencies directly set in this POM) -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -63,6 +52,8 @@
 					<pomDependencies>consider</pomDependencies>
 				</configuration>
 			</plugin>
+			
+			<!-- copy all dependencies to target/lib folder -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -113,6 +104,8 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<!-- adds all jars in target/lib to classpath -->
 			<plugin>
 				<groupId>com.googlecode.addjars-maven-plugin</groupId>
 				<artifactId>addjars-maven-plugin</artifactId>
@@ -133,15 +126,18 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<!-- package result in executable jar, with com.senacor.bdm.standalone.Main as starting class -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>3.2.4</version>
 				<configuration>
+					<finalName>bdmc</finalName>
 					<transformers>
 						<transformer
 							implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-							<mainClass>org.eclipse.xtext.ide.server.ServerLauncher</mainClass>
+							<mainClass>com.senacor.bdm.standalone.Main</mainClass>
 						</transformer>
 						<transformer
 							implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
@@ -197,17 +193,10 @@
 						<goals>
 							<goal>shade</goal>
 						</goals>
-						<configuration>
-							<transformers>
-								<transformer
-									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.senacor.bdm.standalone.Main</mainClass>
-								</transformer>
-							</transformers>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+			
 		</plugins>
 	</build>
 
