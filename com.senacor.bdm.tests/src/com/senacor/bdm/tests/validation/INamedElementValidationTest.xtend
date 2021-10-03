@@ -17,19 +17,18 @@ class INamedElementValidationTest extends AbstractBizModelValidationTest {
 	def void testINamedElementIsFirstUpper() {
 		val be = createBaseEntity("Test")
 		be.createField("TestFeld")
-		
+		be.createBusinessKey("Bk1")
 		assertTrue(b.throwsNoErrors)
-		
-		
+
 	}
-	
+
 	@Test
 	def void test_INAMED_ELEMENT__IS_FIRST_UPPER() {
 		val be = createBaseEntity("Test")
 		be.createField("testFeld")
-		
-		
+		be.createBusinessKey("Bk1")
+
 		assertTrue(b.throwsOnlyError(INAMED_ELEMENT__IS_FIRST_UPPER))
 	}
-	
+
 }
