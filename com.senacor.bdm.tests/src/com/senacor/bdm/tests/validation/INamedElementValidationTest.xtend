@@ -12,29 +12,25 @@ import static org.junit.jupiter.api.Assertions.*
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
 class INamedElementValidationTest extends AbstractBizModelValidationTest {
-
+	
 	@Test
 	def void testINamedElementIsFirstUpper() {
-		val be = createBaseEntity("Test")
-		be.createField("TestFeld")
-		be.createBusinessKey("Bk1")
+		b.createBaseEntity_Complete("Test")
 		assertTrue(b.throwsNoErrors)
 
 	}
 
 	@Test
 	def void test_INAMED_ELEMENT__IS_FIRST_UPPER1() {
-		val be = createBaseEntity("Test")
+		val be = b.createBaseEntity_Complete("Test")
 		be.createField("testFeld")
-		be.createBusinessKey("Bk1")
 
 		assertTrue(b.throwsOnlyError(INAMED_ELEMENT__IS_FIRST_UPPER))
 	}
 	
 	@Test
 	def void test_INAMED_ELEMENT__IS_FIRST_UPPER2() {
-		val be = createBaseEntity("Test")
-		be.createField("TestFeld")
+		val be = b.createBaseEntity_Complete("Test")
 		be.createBusinessKey("bk1")
 
 		assertTrue(b.throwsOnlyError(INAMED_ELEMENT__IS_FIRST_UPPER))
