@@ -15,7 +15,7 @@ class BaseEntityValidator extends AbstractBdmValidator {
 	@Check
 	def checkBaseEntityHasAtLeastOneField(BaseEntity b) {
 		if (b.fields.isNullOrEmpty){
-			error("Eine Basisentität muss mindestens ein Field besitzen", b, INAMED_ELEMENT__NAME,
+			error("Eine Basisentität muss mindestens ein Feld besitzen", b, INAMED_ELEMENT__NAME,
 				BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD)
 		}
 	}
