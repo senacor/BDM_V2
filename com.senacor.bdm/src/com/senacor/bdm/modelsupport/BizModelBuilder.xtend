@@ -30,11 +30,11 @@ class BizModelBuilder extends AbstractModelBuilder {
 		]
 	}
 	
-	/** Creates a new {@link BusinessKey} in the provided entity. */
-	def createBusinessKey(Entity ent, String providedName) {
+	/** Creates a new {@link BusinessKey} in the provided {@link BaseEntity}. */
+	def createBusinessKey(BaseEntity ent, String providedName) {
 		return fact.createBusinessKey => [
 			name = providedName
-			baseentity = ent as BaseEntity
+			baseentity = ent
 		]
 	}
 	
