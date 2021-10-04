@@ -19,8 +19,5 @@ class MemberValidator extends AbstractBdmValidator {
 		if (!m.name.isFirstUpper()) {
 			error("Der Name dieses Elements muss mit einem Großbuchstaben beginnen", m, INAMED_ELEMENT__NAME, MEMBER_IS_FIRST_UPPER)
 		}
-	}
-	
-	
-	
+	}	
 }

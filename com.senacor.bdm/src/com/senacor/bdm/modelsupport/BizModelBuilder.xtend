@@ -21,12 +21,20 @@ class BizModelBuilder extends AbstractModelBuilder {
 			logdocument = doc
 		]
 	}
-	
+		
 	/** Creates a new {@link Field} in the provided entity. */
 	def createField(Entity ent, String providedName) {
 		return fact.createField => [
 			name = providedName
 			entity = ent
+		]
+	}
+	
+	/** Creates a new {@link BusinessKey} in the provided entity. */
+	def createBusinessKey(Entity ent, String providedName) {
+		return fact.createBusinessKey => [
+			name = providedName
+			baseentity = ent as BaseEntity
 		]
 	}
 	

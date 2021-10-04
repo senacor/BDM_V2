@@ -3,10 +3,11 @@
  */
 package com.senacor.bdm.validation
 
-import com.senacor.bdm.validation.biz.MemberValidator
 import com.senacor.bdm.validation.biz.DocumentValidator
 import org.eclipse.xtext.validation.ComposedChecks
 import com.senacor.bdm.validation.biz.INamedElementValidator
+import com.senacor.bdm.validation.biz.BaseEntityValidator
+import com.senacor.bdm.validation.biz.MemberValidator
 
 /**
  * This class contains custom validation rules. 
@@ -14,7 +15,8 @@ import com.senacor.bdm.validation.biz.INamedElementValidator
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 @ComposedChecks(validators=#[
-	MemberValidator, 
+	BaseEntityValidator, 
+	MemberValidator,
 	DocumentValidator,
 	INamedElementValidator
 ])
