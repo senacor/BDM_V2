@@ -34,7 +34,8 @@ Field:
 	'Field' name=ID;
 
 BusinessKey:
-	{BusinessKey} 'businessKey' '{'
+	{BusinessKey} 
+	'businessKey' name=ID '{'
 		(fields+=[Field|QualifiedName] (',' fields+=[Field|QualifiedName])* (',')?)?
 	'}';
 
