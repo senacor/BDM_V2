@@ -18,7 +18,7 @@ class INamedElementValidator extends AbstractBdmValidator {
 	
 	@Check
 	def checkINamedElementStartsWithCapitalLetter(INamedElement element) {
-		if (!(element instanceof Member) && !(element instanceof BusinessKey) && !element.name.isFirstUpper()) {
+		if (!(element instanceof Member) && !element.name.isFirstUpper()) {
 			error("Der Name dieses Elements muss mit einem Großbuchstaben beginnen", element, INAMED_ELEMENT__NAME, INAMED_ELEMENT__IS_FIRST_UPPER)
 		}
 	}
