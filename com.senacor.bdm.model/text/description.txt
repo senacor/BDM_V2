@@ -9,6 +9,7 @@ Package metamodel <http://www.example.org/metamodel>
 
   Class LogDocument -> Document
     Reference members : Member<<0..*>>
+    Reference importcontainer : ImportContainer
 
   Class Member -> INamedElement
     Reference logdocument : LogDocument
@@ -33,3 +34,11 @@ Package metamodel <http://www.example.org/metamodel>
 
   Class FieldDeclaration -> INamedElement
     Reference entity : Entity
+
+  Class ImportContainer
+    Reference document : LogDocument
+    Reference imports : Import<<0..*>>
+
+  Class Import
+    Attribute item : EString
+    Reference importcontainer : ImportContainer

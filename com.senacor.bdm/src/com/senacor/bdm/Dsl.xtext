@@ -9,6 +9,15 @@ LogDocument:
 	'package' name=QualifiedName
 	members+=Member;
 
+ImportContainer:
+	{ImportContainer}
+	(imports+=Import)*	
+;
+
+Import:
+	'import' item=QualifiedName
+;
+
 Member:
 	BaseEntity;
 
