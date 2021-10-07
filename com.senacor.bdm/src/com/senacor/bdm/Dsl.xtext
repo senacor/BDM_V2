@@ -14,9 +14,18 @@ Member:
 
 BaseEntity:
 	'BaseEntity' name=ID '{'
-	fields+=FieldDeclaration (',' fields+=FieldDeclaration)* (',')?
-	businesskeys+=BusinessKey (',' fields+=FieldDeclaration)* (',')?
+		(BaseEntityChild (',' BaseEntityChild)* (',')?)?
 	'}';
+	
+fragment BaseEntityChild *:
+	FieldChild | BusinessKeyChild
+;
+fragment FieldChild *:
+	fields+=FieldDeclaration
+;
+fragment BusinessKeyChild *:
+	businesskeys+=BusinessKey
+;
 
 FieldDeclaration:
 	Field;
@@ -25,8 +34,9 @@ Field:
 	'Field' name=ID;
 
 BusinessKey:
-	{BusinessKey} 'businessKey' '{'
-	(fields+=[Field|QualifiedName] (',' fields+=[Field|QualifiedName])* (',')?)?
+	{BusinessKey} 
+	'businessKey' name=ID '{'
+		(fields+=[Field|QualifiedName] (',' fields+=[Field|QualifiedName])* (',')?)?
 	'}';
 
 QualifiedName:

@@ -15,7 +15,7 @@ class BaseEntityValidator extends AbstractBdmValidator {
 	@Check
 	def checkBaseEntityHasAtLeastOneField(BaseEntity b) {
 		if (b.fields.isNullOrEmpty){
-			error("Eine BaseEntity muss mindestens ein Field besitzen", b, INAMED_ELEMENT__NAME,
+			error("Eine Basisentität muss mindestens ein Feld besitzen", b, INAMED_ELEMENT__NAME,
 				BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD)
 		}
 	}
@@ -23,7 +23,7 @@ class BaseEntityValidator extends AbstractBdmValidator {
 	@Check
 	def checkBaseEntityHasAtLeastOneBusinessKey(BaseEntity b) {
 		if (b.businesskeys.isNullOrEmpty){
-			error("Eine BaseEntity muss mindestens einen Business Key besitzen", b, INAMED_ELEMENT__NAME,
+			error("Eine Basisentität muss mindestens einen Business Key besitzen", b, INAMED_ELEMENT__NAME,
 				BASEENTITY_MUST_HAVE_AT_LEAST_ONE_BK)
 		}
 	}

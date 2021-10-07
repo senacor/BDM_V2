@@ -15,14 +15,10 @@ class MemberValidationTest extends AbstractBizModelValidationTest {
 
 	@Test
 	def void testMemberIsFirstUpper() {
-		val be = createBaseEntity("Kredit")
-		be.createField("Field1")
-		be.createBusinessKey("Bk1")
+		b.createBaseEntity_Complete("Kredit")
 		assertTrue(b.throwsNoErrors)
 		
-		val be2 = createBaseEntity("kunde")
-		be2.createField("Field1")
-		be2.createBusinessKey("Bk1")
+		b.createBaseEntity_Complete("kunde")
 		
 		assertTrue(b.throwsOnlyError(MEMBER_IS_FIRST_UPPER))
 	}	

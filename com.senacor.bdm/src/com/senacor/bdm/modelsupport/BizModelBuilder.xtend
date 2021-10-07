@@ -7,7 +7,6 @@ import com.senacor.bdm.model.metamodel.LogDocument
 
 class BizModelBuilder extends AbstractModelBuilder {
 	
-	
 	/** Creates a new, empty {@link BaseEntity} with the provided name in a new document. The document will be named like the entity. */
 	def createBaseEntity(String providedName) {
 		val doc = createDocument(providedName)
@@ -30,11 +29,11 @@ class BizModelBuilder extends AbstractModelBuilder {
 		]
 	}
 	
-	/** Creates a new {@link BusinessKey} in the provided entity. */
-	def createBusinessKey(Entity ent, String providedName) {
+	/** Creates a new {@link BusinessKey} in the provided {@link BaseEntity}. */
+	def createBusinessKey(BaseEntity ent, String providedName) {
 		return fact.createBusinessKey => [
 			name = providedName
-			baseentity = ent as BaseEntity
+			baseentity = ent
 		]
 	}
 	

@@ -6,8 +6,8 @@ import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
 
-import static org.junit.jupiter.api.Assertions.*
 import static com.senacor.bdm.validation.biz.BaseEntityValidator.*
+import static org.junit.jupiter.api.Assertions.*
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
@@ -15,23 +15,19 @@ class BaseEntityValidationTest extends AbstractBizModelValidationTest {
 
 	@Test
 	def void baseEntityHasAtLeastOneField() {
-		val be = createBaseEntity("Kredit")
-		be.createBusinessKey("Bk1")
-		
-		assertTrue(b.throwsOnlyError(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD))
-		
-		be.createField("Field1")
+		val be = b.createBaseEntity_Complete("Kredit")
 		assertTrue(b.throwsNoErrors)
+		
+		be.fields.clear
+		assertTrue(b.throwsOnlyError(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD))
 	}
 	
 	@Test
 	def void baseEntityHasAtLeastOneBK() {
-		val be = createBaseEntity("Kredit")
-		be.createField("Field1")
-		
-		assertTrue(b.throwsOnlyError(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_BK))
-		
-		be.createBusinessKey("Bk")
+		val be = b.createBaseEntity_Complete("Kredit")
 		assertTrue(b.throwsNoErrors)
+		
+		be.businesskeys.clear
+		assertTrue(b.throwsOnlyError(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_BK))
 	}
 }
