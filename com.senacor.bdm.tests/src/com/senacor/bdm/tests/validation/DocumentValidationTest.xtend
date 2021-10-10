@@ -8,6 +8,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 
 import static com.senacor.bdm.validation.biz.DocumentValidator.*
 import static org.junit.jupiter.api.Assertions.*
+import org.eclipse.xtext.diagnostics.Severity
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
@@ -16,38 +17,37 @@ class DocumentValidationTest extends AbstractBizModelValidationTest {
 	@Test
 	def void testDocumentHasPackage() {
 		createDocument("test")
-		
+
 		assertTrue(b.throwsNoErrors)
 	}
-	
+
 	@Test
 	def void testDocumentHasNoPackage() {
 		val doc = createDocument("test")
 		doc.name = null
-		
-		assertTrue(b.throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
+
+		assertTrue(b.throwsOnlyIssueOfType(DOCUMENT__NEEDS_PACKAGE, Severity.ERROR))
 	}
-	
+
 	@Test
 	def void testDocumentHasEmptyPackage() {
 		val doc = createDocument("test")
 		doc.name = ""
-		
-		assertTrue(b.throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
+
+		assertTrue(b.throwsOnlyIssueOfType(DOCUMENT__NEEDS_PACKAGE, Severity.ERROR))
 	}
-	
-	
+
 	@Test
 	def void testDocumentPackageIsAlwaysStartingLowerCase() {
-		createDocument("iAm.starting.lOwer","test")
-		
+		createDocument("iAm.starting.lOwer", "test")
+
 		assertTrue(b.throwsNoErrors)
 	}
 
 	@Test
 	def void testDocumentPackageIsNotAlwaysStartingLowerCase() {
-		createDocument("Iam.starting.uPper","test")
-		
-		assertTrue(b.throwsOnlyError(DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE))
+		createDocument("Iam.starting.uPper", "test")
+		assertTrue(b.throwsOnlyIssueOfType(DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE, Severity.ERROR))
+
 	}
 }

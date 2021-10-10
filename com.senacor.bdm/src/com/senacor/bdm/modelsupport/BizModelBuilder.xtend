@@ -37,4 +37,20 @@ class BizModelBuilder extends AbstractModelBuilder {
 		]
 	}
 	
+	/** Creates a new, empty {@link ImportContainer} with the provided name. */
+	def createImportContainer(String documentName){
+		val doc = createDocument(documentName)
+		
+		return fact.createImportContainer => [
+			document = doc
+		]
+	}
+
+	/** Creates a new {@link Import} with the provided name. */
+	def createImport(String providedName){
+		return fact.createImport => [
+			item = providedName
+		]
+	}
+	
 }

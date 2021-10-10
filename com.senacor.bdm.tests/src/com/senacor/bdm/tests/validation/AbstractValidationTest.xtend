@@ -19,59 +19,61 @@ abstract class AbstractValidationTest {
 		bizModelProv.get 
 	}
 	
-	/** Returns true if and only if at least one error of the provided errorCode is thrown after validating the 
-	 * model currently contained in the provided builder <b>and</b> no unexpected errors are thrown. If false
-	 * is returned, any  
+	
+	/** Returns true if and only if at least one issue of the provided issueCode and severity is thrown after validating the 
+	 * model currently contained in the provided builder <b>and</b> no unexpected issues are thrown. 
 	 */
-	def boolean throwsOnlyError(AbstractModelBuilder it, String errorCode) {
-		val errors = allErrors
-		val expectedErrors = errors.filter[code == errorCode]
-		val unexpectedErrors  = errors.filter[code != errorCode]
+	def boolean throwsOnlyIssueOfType(AbstractModelBuilder it, String issueCode, Severity severity) {
+		val issues = allIssuesOfGivenSeverity(severity)
+		val expectedIssues= issues.filter[code == issueCode]
+		val unexpectedIssues= issues.filter[code != issueCode]
 		
-		val expectedErrorsFound = !expectedErrors.nullOrEmpty
-		val unexpectedErrorsFound = !unexpectedErrors.nullOrEmpty
+		val expectedIssuesFound = !expectedIssues.nullOrEmpty
+		val unexpectedIssuesFound = !unexpectedIssues.nullOrEmpty
 		
-		if (!expectedErrorsFound) {
-			println('''Missing expected Error: «errorCode»''')
+		if (!expectedIssuesFound) {
+			println('''Missing expected Issue: «issueCode»''')
 		}
-		if (unexpectedErrorsFound) {
-			println('''The following unexpected errors were thrown:''')
-			for (error : unexpectedErrors) {
-				println('''«error.code» - «error»''')
+		if (unexpectedIssuesFound) {
+			println('''The following unexpected issues were thrown:''')
+			for (issue : unexpectedIssues) {
+				println('''«issue.code» - «issue»''')
 			}
 		}
 		
-		return expectedErrorsFound && !unexpectedErrorsFound
+		return expectedIssuesFound && !unexpectedIssuesFound
 	}
 	
-	/** Returns true if and only if there are no validation errors present in the underlying model contained
-	 * by the provided builder. Warnings will not be checked and may thus be present.
-	 */
-	def boolean throwsNoErrors(AbstractModelBuilder it) {
-		val errors = allErrors
-		val errorsExist = !errors.nullOrEmpty
-		
-		if (errorsExist) {
-			println('''The following errors occurred:''')
-			for (error : allErrors) {
-				println('''«error.code» - «error»''')
-			}
-		}
-		
-		return !errorsExist
-	}
-	
-	/** Returns all Issues of level ERROR or above. */
-	def getAllErrors(AbstractModelBuilder builder) {
+	/** Returns all Issues of given severity. */
+	def allIssuesOfGivenSeverity(AbstractModelBuilder builder, Severity severityType) {
 		val rset = builder.resourceSet
 		
 		val allIssues = rset.resources.flatMap[
 			valTestHelper.validate(it)
 		]
 		
-		val allErrors = allIssues.filter[
-			severity <= Severity.ERROR
+		val allIssuesOfGivenSeverity= allIssues.filter[
+			severity == severityType
 		]
-		return allErrors
+		return allIssuesOfGivenSeverity
 	}
+	
+	
+	/** Returns true if and only if there are no validation errors present in the underlying model contained
+	 * by the provided builder. Warnings will not be checked and may thus be present.
+	 */
+	def boolean throwsNoErrors(AbstractModelBuilder it) {
+		val errors = allIssuesOfGivenSeverity(Severity.ERROR)
+		val errorsExist = !errors.nullOrEmpty
+		
+		if (errorsExist) {
+			println('''The following errors occurred:''')
+			for (error : allIssuesOfGivenSeverity(Severity.ERROR)) {
+				println('''«error.code» - «error»''')
+			}
+		}
+		
+		return !errorsExist
+	}
+
 }

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 
 import static com.senacor.bdm.validation.biz.MemberValidator.*
 import static org.junit.jupiter.api.Assertions.*
+import org.eclipse.xtext.diagnostics.Severity
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
@@ -20,6 +21,6 @@ class MemberValidationTest extends AbstractBizModelValidationTest {
 		
 		b.createBaseEntity_Complete("kunde")
 		
-		assertTrue(b.throwsOnlyError(MEMBER_IS_FIRST_UPPER))
+		assertTrue(b.throwsOnlyIssueOfType(MEMBER_IS_FIRST_UPPER, Severity.ERROR))
 	}	
 }

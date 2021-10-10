@@ -8,6 +8,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 
 import static com.senacor.bdm.validation.biz.BaseEntityValidator.*
 import static org.junit.jupiter.api.Assertions.*
+import org.eclipse.xtext.diagnostics.Severity
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
@@ -19,7 +20,7 @@ class BaseEntityValidationTest extends AbstractBizModelValidationTest {
 		assertTrue(b.throwsNoErrors)
 		
 		be.fields.clear
-		assertTrue(b.throwsOnlyError(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD))
+		assertTrue(b.throwsOnlyIssueOfType(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD, Severity.ERROR))
 	}
 	
 	@Test
@@ -28,6 +29,6 @@ class BaseEntityValidationTest extends AbstractBizModelValidationTest {
 		assertTrue(b.throwsNoErrors)
 		
 		be.businesskeys.clear
-		assertTrue(b.throwsOnlyError(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_BK))
+		assertTrue(b.throwsOnlyIssueOfType(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_BK, Severity.ERROR))
 	}
 }

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 
 import static com.senacor.bdm.validation.biz.INamedElementValidator.*
 import static org.junit.jupiter.api.Assertions.*
+import org.eclipse.xtext.diagnostics.Severity
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
@@ -25,7 +26,7 @@ class INamedElementValidationTest extends AbstractBizModelValidationTest {
 		val be = b.createBaseEntity_Complete("Test")
 		be.createField("testFeld")
 
-		assertTrue(b.throwsOnlyError(INAMED_ELEMENT__IS_FIRST_UPPER))
+		assertTrue(b.throwsOnlyIssueOfType(INAMED_ELEMENT__IS_FIRST_UPPER, Severity.ERROR))
 	}
 	
 	@Test
@@ -33,7 +34,7 @@ class INamedElementValidationTest extends AbstractBizModelValidationTest {
 		val be = b.createBaseEntity_Complete("Test")
 		be.createBusinessKey("bk1")
 
-		assertTrue(b.throwsOnlyError(INAMED_ELEMENT__IS_FIRST_UPPER))
+		assertTrue(b.throwsOnlyIssueOfType(INAMED_ELEMENT__IS_FIRST_UPPER, Severity.ERROR))
 	}
 
 }
