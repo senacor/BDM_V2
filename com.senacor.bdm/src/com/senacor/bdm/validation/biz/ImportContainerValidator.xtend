@@ -25,15 +25,11 @@ class ImportContainerValidator extends AbstractBdmValidator {
 
 	@Check
 	def checkImportisUnique(ImportContainer ic) {
-		println("--")
 		val allImports = ic.imports
 		
-		
 		ic.imports.forEach[println(it.item)]
-		println("--")
 		
 		for (import : allImports) {
-			println('''IItem: «import.item»''')
 			if (ic.imports.filter[it.item == import.item].size > 1)
 				warning("Import doppelt vorhanden", import, IMPORT__ITEM, IMPORTCONTAINER_IMPORT_MUST_BE_UNIQUE)
 		}
