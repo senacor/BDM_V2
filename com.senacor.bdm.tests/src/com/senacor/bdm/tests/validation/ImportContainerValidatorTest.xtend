@@ -33,4 +33,26 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 		assertTrue(b.throwsOnlyIssueOfType(IMPORT_MUST_HAVE_AT_LEAST_ONE_ITEM, Severity.ERROR))
 		
 	}
+	
+	
+	@Test
+	def void importSectionsUpperCase(){
+		val ic = b.createImportContainer_Complete("Kunde")
+		ic.imports.add(b.createImport("com.senacor.Test2"))
+
+		ic.imports.add(b.createImport("com.senacor.Test2"))
+		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER, Severity.WARNING))
+		
+		
+	}
+	
+	@Test
+	def void importSectionsLowerCase(){
+		val ic = b.createImportContainer_Complete("Kunde")
+		ic.imports.add(b.createImport("com.senacor.Test2"))
+
+		ic.imports.add(b.createImport("com.senacor.Test2"))		
+		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER, Severity.WARNING))
+		
+	}
 }

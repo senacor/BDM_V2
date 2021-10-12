@@ -10,4 +10,10 @@ class StringHelper {
 			return false
 		Character.isUpperCase(string.charAt(0))
 	}
+	
+	static def isFirstLower(String string) {
+		if (string.nullOrEmpty)
+			return false
+		Character.isLowerCase(string.charAt(0))
+	}
 }
