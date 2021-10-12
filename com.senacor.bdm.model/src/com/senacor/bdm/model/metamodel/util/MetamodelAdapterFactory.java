@@ -112,6 +112,16 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseImportContainer(ImportContainer object) {
+			return createImportContainerAdapter();
+		}
+
+		@Override
+		public Adapter caseImport(Import object) {
+			return createImportAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -253,6 +263,34 @@ public class MetamodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFieldDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.ImportContainer <em>Import Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.ImportContainer
+	 * @generated
+	 */
+	public Adapter createImportContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.senacor.bdm.model.metamodel.Import <em>Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.senacor.bdm.model.metamodel.Import
+	 * @generated
+	 */
+	public Adapter createImportAdapter() {
 		return null;
 	}
 

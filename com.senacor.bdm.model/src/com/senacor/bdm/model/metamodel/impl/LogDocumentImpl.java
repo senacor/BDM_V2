@@ -2,6 +2,7 @@
  */
 package com.senacor.bdm.model.metamodel.impl;
 
+import com.senacor.bdm.model.metamodel.ImportContainer;
 import com.senacor.bdm.model.metamodel.LogDocument;
 import com.senacor.bdm.model.metamodel.Member;
 import com.senacor.bdm.model.metamodel.MetamodelPackage;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl#getMembers <em>Members</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.impl.LogDocumentImpl#getImportcontainer <em>Importcontainer</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 	 * @ordered
 	 */
 	protected EList<Member> members;
+
+	/**
+	 * The cached value of the '{@link #getImportcontainer() <em>Importcontainer</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImportcontainer()
+	 * @generated
+	 * @ordered
+	 */
+	protected ImportContainer importcontainer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,12 +137,67 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ImportContainer getImportcontainer() {
+		return importcontainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetImportcontainer(ImportContainer newImportcontainer, NotificationChain msgs) {
+		ImportContainer oldImportcontainer = importcontainer;
+		importcontainer = newImportcontainer;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER, oldImportcontainer, newImportcontainer);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImportcontainer(ImportContainer newImportcontainer) {
+		if (newImportcontainer != importcontainer) {
+			NotificationChain msgs = null;
+			if (importcontainer != null)
+				msgs = ((InternalEObject) importcontainer).eInverseRemove(this,
+						MetamodelPackage.IMPORT_CONTAINER__DOCUMENT, ImportContainer.class, msgs);
+			if (newImportcontainer != null)
+				msgs = ((InternalEObject) newImportcontainer).eInverseAdd(this,
+						MetamodelPackage.IMPORT_CONTAINER__DOCUMENT, ImportContainer.class, msgs);
+			msgs = basicSetImportcontainer(newImportcontainer, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER,
+					newImportcontainer, newImportcontainer));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMembers()).basicAdd(otherEnd, msgs);
+		case MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER:
+			if (importcontainer != null)
+				msgs = ((InternalEObject) importcontainer).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER, null, msgs);
+			return basicSetImportcontainer((ImportContainer) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -145,6 +212,8 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 		switch (featureID) {
 		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
 			return ((InternalEList<?>) getMembers()).basicRemove(otherEnd, msgs);
+		case MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER:
+			return basicSetImportcontainer(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -161,6 +230,8 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 			return getName();
 		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
 			return getMembers();
+		case MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER:
+			return getImportcontainer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -181,6 +252,9 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 			getMembers().clear();
 			getMembers().addAll((Collection<? extends Member>) newValue);
 			return;
+		case MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER:
+			setImportcontainer((ImportContainer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -199,6 +273,9 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
 			getMembers().clear();
 			return;
+		case MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER:
+			setImportcontainer((ImportContainer) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -215,6 +292,8 @@ public class LogDocumentImpl extends MinimalEObjectImpl.Container implements Log
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case MetamodelPackage.LOG_DOCUMENT__MEMBERS:
 			return members != null && !members.isEmpty();
+		case MetamodelPackage.LOG_DOCUMENT__IMPORTCONTAINER:
+			return importcontainer != null;
 		}
 		return super.eIsSet(featureID);
 	}

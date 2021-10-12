@@ -64,6 +64,10 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 			return createField();
 		case MetamodelPackage.BUSINESS_KEY:
 			return createBusinessKey();
+		case MetamodelPackage.IMPORT_CONTAINER:
+			return createImportContainer();
+		case MetamodelPackage.IMPORT:
+			return createImport();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -107,6 +111,26 @@ public class MetamodelFactoryImpl extends EFactoryImpl implements MetamodelFacto
 	public BusinessKey createBusinessKey() {
 		BusinessKeyImpl businessKey = new BusinessKeyImpl();
 		return businessKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImportContainer createImportContainer() {
+		ImportContainerImpl importContainer = new ImportContainerImpl();
+		return importContainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Import createImport() {
+		ImportImpl import_ = new ImportImpl();
+		return import_;
 	}
 
 	/**

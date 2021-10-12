@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link com.senacor.bdm.model.metamodel.LogDocument#getMembers <em>Members</em>}</li>
+ *   <li>{@link com.senacor.bdm.model.metamodel.LogDocument#getImportcontainer <em>Importcontainer</em>}</li>
  * </ul>
  *
  * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getLogDocument()
@@ -34,5 +35,29 @@ public interface LogDocument extends Document {
 	 * @generated
 	 */
 	EList<Member> getMembers();
+
+	/**
+	 * Returns the value of the '<em><b>Importcontainer</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link com.senacor.bdm.model.metamodel.ImportContainer#getDocument <em>Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Importcontainer</em>' containment reference.
+	 * @see #setImportcontainer(ImportContainer)
+	 * @see com.senacor.bdm.model.metamodel.MetamodelPackage#getLogDocument_Importcontainer()
+	 * @see com.senacor.bdm.model.metamodel.ImportContainer#getDocument
+	 * @model opposite="document" containment="true"
+	 * @generated
+	 */
+	ImportContainer getImportcontainer();
+
+	/**
+	 * Sets the value of the '{@link com.senacor.bdm.model.metamodel.LogDocument#getImportcontainer <em>Importcontainer</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Importcontainer</em>' containment reference.
+	 * @see #getImportcontainer()
+	 * @generated
+	 */
+	void setImportcontainer(ImportContainer value);
 
 } // LogDocument

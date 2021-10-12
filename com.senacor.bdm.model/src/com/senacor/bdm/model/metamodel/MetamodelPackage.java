@@ -122,13 +122,22 @@ public interface MetamodelPackage extends EPackage {
 	int LOG_DOCUMENT__MEMBERS = DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Importcontainer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_DOCUMENT__IMPORTCONTAINER = DOCUMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Log Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOG_DOCUMENT_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 1;
+	int LOG_DOCUMENT_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Log Document</em>' class.
@@ -489,6 +498,98 @@ public interface MetamodelPackage extends EPackage {
 	int BUSINESS_KEY_OPERATION_COUNT = INAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.ImportContainerImpl <em>Import Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.senacor.bdm.model.metamodel.impl.ImportContainerImpl
+	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getImportContainer()
+	 * @generated
+	 */
+	int IMPORT_CONTAINER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Document</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_CONTAINER__DOCUMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_CONTAINER__IMPORTS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Import Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_CONTAINER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Import Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_CONTAINER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link com.senacor.bdm.model.metamodel.impl.ImportImpl <em>Import</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.senacor.bdm.model.metamodel.impl.ImportImpl
+	 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getImport()
+	 * @generated
+	 */
+	int IMPORT = 10;
+
+	/**
+	 * The feature id for the '<em><b>Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT__ITEM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Importcontainer</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT__IMPORTCONTAINER = 1;
+
+	/**
+	 * The number of structural features of the '<em>Import</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Import</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.LogDocument <em>Log Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -508,6 +609,17 @@ public interface MetamodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLogDocument_Members();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.senacor.bdm.model.metamodel.LogDocument#getImportcontainer <em>Importcontainer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Importcontainer</em>'.
+	 * @see com.senacor.bdm.model.metamodel.LogDocument#getImportcontainer()
+	 * @see #getLogDocument()
+	 * @generated
+	 */
+	EReference getLogDocument_Importcontainer();
 
 	/**
 	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.Member <em>Member</em>}'.
@@ -678,6 +790,70 @@ public interface MetamodelPackage extends EPackage {
 	EReference getFieldDeclaration_Entity();
 
 	/**
+	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.ImportContainer <em>Import Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Import Container</em>'.
+	 * @see com.senacor.bdm.model.metamodel.ImportContainer
+	 * @generated
+	 */
+	EClass getImportContainer();
+
+	/**
+	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.ImportContainer#getDocument <em>Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Document</em>'.
+	 * @see com.senacor.bdm.model.metamodel.ImportContainer#getDocument()
+	 * @see #getImportContainer()
+	 * @generated
+	 */
+	EReference getImportContainer_Document();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.senacor.bdm.model.metamodel.ImportContainer#getImports <em>Imports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Imports</em>'.
+	 * @see com.senacor.bdm.model.metamodel.ImportContainer#getImports()
+	 * @see #getImportContainer()
+	 * @generated
+	 */
+	EReference getImportContainer_Imports();
+
+	/**
+	 * Returns the meta object for class '{@link com.senacor.bdm.model.metamodel.Import <em>Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Import</em>'.
+	 * @see com.senacor.bdm.model.metamodel.Import
+	 * @generated
+	 */
+	EClass getImport();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.senacor.bdm.model.metamodel.Import#getItem <em>Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Item</em>'.
+	 * @see com.senacor.bdm.model.metamodel.Import#getItem()
+	 * @see #getImport()
+	 * @generated
+	 */
+	EAttribute getImport_Item();
+
+	/**
+	 * Returns the meta object for the container reference '{@link com.senacor.bdm.model.metamodel.Import#getImportcontainer <em>Importcontainer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Importcontainer</em>'.
+	 * @see com.senacor.bdm.model.metamodel.Import#getImportcontainer()
+	 * @see #getImport()
+	 * @generated
+	 */
+	EReference getImport_Importcontainer();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -717,6 +893,14 @@ public interface MetamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOG_DOCUMENT__MEMBERS = eINSTANCE.getLogDocument_Members();
+
+		/**
+		 * The meta object literal for the '<em><b>Importcontainer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOG_DOCUMENT__IMPORTCONTAINER = eINSTANCE.getLogDocument_Importcontainer();
 
 		/**
 		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.MemberImpl <em>Member</em>}' class.
@@ -861,6 +1045,58 @@ public interface MetamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FIELD_DECLARATION__ENTITY = eINSTANCE.getFieldDeclaration_Entity();
+
+		/**
+		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.ImportContainerImpl <em>Import Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.senacor.bdm.model.metamodel.impl.ImportContainerImpl
+		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getImportContainer()
+		 * @generated
+		 */
+		EClass IMPORT_CONTAINER = eINSTANCE.getImportContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Document</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMPORT_CONTAINER__DOCUMENT = eINSTANCE.getImportContainer_Document();
+
+		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMPORT_CONTAINER__IMPORTS = eINSTANCE.getImportContainer_Imports();
+
+		/**
+		 * The meta object literal for the '{@link com.senacor.bdm.model.metamodel.impl.ImportImpl <em>Import</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.senacor.bdm.model.metamodel.impl.ImportImpl
+		 * @see com.senacor.bdm.model.metamodel.impl.MetamodelPackageImpl#getImport()
+		 * @generated
+		 */
+		EClass IMPORT = eINSTANCE.getImport();
+
+		/**
+		 * The meta object literal for the '<em><b>Item</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPORT__ITEM = eINSTANCE.getImport_Item();
+
+		/**
+		 * The meta object literal for the '<em><b>Importcontainer</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMPORT__IMPORTCONTAINER = eINSTANCE.getImport_Importcontainer();
 
 	}
 

@@ -9,6 +9,8 @@ import com.senacor.bdm.model.metamodel.Entity;
 import com.senacor.bdm.model.metamodel.Field;
 import com.senacor.bdm.model.metamodel.FieldDeclaration;
 import com.senacor.bdm.model.metamodel.INamedElement;
+import com.senacor.bdm.model.metamodel.Import;
+import com.senacor.bdm.model.metamodel.ImportContainer;
 import com.senacor.bdm.model.metamodel.LogDocument;
 import com.senacor.bdm.model.metamodel.Member;
 import com.senacor.bdm.model.metamodel.MetamodelFactory;
@@ -91,6 +93,20 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	private EClass fieldDeclarationEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass importContainerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass importEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -170,6 +186,15 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 */
 	public EReference getLogDocument_Members() {
 		return (EReference) logDocumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogDocument_Importcontainer() {
+		return (EReference) logDocumentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -321,6 +346,60 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getImportContainer() {
+		return importContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getImportContainer_Document() {
+		return (EReference) importContainerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getImportContainer_Imports() {
+		return (EReference) importContainerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImport() {
+		return importEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImport_Item() {
+		return (EAttribute) importEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getImport_Importcontainer() {
+		return (EReference) importEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MetamodelFactory getMetamodelFactory() {
 		return (MetamodelFactory) getEFactoryInstance();
 	}
@@ -347,6 +426,7 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		// Create classes and their features
 		logDocumentEClass = createEClass(LOG_DOCUMENT);
 		createEReference(logDocumentEClass, LOG_DOCUMENT__MEMBERS);
+		createEReference(logDocumentEClass, LOG_DOCUMENT__IMPORTCONTAINER);
 
 		memberEClass = createEClass(MEMBER);
 		createEReference(memberEClass, MEMBER__LOGDOCUMENT);
@@ -371,6 +451,14 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 
 		fieldDeclarationEClass = createEClass(FIELD_DECLARATION);
 		createEReference(fieldDeclarationEClass, FIELD_DECLARATION__ENTITY);
+
+		importContainerEClass = createEClass(IMPORT_CONTAINER);
+		createEReference(importContainerEClass, IMPORT_CONTAINER__DOCUMENT);
+		createEReference(importContainerEClass, IMPORT_CONTAINER__IMPORTS);
+
+		importEClass = createEClass(IMPORT);
+		createEAttribute(importEClass, IMPORT__ITEM);
+		createEReference(importEClass, IMPORT__IMPORTCONTAINER);
 	}
 
 	/**
@@ -417,6 +505,9 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		initEReference(getLogDocument_Members(), this.getMember(), this.getMember_Logdocument(), "members", null, 0, -1,
 				LogDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogDocument_Importcontainer(), this.getImportContainer(), this.getImportContainer_Document(),
+				"importcontainer", null, 0, 1, LogDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(memberEClass, Member.class, "Member", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMember_Logdocument(), this.getLogDocument(), this.getLogDocument_Members(), "logdocument",
@@ -459,6 +550,22 @@ public class MetamodelPackageImpl extends EPackageImpl implements MetamodelPacka
 		initEReference(getFieldDeclaration_Entity(), this.getEntity(), this.getEntity_Fields(), "entity", null, 0, 1,
 				FieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(importContainerEClass, ImportContainer.class, "ImportContainer", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImportContainer_Document(), this.getLogDocument(), this.getLogDocument_Importcontainer(),
+				"document", null, 0, 1, ImportContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImportContainer_Imports(), this.getImport(), this.getImport_Importcontainer(), "imports",
+				null, 0, -1, ImportContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getImport_Item(), ecorePackage.getEString(), "item", null, 0, 1, Import.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImport_Importcontainer(), this.getImportContainer(), this.getImportContainer_Imports(),
+				"importcontainer", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
