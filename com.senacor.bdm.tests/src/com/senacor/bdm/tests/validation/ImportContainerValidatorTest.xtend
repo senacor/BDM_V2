@@ -38,10 +38,8 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 	@Test
 	def void importSectionsUpperCase(){
 		val ic = b.createImportContainer_Complete("Kunde")
-		ic.imports.add(b.createImport("com.senacor.Test2"))
-
-		ic.imports.add(b.createImport("com.senacor.Test2"))
-		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER, Severity.WARNING))
+		ic.imports.add(b.createImport("com.senacor.Test"))
+		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER, Severity.ERROR))
 		
 		
 	}
@@ -49,10 +47,8 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 	@Test
 	def void importSectionsLowerCase(){
 		val ic = b.createImportContainer_Complete("Kunde")
-		ic.imports.add(b.createImport("com.senacor.Test2"))
-
-		ic.imports.add(b.createImport("com.senacor.Test2"))		
-		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER, Severity.WARNING))
+		ic.imports.add(b.createImport("com.senacor.Test"))
+		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER, Severity.ERROR))
 		
 	}
 }

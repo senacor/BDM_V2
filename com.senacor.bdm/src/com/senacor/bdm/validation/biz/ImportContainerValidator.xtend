@@ -8,6 +8,7 @@ import static com.senacor.bdm.helpers.StringHelper.*
 
 
 import static com.senacor.bdm.model.metamodel.MetamodelPackage.Literals.*
+import java.util.regex.Pattern
 
 class ImportContainerValidator extends AbstractBdmValidator {
 
@@ -45,28 +46,51 @@ class ImportContainerValidator extends AbstractBdmValidator {
 	/**
 	 * 1. holt sich das import item
 	 * 2. splitet den import an allen "punkten"
-	 * 3. itereirt über die einzelnen import segmente und checkt die gross/klein schreibung  
-	 * 3.a. checkt ob alle parent import sections klein beginnen
-	 * 3.b  checkt ob das letzte element mit grossbuchstaben beginnt
+	 * 3. itereirt über die einzelnen import segmente   
+	 * 4. checkt ob alle parent import sections klein beginnen
+	 * 5. drope aktuelles element
 	 */
 	@Check
-	def checkImportSyntax(Import impt){
+	def checkImportSyntaxFirstPart(Import impt){
 		
 		
 		var import_item = impt.item
-		var import_subsections = import_item.split('.')
+		var import_subsections = import_item.split(Pattern.quote("."))
 		var length_of_import = import_subsections.length
-		for(var itter=0 ; itter< length_of_import-2; itter++){
-			val _sub_string = import_subsections.get(itter)
-			if(!isFirstLower(_sub_string) ){
-				error("Nur das konkrete Element eines Importes darf gross geschrieben werden!",impt, IMPORT__ITEM,
+		
+		var itter = 0
+		while (length_of_import > 1){
+			if(!isFirstLower(import_subsections.get(itter))){
+				error("die parent elemente eines importes muessen kein geschrieben werden", impt, IMPORT__ITEM,
 				IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER)
 			}
+			import_subsections = import_subsections.drop(1)
+			length_of_import = length_of_import - 1
 		}
-		if(!isFirstUpper(import_subsections.get(length_of_import-1))){
-			error("Das konkrete Element eines Importes muss gross geschrieben werden!",impt, IMPORT__ITEM,
-				IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER)
+		
+		
+	}
+	
+	/**
+	 * 1. holt sich das import item
+	 * 2. splitet den import an allen "punkten"
+	 * 3  checkt ob das letzte element mit grossbuchstaben beginnt
+	 */
+	@Check
+	def checkImportSyntaxLastPart(Import impt){
+		
+		
+		var import_item = impt.item
+		var import_subsections = import_item.split(Pattern.quote("."))
+		
+		
+		if(!isFirstUpper(import_subsections.last)){
+			error("das letzte element eines imports muss gross geschrieben werden", impt, IMPORT__ITEM,
+			IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER)
 		}
+	
+		
+		
 	}
 }
 
