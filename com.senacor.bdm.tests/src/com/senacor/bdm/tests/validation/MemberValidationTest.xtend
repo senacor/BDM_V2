@@ -21,6 +21,6 @@ class MemberValidationTest extends AbstractBizModelValidationTest {
 		
 		b.createBaseEntity_Complete("kunde")
 		
-		assertTrue(b.throwsOnlyIssueOfType(MEMBER_IS_FIRST_UPPER, Severity.ERROR))
+		assertTrue(b.throwsOnlyError(MEMBER_IS_FIRST_UPPER))
 	}	
 }

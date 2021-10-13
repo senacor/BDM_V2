@@ -26,7 +26,7 @@ class DocumentValidationTest extends AbstractBizModelValidationTest {
 		val doc = createDocument("test")
 		doc.name = null
 
-		assertTrue(b.throwsOnlyIssueOfType(DOCUMENT__NEEDS_PACKAGE, Severity.ERROR))
+		assertTrue(b.throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
 	}
 
 	@Test
@@ -34,7 +34,7 @@ class DocumentValidationTest extends AbstractBizModelValidationTest {
 		val doc = createDocument("test")
 		doc.name = ""
 
-		assertTrue(b.throwsOnlyIssueOfType(DOCUMENT__NEEDS_PACKAGE, Severity.ERROR))
+		assertTrue(b.throwsOnlyError(DOCUMENT__NEEDS_PACKAGE))
 	}
 
 	@Test
@@ -47,7 +47,7 @@ class DocumentValidationTest extends AbstractBizModelValidationTest {
 	@Test
 	def void testDocumentPackageIsNotAlwaysStartingLowerCase() {
 		createDocument("Iam.starting.uPper", "test")
-		assertTrue(b.throwsOnlyIssueOfType(DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE, Severity.ERROR))
+		assertTrue(b.throwsOnlyError(DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE))
 
 	}
 }

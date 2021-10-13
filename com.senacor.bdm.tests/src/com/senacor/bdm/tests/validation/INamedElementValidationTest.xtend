@@ -26,7 +26,7 @@ class INamedElementValidationTest extends AbstractBizModelValidationTest {
 		val be = b.createBaseEntity_Complete("Test")
 		be.createField("testFeld")
 
-		assertTrue(b.throwsOnlyIssueOfType(INAMED_ELEMENT__IS_FIRST_UPPER, Severity.ERROR))
+		assertTrue(b.throwsOnlyError(INAMED_ELEMENT__IS_FIRST_UPPER))
 	}
 	
 	@Test
@@ -34,7 +34,7 @@ class INamedElementValidationTest extends AbstractBizModelValidationTest {
 		val be = b.createBaseEntity_Complete("Test")
 		be.createBusinessKey("bk1")
 
-		assertTrue(b.throwsOnlyIssueOfType(INAMED_ELEMENT__IS_FIRST_UPPER, Severity.ERROR))
+		assertTrue(b.throwsOnlyError(INAMED_ELEMENT__IS_FIRST_UPPER))
 	}
 
 }

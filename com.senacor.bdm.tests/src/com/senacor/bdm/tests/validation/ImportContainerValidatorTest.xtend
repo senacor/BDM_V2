@@ -14,7 +14,10 @@ import org.eclipse.xtext.diagnostics.Severity
 @InjectWith(DslInjectorProvider)
 class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 	
-	
+	/**
+	 * Creates a valid import container (containing already one valid import) and adds a second valid Import.
+	 * Then adds a third import with the same name (item) as the second.
+	 */
 	@Test
 	def void importIsUnique(){
 		val ic = b.createImportContainer_Complete("Kunde")
@@ -22,7 +25,7 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 		assertTrue(b.throwsNoErrors)
 
 		ic.imports.add(b.createImport("com.senacor.Test2"))
-		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_MUST_BE_UNIQUE, Severity.WARNING))
+		assertTrue(b.throwsOnlyWarning(IMPORTCONTAINER_IMPORT_MUST_BE_UNIQUE))
 		
 	}
 	@Test
@@ -30,8 +33,7 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 		val ic = b.createImportContainer("Kunde")
 
 		ic.imports.add(b.createEmptyImport)
-		assertTrue(b.throwsOnlyIssueOfType(IMPORT_MUST_HAVE_AT_LEAST_ONE_ITEM, Severity.ERROR))
-		
+		assertTrue(b.throwsOnlyError(IMPORT_MUST_HAVE_AT_LEAST_ONE_ITEM))	
 	}
 	
 	
@@ -41,7 +43,7 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 		ic.imports.add(b.createImport("com.senacor.Test2"))
 
 		ic.imports.add(b.createImport("com.senacor.Test2"))
-		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER, Severity.WARNING))
+		assertTrue(b.throwsOnlyWarning(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER))
 		
 		
 	}
@@ -52,7 +54,7 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 		ic.imports.add(b.createImport("com.senacor.Test2"))
 
 		ic.imports.add(b.createImport("com.senacor.Test2"))		
-		assertTrue(b.throwsOnlyIssueOfType(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER, Severity.WARNING))
+		assertTrue(b.throwsOnlyWarning(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER))
 		
 	}
 }

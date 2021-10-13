@@ -19,11 +19,18 @@ abstract class AbstractValidationTest {
 		bizModelProv.get 
 	}
 	
+	def boolean throwsOnlyError(AbstractModelBuilder it, String issueCode) {
+		throwsOnlyIssueOfType(it, issueCode, Severity.ERROR)
+	}
+
+	def boolean throwsOnlyWarning(AbstractModelBuilder it, String issueCode) {
+		throwsOnlyIssueOfType(it, issueCode, Severity.WARNING)
+	}
 	
 	/** Returns true if and only if at least one issue of the provided issueCode and severity is thrown after validating the 
 	 * model currently contained in the provided builder <b>and</b> no unexpected issues are thrown. 
 	 */
-	def boolean throwsOnlyIssueOfType(AbstractModelBuilder it, String issueCode, Severity severity) {
+	private def boolean throwsOnlyIssueOfType(AbstractModelBuilder it, String issueCode, Severity severity) {
 		val issues = allIssuesOfGivenSeverity(severity)
 		val expectedIssues= issues.filter[code == issueCode]
 		val unexpectedIssues= issues.filter[code != issueCode]

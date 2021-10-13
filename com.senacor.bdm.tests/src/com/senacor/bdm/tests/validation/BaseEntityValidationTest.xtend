@@ -20,7 +20,7 @@ class BaseEntityValidationTest extends AbstractBizModelValidationTest {
 		assertTrue(b.throwsNoErrors)
 		
 		be.fields.clear
-		assertTrue(b.throwsOnlyIssueOfType(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD, Severity.ERROR))
+		assertTrue(b.throwsOnlyError(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD))
 	}
 	
 	@Test
@@ -29,6 +29,6 @@ class BaseEntityValidationTest extends AbstractBizModelValidationTest {
 		assertTrue(b.throwsNoErrors)
 		
 		be.businesskeys.clear
-		assertTrue(b.throwsOnlyIssueOfType(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_BK, Severity.ERROR))
+		assertTrue(b.throwsOnlyError(BASEENTITY_MUST_HAVE_AT_LEAST_ONE_BK))
 	}
 }
