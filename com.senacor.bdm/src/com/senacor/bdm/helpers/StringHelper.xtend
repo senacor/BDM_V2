@@ -16,4 +16,8 @@ class StringHelper {
 			return false
 		Character.isLowerCase(string.charAt(0))
 	}
+	
+	static def getLastSegment(String string){
+		return string.substring(string.lastIndexOf('.') + 1);
+	}
 }
