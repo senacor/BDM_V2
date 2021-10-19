@@ -1,13 +1,13 @@
 package com.senacor.bdm.modelsupport
 
-import com.senacor.bdm.model.metamodel.MetamodelFactory
-import org.eclipse.xtend.lib.annotations.Accessors
-import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.xtext.resource.XtextResourceSet
-import javax.inject.Provider
-import javax.inject.Inject
 import com.senacor.bdm.model.metamodel.LogDocument
+import com.senacor.bdm.model.metamodel.MetamodelFactory
+import javax.inject.Inject
+import javax.inject.Provider
 import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.eclipse.xtext.resource.XtextResourceSet
 
 abstract class AbstractModelBuilder {
 	protected val static fact = MetamodelFactory.eINSTANCE 

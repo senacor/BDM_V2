@@ -1,8 +1,11 @@
 package com.senacor.bdm.modelsupport
 
 import com.senacor.bdm.model.metamodel.BaseEntity
+import com.senacor.bdm.model.metamodel.BusinessKey
 import com.senacor.bdm.model.metamodel.Entity
 import com.senacor.bdm.model.metamodel.Field
+import com.senacor.bdm.model.metamodel.Import
+import com.senacor.bdm.model.metamodel.ImportContainer
 import com.senacor.bdm.model.metamodel.LogDocument
 
 class BizModelBuilder extends AbstractModelBuilder {
@@ -36,8 +39,15 @@ class BizModelBuilder extends AbstractModelBuilder {
 			baseentity = ent
 		]
 	}
-	
-	/** Creates a new, empty {@link ImportContainer} with the provided name. */
+
+	/** Creates a new, empty {@link ImportContainer} with the provided name in the provided document. */
+	def createImportContainer(LogDocument doc){
+		return fact.createImportContainer => [
+			document = doc
+		]
+	}
+		
+	/** Creates a new, empty {@link ImportContainer} in a new {@link LogDocument} with the name provided. */
 	def createImportContainer(String documentName){
 		val doc = createDocument(documentName)
 		
@@ -52,5 +62,4 @@ class BizModelBuilder extends AbstractModelBuilder {
 			item = providedName
 		]
 	}
-	
 }

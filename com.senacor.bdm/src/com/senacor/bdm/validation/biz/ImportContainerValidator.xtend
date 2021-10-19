@@ -3,12 +3,12 @@ package com.senacor.bdm.validation.biz
 import com.senacor.bdm.model.metamodel.Import
 import com.senacor.bdm.model.metamodel.ImportContainer
 import com.senacor.bdm.validation.AbstractBdmValidator
-import java.util.ArrayList
 import java.util.regex.Pattern
 import org.eclipse.xtext.validation.Check
 
-import static extension com.senacor.bdm.helpers.StringHelper.*
 import static com.senacor.bdm.model.metamodel.MetamodelPackage.Literals.*
+
+import static extension com.senacor.bdm.helpers.StringHelper.*
 
 class ImportContainerValidator extends AbstractBdmValidator {
 

@@ -8,7 +8,6 @@ import org.junit.jupiter.api.^extension.ExtendWith
 
 import static com.senacor.bdm.validation.biz.DocumentValidator.*
 import static org.junit.jupiter.api.Assertions.*
-import org.eclipse.xtext.diagnostics.Severity
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
@@ -48,6 +47,18 @@ class DocumentValidationTest extends AbstractBizModelValidationTest {
 	def void testDocumentPackageIsNotAlwaysStartingLowerCase() {
 		createDocument("Iam.starting.uPper", "test")
 		assertTrue(b.throwsOnlyError(DOCUMENT__PACKAGE_SECTIONS_START_LOWER_CASE))
+
+	}
+
+	@Test
+	def void testIfDocumentHasOnlyOneMemberItIsNamedLikeIt() {
+		val doc = b.createDocument("Kunde")
+
+		doc.members += b.createBaseEntity_Complete(doc, "Konto")
+		assertTrue(b.throwsOnlyError(DOCUMENT__FILE_NAME_IDENTICAL_TO_ONLY_MEMBER))
+
+		doc.members += b.createBaseEntity_Complete(doc, "Kunde")
+		assertTrue(b.throwsNoErrors)
 
 	}
 }

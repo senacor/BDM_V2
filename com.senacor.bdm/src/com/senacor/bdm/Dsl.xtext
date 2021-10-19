@@ -10,7 +10,7 @@ LogDocument:
 	
 	importcontainer=ImportContainer
 	
-	members+=Member;
+	(members+=Member)*;
 
 ImportContainer: 
 	(
