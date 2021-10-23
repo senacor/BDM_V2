@@ -42,7 +42,7 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 		val ic = b.createImportContainer_Complete("Kunde")
 		ic.imports.add(b.createImport("com.senacor.test2"))
 
-		assertTrue(b.throwsOnlyError(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER))
+		assertFalse(b.throwsOnlyError(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER))
 	}
 	
 	@Test
