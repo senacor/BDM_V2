@@ -51,45 +51,26 @@ class ImportContainerValidator extends AbstractBdmValidator {
 					IMPORT_LAST_SEGMENT_IS_UNIQUE)
 	}
 
-	/**
-	 * 1. holt sich das import item
-	 * 2. splitet den import an allen "punkten"
-	 * 3. itereirt über die einzelnen import segmente   
-	 * 4. checkt ob alle parent import sections klein beginnen
-	 * 5. drope aktuelles element
-	 */
 	@Check
 	def checkImportSyntaxFirstPart(Import imp) {
-
-		var import_item = imp.item
-		var import_subsections = import_item.split(Pattern.quote("."))
-		var length_of_import = import_subsections.length
-
-		var itter = 0
-		while (length_of_import > 1) {
-			if (!isFirstLower(import_subsections.get(itter)) && !import_subsections.get(itter).isNullOrEmpty) {
-				error("Die Parent Elemente eines Imports müssen klein geschrieben werden", imp, IMPORT__ITEM,
+		var importSubsections = imp.item.split(Pattern.quote("."))
+		var lengthOfImport = importSubsections.length
+		var sectionId = 0
+		while (sectionId < lengthOfImport) {
+			if (!isFirstLower(importSubsections.get(sectionId))) {
+				error("die parent elemente eines imports muessen klein geschrieben werden", imp, IMPORT__ITEM,
 					IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER)
 			}
-			import_subsections = import_subsections.drop(1)
-			length_of_import = length_of_import - 1
+			sectionId += 1
 		}
 
 	}
 
-	/**
-	 * 1. holt sich das import item
-	 * 2. splitet den import an allen "punkten"
-	 * 3  checkt ob das letzte element mit grossbuchstaben beginnt
-	 */
 	@Check
 	def checkImportSyntaxLastPart(Import impt) {
-
-		var import_item = impt.item
-		var import_subsections = import_item.split(Pattern.quote("."))
-
-		if (!isFirstUpper(import_subsections.last) && !import_subsections.last.isNullOrEmpty) {
-			error("Das letzte Element eines Imports muss gross geschrieben werden", impt, IMPORT__ITEM,
+		var importSubsections = impt.item.split(Pattern.quote("."))
+		if (!isFirstUpper(importSubsections.last)) {
+			error("das letzte element eines imports muss gross geschrieben werden", impt, IMPORT__ITEM,
 				IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER)
 		}
 
