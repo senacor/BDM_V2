@@ -8,7 +8,6 @@ import org.junit.jupiter.api.^extension.ExtendWith
 
 import static com.senacor.bdm.validation.biz.ImportContainerValidator.*
 import static org.junit.jupiter.api.Assertions.*
-import org.eclipse.xtext.diagnostics.Severity
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
@@ -22,7 +21,6 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 	def void importIsUnique(){
 		val ic = b.createImportContainer_Complete("Kunde")
 		ic.imports.add(b.createImport("com.senacor.Test2"))
-		//assertTrue(b.throwsNoErrors)
 
 		ic.imports.add(b.createImport("com.senacor.Test2"))
 		assertTrue(b.throwsOnlyWarning(IMPORTCONTAINER_IMPORT_MUST_BE_UNIQUE))
@@ -30,10 +28,10 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 	}
 	@Test
 	def void importHasAtLeastOneItem(){
-		val ic = b.createImportContainer("Kunde")
+		val ic = b.createImportContainer_Complete("Kunde")
 
 		ic.imports.add(b.createEmptyImport)
-		assertFalse(b.throwsOnlyError(IMPORT_MUST_HAVE_AT_LEAST_ONE_ITEM))	
+		assertTrue(b.throwsOnlyError(IMPORT_MUST_HAVE_AT_LEAST_ONE_ITEM))	
 	}
 	
 	
@@ -42,7 +40,7 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 		val ic = b.createImportContainer_Complete("Kunde")
 		ic.imports.add(b.createImport("com.senacor.test2"))
 
-		assertFalse(b.throwsOnlyError(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER))
+		assertTrue(b.throwsOnlyError(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER))
 	}
 	
 	@Test
@@ -60,7 +58,7 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 
 		ic.imports.add(b.createImport("com.senacor.Test2"))
 		ic.imports.add(b.createImport("de.senacor.Test2"))		
-		assertFalse(b.throwsOnlyError(IMPORT_LAST_SEGMENT_IS_UNIQUE))
+		assertTrue(b.throwsOnlyError(IMPORT_LAST_SEGMENT_IS_UNIQUE))
 		
 	}
 }

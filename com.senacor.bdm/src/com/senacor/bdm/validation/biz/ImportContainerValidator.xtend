@@ -56,21 +56,22 @@ class ImportContainerValidator extends AbstractBdmValidator {
 		var importSubsections = imp.item.split(Pattern.quote("."))
 		var lengthOfImport = importSubsections.length
 		var sectionId = 0
-		while (sectionId < lengthOfImport) {
-			if (!isFirstLower(importSubsections.get(sectionId))) {
-				error("die parent elemente eines imports muessen klein geschrieben werden", imp, IMPORT__ITEM,
-					IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER)
-			}
-			sectionId += 1
-		}
 
+		if (!importSubsections.isNullOrEmpty)
+			while (sectionId < lengthOfImport) {
+				if (!isFirstLower(importSubsections.get(sectionId)) && sectionId != lengthOfImport-1) {
+					error("Der Parent eines Imports muss klein geschrieben werden", imp, IMPORT__ITEM,
+						IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER)
+				}
+				sectionId += 1
+			}
 	}
 
 	@Check
 	def checkImportSyntaxLastPart(Import impt) {
 		var importSubsections = impt.item.split(Pattern.quote("."))
-		if (!isFirstUpper(importSubsections.last)) {
-			error("das letzte element eines imports muss gross geschrieben werden", impt, IMPORT__ITEM,
+		if (!isFirstUpper(importSubsections.last) && !importSubsections.isNullOrEmpty && importSubsections.last != "") {
+			error("Das letzte Element eines Imports muss gross geschrieben werden", impt, IMPORT__ITEM,
 				IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER)
 		}
 

@@ -40,7 +40,7 @@ class DocumentValidator extends AbstractBdmValidator {
 		val documentName = d.eResource.URI.filenameWithoutExtension
 
 		if (d.members.size == 1 && documentName != d.members.last.name) {
-			error("Enthält ein Dokument nur ein Member, müssen der Name des Members und der Dateiname ident sein.", d,
+			error("Enthält ein Dokument nur ein Member, müssen der Name des Members und der Dateiname identisch sein.", d,
 				DOCUMENT__NAME, DOCUMENT__FILE_NAME_IDENTICAL_TO_ONLY_MEMBER)
 		}
 

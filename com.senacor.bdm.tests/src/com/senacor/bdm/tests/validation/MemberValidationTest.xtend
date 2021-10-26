@@ -1,5 +1,6 @@
 package com.senacor.bdm.tests.validation
 
+import com.senacor.bdm.model.metamodel.BaseEntity
 import com.senacor.bdm.tests.DslInjectorProvider
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
@@ -8,8 +9,6 @@ import org.junit.jupiter.api.^extension.ExtendWith
 
 import static com.senacor.bdm.validation.biz.MemberValidator.*
 import static org.junit.jupiter.api.Assertions.*
-import org.eclipse.xtext.diagnostics.Severity
-import com.senacor.bdm.model.metamodel.BaseEntity
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)
