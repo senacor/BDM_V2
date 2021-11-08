@@ -12,6 +12,7 @@
       ecorePackage="metamodel.ecore#/">
     <genClasses ecoreClass="metamodel.ecore#//LogDocument">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//LogDocument/members"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//LogDocument/importcontainer"/>
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//Member">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Member/logdocument"/>
@@ -35,6 +36,14 @@
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//FieldDeclaration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//FieldDeclaration/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ImportContainer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//ImportContainer/document"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//ImportContainer/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Import/item"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Import/importcontainer"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

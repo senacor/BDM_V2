@@ -4,6 +4,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="LogDocument" eSuperTypes="#//Document">
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="#//Member" containment="true" eOpposite="#//Member/logdocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importcontainer" eType="#//ImportContainer"
+        containment="true" eOpposite="#//ImportContainer/document"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Member" abstract="true" eSuperTypes="#//INamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="logdocument" eType="#//LogDocument"
@@ -33,5 +35,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="FieldDeclaration" abstract="true" eSuperTypes="#//INamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
         eOpposite="#//Entity/fields"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImportContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="#//LogDocument"
+        eOpposite="#//LogDocument/importcontainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true" eOpposite="#//Import/importcontainer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="item" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importcontainer" eType="#//ImportContainer"
+        eOpposite="#//ImportContainer/imports"/>
   </eClassifiers>
 </ecore:EPackage>

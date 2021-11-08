@@ -1,5 +1,6 @@
 package com.senacor.bdm.tests.validation
 
+import com.senacor.bdm.model.metamodel.BaseEntity
 import com.senacor.bdm.tests.DslInjectorProvider
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
@@ -22,4 +23,16 @@ class MemberValidationTest extends AbstractBizModelValidationTest {
 		
 		assertTrue(b.throwsOnlyError(MEMBER_IS_FIRST_UPPER))
 	}	
+	
+	@Test
+	def void testMemberHasNoDuplicateChilds(){
+		val doc = b.createDocument("Konto")
+		
+		doc.members += b.createBaseEntity_Complete(doc, "Konto")
+		val entity = doc.members.last as BaseEntity
+		
+		entity.fields += b.createField(entity, "MeinTestFeld1")
+		assertTrue(b.throwsOnlyError(MEMBER_NO_DUPLICATE_NAMES_INSIDE_MEMBER))
+		
+	}
 }

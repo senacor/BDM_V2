@@ -8,6 +8,7 @@ import org.eclipse.xtext.validation.ComposedChecks
 import com.senacor.bdm.validation.biz.INamedElementValidator
 import com.senacor.bdm.validation.biz.BaseEntityValidator
 import com.senacor.bdm.validation.biz.MemberValidator
+import com.senacor.bdm.validation.biz.ImportContainerValidator
 
 /**
  * This class contains custom validation rules. 
@@ -18,7 +19,8 @@ import com.senacor.bdm.validation.biz.MemberValidator
 	BaseEntityValidator, 
 	MemberValidator,
 	DocumentValidator,
-	INamedElementValidator
+	INamedElementValidator,
+	ImportContainerValidator
 ])
 class DslValidator extends AbstractDslValidator {
 	

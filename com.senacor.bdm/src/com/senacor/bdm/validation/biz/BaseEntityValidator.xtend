@@ -7,7 +7,7 @@ import org.eclipse.xtext.validation.Check
 import static com.senacor.bdm.model.metamodel.MetamodelPackage.Literals.*
 
 class BaseEntityValidator extends AbstractBdmValidator {
-	public static val String CODE__PREFIX = CODE__PREFIX_ALL + "member.";
+	public static val String CODE__PREFIX = CODE__PREFIX_ALL + "baseEntity.";
 
 	public static val String BASEENTITY_MUST_HAVE_AT_LEAST_ONE_FIELD = CODE__PREFIX + "BaseEntityOneField";
 	public static val String BASEENTITY_MUST_HAVE_AT_LEAST_ONE_BK = CODE__PREFIX + "BaseEntityOneBK";
