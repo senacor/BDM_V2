@@ -7,11 +7,18 @@ import javax.inject.Provider
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.xtend.lib.annotations.Accessors
+import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 import org.eclipse.xtext.resource.XtextResourceSet
 
 abstract class AbstractModelBuilder {
 	protected val static fact = MetamodelFactory.eINSTANCE 
 	
+	protected val extension CommonModelSupport
+	
+	@Inject
+	@FinalFieldsConstructor
+	new() {}
+	 
 	/** The package new documents will currently be created in. */
 	@Accessors
 	var String currentPackage = "com.senacor.test"

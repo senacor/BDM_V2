@@ -9,6 +9,12 @@ import org.eclipse.xtext.resource.XtextResourceSet
 
 class MemberHelper {
 
+//    eine, die einen "SimpleName" (z.B. "Kredit", d.h. nur ein Segment) in vollqualifizierten Namen umwandelt (z.B. "a.b.c.Kredit"), falls das Element importiert ist.
+//    def QualifiedName toFQN(Document doc, String simpleName)
+//    eine, die zurückgibt, ob ein bestimmter qualifizierter Name im jeweiligen Dokument importiert ist
+//    eine, die zurückgibt, ob ein bestimmter einfacher Name im jeweiligen Dokument importiert ist
+
+
 	@Inject
 	IQualifiedNameProvider qnp
 
