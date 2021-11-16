@@ -35,14 +35,14 @@ class ImportContainerValidatorTest extends AbstractBizModelValidationTest {
 	def void importSectionsUpperCase(){
 		createImports("Kunde", "com.senacor.test2")
 
-		assertTrue(b.throwsOnlyError(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER))
+		assertTrue(b.throwsOnlyError(IMPORT_LAST_SEGMENT_MUST_BEGIN_UPPER))
 	}
 	
 	@Test
 	def void importSectionsLowerCase(){
 		createImports("Kunde", "com.Senacor.Test2")
 		
-		assertTrue(b.throwsOnlyError(IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER))
+		assertTrue(b.throwsOnlyError(IMPORT_SUBSECTION_MUST_BEGIN_LOWER))
 		
 	}
 	

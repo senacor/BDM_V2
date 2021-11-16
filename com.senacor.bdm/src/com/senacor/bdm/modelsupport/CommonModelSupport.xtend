@@ -12,6 +12,7 @@ import static extension java.util.Optional.*
 import com.senacor.bdm.model.metamodel.Import
 import org.eclipse.xtext.naming.IQualifiedNameConverter
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
+import java.util.Map
 
 /** Contains helper methods that simplify dealing with the "generic", i.e., common, part of our metamodel. 
  * All methods should not be static, i.e, they may use other injected classes.
@@ -46,5 +47,20 @@ class CommonModelSupport {
 	def QualifiedName getQualifiedName(Import imp) {
 		qnc.toQualifiedName(imp.item)
 	}
+	
+	/** Checks if provided qualified name is imported in the provided document */
+	def boolean isQualifiedNameImported(LogDocument doc, QualifiedName qn){
+		doc.getImportedQualifiedNamesBySimpleName.isImported(qn)
+	}
+
+	/** Checks if provided simple name is imported in the provided document */
+	def boolean isSimpleNameImported(LogDocument doc, String simpleName){
+		doc.getImportedQualifiedNamesBySimpleName.isImported(qnc.toQualifiedName(simpleName))
+	}
+	
+	private def boolean isImported(Map<String, QualifiedName> qualifiedToSimpleNames, QualifiedName qualifiedName){
+		qualifiedToSimpleNames.containsValue(qualifiedName)
+	}
+
 	
 }

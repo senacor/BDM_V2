@@ -1,7 +1,9 @@
 package com.senacor.bdm.tests.modelsupport
 
+import com.google.inject.Inject
 import com.senacor.bdm.tests.DslInjectorProvider
 import com.senacor.bdm.tests.validation.AbstractBizModelValidationTest
+import org.eclipse.xtext.naming.IQualifiedNameConverter
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.junit.jupiter.api.Test
@@ -13,6 +15,9 @@ import static org.junit.jupiter.api.Assertions.*
 @InjectWith(DslInjectorProvider)
 class CommonModelSupportTest extends AbstractBizModelValidationTest {
 	
+	@Inject
+	extension IQualifiedNameConverter qnc
+	
 	@Test
 	def void testRetrieveFqnForImportedMember() {
 		val ent = b.createBaseEntity_Complete("Test")
@@ -21,6 +26,18 @@ class CommonModelSupportTest extends AbstractBizModelValidationTest {
 		doc.createImport(ent)
 		
 		assertEquals("com.senacor.test.Test", doc.getFullyQualifiedName("Test").map[toString].get)
+	}
+
+	@Test
+	def void testCheckIsImported() {
+	
+		val doc = b.createDocument("MyTestDocument")
+		doc.createImport("com.senacor.testimport")
+		
+		assertTrue(doc.isQualifiedNameImported(qnc.toQualifiedName("com.senacor.testimport")))
+		
+		assertTrue(doc.isSimpleNameImported("com.senacor.testimport"))
+		
 	}
 
 }

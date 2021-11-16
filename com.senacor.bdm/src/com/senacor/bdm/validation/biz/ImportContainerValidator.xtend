@@ -20,11 +20,11 @@ class ImportContainerValidator extends AbstractBdmValidator {
 
 	public static val String IMPORTCONTAINER_IMPORT_MUST_BE_UNIQUE = CODE__PREFIX + "ImportIsUnique";
 
-	public static val String IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER = CODE__PREFIX +
+	public static val String IMPORT_SUBSECTION_MUST_BEGIN_LOWER = CODE__PREFIX +
 		"ImportSubSectionLower";
 
-	public static val String IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER = CODE__PREFIX +
-		"ImportSubSectionUpper";
+	public static val String IMPORT_LAST_SEGMENT_MUST_BEGIN_UPPER = CODE__PREFIX +
+		"ImportLastSegmentUpper";
 
 	@Check
 	def checkImportHasAtLeastOneItem(Import imp) {
@@ -44,7 +44,7 @@ class ImportContainerValidator extends AbstractBdmValidator {
 	}
 
 	@Check
-	def checkNoImportsWithSameLaseSegment(ImportContainer ic) {
+	def checkNoImportsWithSameLastSegment(ImportContainer ic) {
 		for (import : ic.imports)
 			if (ic.imports.filter[it.item.lastSegment == import.item.lastSegment].size > 1)
 				error("Das letzte Segment eines Imports darf nur einmal vorhanden sein", import, IMPORT__ITEM,
@@ -61,7 +61,7 @@ class ImportContainerValidator extends AbstractBdmValidator {
 			while (sectionId < lengthOfImport) {
 				if (!isFirstLower(importSubsections.get(sectionId)) && sectionId != lengthOfImport-1) {
 					error("Der Parent eines Imports muss klein geschrieben werden", imp, IMPORT__ITEM,
-						IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_LOWER)
+						com.senacor.bdm.validation.biz.ImportContainerValidator.IMPORT_SUBSECTION_MUST_BEGIN_LOWER)
 				}
 				sectionId += 1
 			}
@@ -72,7 +72,7 @@ class ImportContainerValidator extends AbstractBdmValidator {
 		var importSubsections = impt.item.split(Pattern.quote("."))
 		if (!isFirstUpper(importSubsections.last) && !importSubsections.isNullOrEmpty && importSubsections.last != "") {
 			error("Das letzte Element eines Imports muss gross geschrieben werden", impt, IMPORT__ITEM,
-				IMPORTCONTAINER_IMPORT_SUBSECTION_MUST_BEGIN_UPPER)
+				com.senacor.bdm.validation.biz.ImportContainerValidator.IMPORT_LAST_SEGMENT_MUST_BEGIN_UPPER)
 		}
 
 	}
