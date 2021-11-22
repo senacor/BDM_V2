@@ -8,7 +8,6 @@ import org.junit.jupiter.api.^extension.ExtendWith
 
 import static com.senacor.bdm.validation.biz.BaseEntityValidator.*
 import static org.junit.jupiter.api.Assertions.*
-import org.eclipse.xtext.diagnostics.Severity
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DslInjectorProvider)

@@ -20,11 +20,9 @@ class ImportContainerValidator extends AbstractBdmValidator {
 
 	public static val String IMPORTCONTAINER_IMPORT_MUST_BE_UNIQUE = CODE__PREFIX + "ImportIsUnique";
 
-	public static val String IMPORT_SUBSECTION_MUST_BEGIN_LOWER = CODE__PREFIX +
-		"ImportSubSectionLower";
+	public static val String IMPORT_SUBSECTION_MUST_BEGIN_LOWER = CODE__PREFIX + "ImportSubSectionLower";
 
-	public static val String IMPORT_LAST_SEGMENT_MUST_BEGIN_UPPER = CODE__PREFIX +
-		"ImportLastSegmentUpper";
+	public static val String IMPORT_LAST_SEGMENT_MUST_BEGIN_UPPER = CODE__PREFIX + "ImportLastSegmentUpper";
 
 	@Check
 	def checkImportHasAtLeastOneItem(Import imp) {
@@ -59,9 +57,9 @@ class ImportContainerValidator extends AbstractBdmValidator {
 
 		if (!importSubsections.isNullOrEmpty)
 			while (sectionId < lengthOfImport) {
-				if (!isFirstLower(importSubsections.get(sectionId)) && sectionId != lengthOfImport-1) {
+				if (!isFirstLower(importSubsections.get(sectionId)) && sectionId != lengthOfImport - 1) {
 					error("Der Parent eines Imports muss klein geschrieben werden", imp, IMPORT__ITEM,
-						com.senacor.bdm.validation.biz.ImportContainerValidator.IMPORT_SUBSECTION_MUST_BEGIN_LOWER)
+						IMPORT_SUBSECTION_MUST_BEGIN_LOWER)
 				}
 				sectionId += 1
 			}
@@ -72,7 +70,7 @@ class ImportContainerValidator extends AbstractBdmValidator {
 		var importSubsections = impt.item.split(Pattern.quote("."))
 		if (!isFirstUpper(importSubsections.last) && !importSubsections.isNullOrEmpty && importSubsections.last != "") {
 			error("Das letzte Element eines Imports muss gross geschrieben werden", impt, IMPORT__ITEM,
-				com.senacor.bdm.validation.biz.ImportContainerValidator.IMPORT_LAST_SEGMENT_MUST_BEGIN_UPPER)
+				IMPORT_LAST_SEGMENT_MUST_BEGIN_UPPER)
 		}
 
 	}
