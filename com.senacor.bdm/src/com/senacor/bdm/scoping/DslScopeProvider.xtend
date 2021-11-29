@@ -34,26 +34,26 @@ class DslScopeProvider extends AbstractDslScopeProvider {
 
 		if (context instanceof BusinessKeyImpl && reference == BUSINESS_KEY__FIELDS) {
 
-			val rootElement = EcoreUtil2.getRootContainer(context) as LogDocument
-
-			var qNsOfImportedAndOwnBaseEntities = new ArrayList<QualifiedName>
-			qNsOfImportedAndOwnBaseEntities.addAll(rootElement.importcontainer.imports.map[qualifiedName])
-			qNsOfImportedAndOwnBaseEntities.addAll(rootElement.members.map[qualifiedName.orElseThrow])
-
-			var allVisisbleFields = context.searchIndexByType(FIELD)
-
-			var candidates = new ArrayList<IEObjectDescription>
-
-			for (visField : allVisisbleFields)
-				for (qNOfImportedOrOwnBaseEntity : qNsOfImportedAndOwnBaseEntities) {
-					val first3SegmentsOfVisibleField = visField.qualifiedName.segments.subList(0,3).map[it.toLowerCase]
-					val first3SegmentsOfImportOrBaseEntity = qNOfImportedOrOwnBaseEntity.segments.subList(0, 3).map[it.toLowerCase]
-					if (first3SegmentsOfVisibleField.containsAll(first3SegmentsOfImportOrBaseEntity))
-						candidates.add(visField)
-				}
- 				val scope = new SimpleScope(candidates)
-
-			return scope
+//			val rootElement = EcoreUtil2.getRootContainer(context) as LogDocument
+//
+//			var qNsOfImportedAndOwnBaseEntities = new ArrayList<QualifiedName>
+//			qNsOfImportedAndOwnBaseEntities.addAll(rootElement.importcontainer.imports.map[qualifiedName])
+//			qNsOfImportedAndOwnBaseEntities.addAll(rootElement.members.map[qualifiedName.orElseThrow])
+//
+//			var allVisisbleFields = context.searchIndexByType(FIELD)
+//
+//			var candidates = new ArrayList<IEObjectDescription>
+//
+//			for (visField : allVisisbleFields)
+//				for (qNOfImportedOrOwnBaseEntity : qNsOfImportedAndOwnBaseEntities) {
+//					val first3SegmentsOfVisibleField = visField.qualifiedName.segments.subList(0,3).map[it.toLowerCase]
+//					val first3SegmentsOfImportOrBaseEntity = qNOfImportedOrOwnBaseEntity.segments.subList(0, 3).map[it.toLowerCase]
+//					if (first3SegmentsOfVisibleField.containsAll(first3SegmentsOfImportOrBaseEntity))
+//						candidates.add(visField)
+//				}
+// 				val scope = new SimpleScope(candidates)
+//
+//			return scope
 		}
 		return super.getScope(context, reference)
 	}
