@@ -3,6 +3,20 @@
  */
 package com.senacor.bdm.scoping
 
+import com.google.inject.Inject
+import com.senacor.bdm.helpers.IndexHelper
+import com.senacor.bdm.model.metamodel.LogDocument
+import com.senacor.bdm.model.metamodel.impl.BusinessKeyImpl
+import com.senacor.bdm.modelsupport.CommonModelSupport
+import java.util.ArrayList
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.naming.QualifiedName
+import org.eclipse.xtext.resource.IEObjectDescription
+import org.eclipse.xtext.scoping.impl.SimpleScope
+
+import static com.senacor.bdm.model.metamodel.MetamodelPackage.Literals.*
 
 /**
  * This class contains custom scoping description.
@@ -10,6 +24,37 @@ package com.senacor.bdm.scoping
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
  * on how and when to use it.
  */
+
 class DslScopeProvider extends AbstractDslScopeProvider {
 
+	@Inject extension IndexHelper
+	@Inject extension CommonModelSupport commonModelSupport
+
+	override getScope(EObject context, EReference reference) {
+
+		if (context instanceof BusinessKeyImpl && reference == BUSINESS_KEY__FIELDS) {
+
+			val rootElement = EcoreUtil2.getRootContainer(context) as LogDocument
+
+			var qNsOfImportedAndOwnBaseEntities = new ArrayList<QualifiedName>
+			qNsOfImportedAndOwnBaseEntities.addAll(rootElement.importcontainer.imports.map[qualifiedName])
+			qNsOfImportedAndOwnBaseEntities.addAll(rootElement.members.map[qualifiedName.orElseThrow])
+
+			var allVisisbleFields = context.searchIndexByType(FIELD)
+
+			var candidates = new ArrayList<IEObjectDescription>
+
+			for (visField : allVisisbleFields)
+				for (qNOfImportedOrOwnBaseEntity : qNsOfImportedAndOwnBaseEntities) {
+					val first3SegmentsOfVisibleField = visField.qualifiedName.segments.subList(0,3).map[it.toLowerCase]
+					val first3SegmentsOfImportOrBaseEntity = qNOfImportedOrOwnBaseEntity.segments.subList(0, 3).map[it.toLowerCase]
+					if (first3SegmentsOfVisibleField.containsAll(first3SegmentsOfImportOrBaseEntity))
+						candidates.add(visField)
+				}
+ 				val scope = new SimpleScope(candidates)
+
+			return scope
+		}
+		return super.getScope(context, reference)
+	}
 }

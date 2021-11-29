@@ -25,7 +25,7 @@ class CommonModelSupportTest extends AbstractBizModelValidationTest {
 		val doc = b.createDocument("MyTestDocument")
 		doc.createImport(ent)
 		
-		assertEquals("com.senacor.test.Test", doc.getFullyQualifiedName("Test").map[toString].get)
+		assertEquals("com.senacor.test.Test", doc.getFullyQualifiedNameOfImports("Test").map[toString].get)
 	}
 
 	@Test

@@ -1,9 +1,9 @@
 package com.senacor.bdm.validation.biz
 
 import com.google.inject.Inject
-import com.senacor.bdm.helpers.MemberHelper
 import com.senacor.bdm.model.metamodel.INamedElement
 import com.senacor.bdm.model.metamodel.Member
+import com.senacor.bdm.modelsupport.CommonModelSupport
 import com.senacor.bdm.validation.AbstractBdmValidator
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 import org.eclipse.xtext.validation.Check
@@ -18,7 +18,7 @@ class MemberValidator extends AbstractBdmValidator {
 	public static val String MEMBER_IS_FIRST_UPPER = CODE__PREFIX + "IsFirstUpper";
 	public static val String MEMBER_NO_DUPLICATE_NAMES_INSIDE_MEMBER = CODE__PREFIX + "NoDuplicateNamesInsideMember";
 
-	val extension MemberHelper
+	val extension CommonModelSupport
 
 	@Inject
 	@FinalFieldsConstructor
