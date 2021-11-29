@@ -36,8 +36,6 @@ class CommonModelSupportTest extends AbstractBizModelValidationTest {
 		
 		assertTrue(doc.isQualifiedNameImported(qnc.toQualifiedName("com.senacor.testimport")))
 		
-		assertTrue(doc.isSimpleNameImported("com.senacor.testimport"))
-		
 	}
 
 }

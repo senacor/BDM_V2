@@ -93,11 +93,14 @@ class CommonModelSupport {
 
 	/** Checks if provided simple name is imported in the provided document */
 	def boolean isSimpleNameImported(LogDocument doc, String simpleName) {
-		doc.getImportedQualifiedNamesBySimpleName.isImported(qnc.toQualifiedName(simpleName))
+		doc.getImportedQualifiedNamesBySimpleName.isImported(simpleName)
 	}
 
 	private def boolean isImported(Map<String, QualifiedName> qualifiedToSimpleNames, QualifiedName qualifiedName) {
 		qualifiedToSimpleNames.containsValue(qualifiedName)
+	}
+	private def boolean isImported(Map<String, QualifiedName> qualifiedToSimpleNames, String simpleName) {
+		qualifiedToSimpleNames.containsKey(simpleName)
 	}
 
 }
