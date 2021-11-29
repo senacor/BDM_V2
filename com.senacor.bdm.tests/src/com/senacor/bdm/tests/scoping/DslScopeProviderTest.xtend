@@ -22,24 +22,23 @@ class DslScopeProviderTest extends AbstractBizModelValidationTest {
 
 	@Test
 	def void provideIndexTest() {
-		val vertrag = b.createBaseEntity_Complete("Vertrag")
+		val imported = b.createBaseEntity_Complete("Imported")
 		
-		val kredit = b.createBaseEntity_Complete("Kredit")
-		kredit.document.createImport(vertrag)
+		b.createBaseEntity_Complete("NotImported")
 		
-		val kunde = b.createBaseEntity_Complete("Kunde")
-		kunde.document.createImport(vertrag)
+		val thatsMe = b.createBaseEntity_Complete("ThatsMe")
+		thatsMe.document.createImport(imported)
 		
-		val scope = scopeProvider.getScope(kunde.businesskeys.head, BUSINESS_KEY__FIELDS)
+		val scope = scopeProvider.getScope(thatsMe.businesskeys.head, BUSINESS_KEY__FIELDS)
 		
 		val String expected =
 			'''	
-			com.senacor.test.Kredit.MeinTestFeld1 -> com.senacor.test.Kredit.MeinTestFeld1
-			MeinTestFeld1 -> com.senacor.test.Kunde.MeinTestFeld1
-			Kunde.MeinTestFeld1 -> com.senacor.test.Kunde.MeinTestFeld1
-			com.senacor.test.Kunde.MeinTestFeld1 -> com.senacor.test.Kunde.MeinTestFeld1
-			Vertrag.MeinTestFeld1 -> com.senacor.test.Vertrag.MeinTestFeld1
-			com.senacor.test.Vertrag.MeinTestFeld1 -> com.senacor.test.Vertrag.MeinTestFeld1
+			Imported.MeinTestFeld1 -> com.senacor.test.Imported.MeinTestFeld1
+			com.senacor.test.Imported.MeinTestFeld1 -> com.senacor.test.Imported.MeinTestFeld1
+			com.senacor.test.NotImported.MeinTestFeld1 -> com.senacor.test.NotImported.MeinTestFeld1
+			MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
+			ThatsMe.MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
+			com.senacor.test.ThatsMe.MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
 			'''
 		
 		assertEquals(expected, scope.print)
