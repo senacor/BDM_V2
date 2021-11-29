@@ -8,7 +8,9 @@ import java.util.Map
 import java.util.Optional
 import javax.inject.Inject
 import javax.inject.Singleton
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
+import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.naming.IQualifiedNameConverter
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.naming.QualifiedName
@@ -28,6 +30,22 @@ class CommonModelSupport {
 
 	val IQualifiedNameProvider qnp
 	val IQualifiedNameConverter qnc
+
+
+	/** Returns the containing element of the provided type or null if it does not exist. */
+	def <T extends EObject> T getContainerOfType(EObject o, Class<T> clazz) {
+		EcoreUtil2.getContainerOfType(o, clazz)
+	}
+	
+	/** Returns the containing {@link Member} or null if it does not exist. */
+	def getMember(EObject o) {
+		getContainerOfType(o, Member)
+	}
+	
+	/** Returns the containing LogDocument or null if it does not exist. */
+	def getDocument(EObject o) {
+		EcoreUtil2.getContainerOfType(o, LogDocument)
+	}
 
 	/****************************/
 	/*  Qualified Name Returner */
