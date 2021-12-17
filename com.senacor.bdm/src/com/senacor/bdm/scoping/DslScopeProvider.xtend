@@ -17,6 +17,7 @@ import org.eclipse.xtext.scoping.impl.SimpleScope
 import static com.senacor.bdm.model.metamodel.MetamodelPackage.Literals.*
 
 import static extension com.senacor.bdm.helpers.StringHelper.*
+import com.senacor.bdm.helpers.MemberHelper
 
 /**
  * This class contains custom scoping description.
@@ -29,6 +30,7 @@ class DslScopeProvider extends AbstractDslScopeProvider {
 
 	@Inject extension IndexHelper
 	@Inject extension CommonModelSupport commonModelSupport
+	@Inject extension MemberHelper
 
 	override getScope(EObject context, EReference reference) {
 
@@ -75,29 +77,5 @@ class DslScopeProvider extends AbstractDslScopeProvider {
 	/** Creates a new IEObjectDescription that delegates to the provided one but uses a different alias. */
 	def IEObjectDescription rename(IEObjectDescription description, QualifiedName alias) {
 		new AliasedEObjectDescription(alias, description)
-	}
-	
-	/** Returns the prefixed name of the provided QN. For example, this would return {@code Kredit.Feld} for
-	 * {@code com.senacor.test.Kredit.Feld}. 
-	 */
-	def QualifiedName getPrefixedName(QualifiedName qn) {
-		val count = qn.segments.dropWhile[isFirstLower].size
-		qn.skipFirst(qn.segmentCount - count)
-	}
-	
-//	/** Returns the simple name of the member name contained in the provided QN. For example, this would 
-//	 * return {@code com.senacor.test.Kredit} for {@code com.senacor.test.Kredit.Feld}. 
-//	 */
-//	def String getMemberName(QualifiedName qn) {
-//		val count = qn.segments.dropWhile[isFirstLower].size
-//		qn.skipLast(qn.segmentCount - count)
-//	}
-	
-	/** Returns the simple name of the member name contained in the provided QN. For example, this would return {@code Kredit} for
-	 * {@code com.senacor.test.Kredit.Feld}. 
-	 */
-	def String getMemberSimpleName(QualifiedName qn) {
-		qn.segments.dropWhile[isFirstLower].head
-	}
-	
+	}	
 }
