@@ -5,6 +5,7 @@ package com.senacor.bdm.scoping
 
 import com.google.inject.Inject
 import com.senacor.bdm.helpers.IndexHelper
+import com.senacor.bdm.helpers.MemberHelper
 import com.senacor.bdm.model.metamodel.BusinessKey
 import com.senacor.bdm.modelsupport.CommonModelSupport
 import org.eclipse.emf.ecore.EObject
@@ -15,9 +16,6 @@ import org.eclipse.xtext.resource.impl.AliasedEObjectDescription
 import org.eclipse.xtext.scoping.impl.SimpleScope
 
 import static com.senacor.bdm.model.metamodel.MetamodelPackage.Literals.*
-
-import static extension com.senacor.bdm.helpers.StringHelper.*
-import com.senacor.bdm.helpers.MemberHelper
 
 /**
  * This class contains custom scoping description.
@@ -36,14 +34,6 @@ class DslScopeProvider extends AbstractDslScopeProvider {
 
 		if (reference == BUSINESS_KEY__FIELDS) {
 			if (context instanceof BusinessKey) {
-				val doc = context.document
-	
-				var qNsOfImportedAndOwnBaseEntities = newArrayList
-				qNsOfImportedAndOwnBaseEntities.addAll(doc.importcontainer.imports.map[qualifiedName])
-				qNsOfImportedAndOwnBaseEntities.addAll(doc.members.map[qualifiedName.orElseThrow])
-	
-				var allFields = context.searchIndexByType(FIELD)
-				
 				// TODO: 
 				// 1) implement Case 1.
 				// 2) refactor (and test!) QualifiedName helper methods (-> e.g., in static public QualifiedNameHelper )
@@ -54,17 +44,26 @@ class DslScopeProvider extends AbstractDslScopeProvider {
 //				1. MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
 //				2. ThatsMe.MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
 //				3. com.senacor.test.ThatsMe.MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
-	
+
+				val doc = context.document
+				var allFields = context.searchIndexByType(FIELD)
 				val importedFields = allFields
 					.filter[doc.isSimpleNameImported(it.qualifiedName.memberSimpleName)]
 					.map[
 						rename(it, qualifiedName.prefixedName)
 					]
 					.toList
-	
+					
+				val ownFields = allFields
+					.filter[doc.isFieldOfDocument(it.name.lastSegment)]
+					.map[
+						rename(it, qualifiedName.prefixedName)
+					]
+					.toList
+					
 				var candidates = newArrayList
 				candidates += importedFields
-				candidates += allFields
+				candidates += ownFields
 				
  				val scope = new SimpleScope(candidates)
 	

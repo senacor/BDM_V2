@@ -37,5 +37,15 @@ class CommonModelSupportTest extends AbstractBizModelValidationTest {
 		assertTrue(doc.isQualifiedNameImported(qnc.toQualifiedName("com.senacor.testimport")))
 		
 	}
+	
+	@Test
+	def void testIsFieldOfDocument(){
+		val doc = b.createDocument("MyTestDocument")
+		val ent = doc.createBaseEntity('TestEntity')
+		ent.createField('TestField')
+		
+		assertTrue(doc.isFieldOfDocument('TestField'))
+		assertFalse(doc.isFieldOfDocument('OtherField'))
+	}
 
 }

@@ -22,35 +22,36 @@ class DslScopeProviderTest extends AbstractBizModelValidationTest {
 
 	@Test
 	def void provideIndexTest() {
-		val imported = b.createBaseEntity_Complete("Imported")
-		
-		b.createBaseEntity_Complete("NotImported")
-		
-		val thatsMe = b.createBaseEntity_Complete("ThatsMe")
-		thatsMe.document.createImport(imported)
-		
-		val scope = scopeProvider.getScope(thatsMe.businesskeys.head, BUSINESS_KEY__FIELDS)
-		
-		val String expected =
-			'''	
-			Imported.MeinTestFeld1 -> com.senacor.test.Imported.MeinTestFeld1
-			com.senacor.test.Imported.MeinTestFeld1 -> com.senacor.test.Imported.MeinTestFeld1
-			com.senacor.test.NotImported.MeinTestFeld1 -> com.senacor.test.NotImported.MeinTestFeld1
-			MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
-			ThatsMe.MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
-			com.senacor.test.ThatsMe.MeinTestFeld1 -> com.senacor.test.ThatsMe.MeinTestFeld1
-			'''
-		
+		val docWithImports = b.createDocument("MyTestDocument")
+		val entity = docWithImports.createBaseEntity('OwnEntity')
+		entity.createField('OwnField')
+		entity.createBusinessKey('OwnBusinessKey')
+
+		val imported = b.createBaseEntity("Imported")
+		imported.createField('ImportedField')
+		docWithImports.createImport(imported)
+
+		val docNotImported = b.createDocument("NotImportedtDocument")
+		val entityNotImported = docNotImported.createBaseEntity('NotImportedEntity')
+		entityNotImported.createField('NotImportedField')
+
+		val scope = scopeProvider.getScope(entity.businesskeys.head, BUSINESS_KEY__FIELDS)
+
+		val String expected = 
+		'''	
+			Imported.ImportedField -> com.senacor.test.Imported.ImportedField
+			OwnEntity.OwnField -> com.senacor.test.OwnEntity.OwnField
+		'''
+
 		assertEquals(expected, scope.print)
 	}
-	
+
 	def String print(IScope scope) {
 		'''
-		«FOR e : scope.allElements.sortBy[qualifiedName]»
-			«e.name» -> «e.qualifiedName»
-		«ENDFOR»
+			«FOR e : scope.allElements.sortBy[qualifiedName]»
+				«e.name» -> «e.qualifiedName»
+			«ENDFOR»
 		'''
 	}
-	
-	
+
 }
